@@ -1,0 +1,41 @@
+# RackRail Solution – Sicherheits- und Cache-Header (Apache)
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-IXJneBaDvz8A1KwRuA/2oj+h6PLqvStjfY4LJd9vcW4='; img-src 'self' data:; font-src 'self'; manifest-src 'self'; media-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'none'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header unset X-Powered-By
+  Header unset Server
+</IfModule>
+# HTTPS erzwingen
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+# Verzeichnislisten aus, versteckte Dateien sperren
+Options -Indexes
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+# .well-known (security.txt) bleibt erreichbar
+<IfModule mod_rewrite.c>
+  RewriteRule ^\.well-known/ - [L]
+</IfModule>
+ServerSignature Off
+# Komprimierung
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+ErrorDocument 404 /404.html
+# PHP-Härtung
+<IfModule mod_php.c>
+  php_flag expose_php Off
+  php_value upload_max_filesize 10M
+  php_value post_max_size 55M
+</IfModule>
