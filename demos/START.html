@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>RackRail Solution · Website-Demos</title>
+<style>
+:root{--ink:#0b1220;--ink2:#55637a;--bg:#f3f5f8;--card:#fff;--line:#e3e8f0;--accent:#0f3b7a;--accent2:#2f6bd6;--warm:#e8792b}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{padding:48px 24px 20px;max-width:1240px;margin:0 auto}
+header .eyebrow{color:var(--warm);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.03em;margin:8px 0 10px;line-height:1.05}
+header p{color:var(--ink2);max-width:70ch;margin:0}
+.tips{max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.tip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.92rem;color:var(--ink2)}
+.tip b{color:var(--ink)}
+main{max-width:1240px;margin:28px auto 80px;padding:0 24px;display:grid;gap:22px}
+.card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px -30px rgba(11,18,32,.3)}
+.shots{position:relative;background:#e9edf3;min-height:280px}
+.shots a{display:block}
+.shots img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.shots a:first-child{position:absolute;inset:0}
+.shots .mob{position:absolute;right:18px;bottom:18px;width:26%;border-radius:14px;overflow:hidden;box-shadow:0 20px 40px -18px rgba(0,0,0,.6);border:3px solid #fff;background:#fff}
+.shots .mob img{aspect-ratio:390/800}
+.body{padding:28px 28px 26px;display:flex;flex-direction:column;gap:10px}
+.num{color:var(--warm);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem}
+h2{margin:0;font-size:1.7rem;letter-spacing:-.025em}
+.body p{margin:0;color:var(--ink2)}
+.fit{font-size:.92rem}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+.btn{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:#eef2f7;color:var(--ink);padding:0 12px}
+.btn.ghost:hover{background:#e0e6ef}
+.btn.edit{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn.edit:hover{border-color:var(--ink)}
+footer{text-align:center;color:var(--ink2);font-size:.85rem;padding:0 24px 40px}
+@media (max-width:860px){.card{grid-template-columns:1fr}.shots{min-height:220px;aspect-ratio:16/10}}
+</style>
+</head>
+<body>
+<header>
+  <span class="eyebrow">RackRail Solution</span>
+  <h1>Fünf Website-Varianten zur Auswahl.</h1>
+  <p>Gleiche Inhalte, gleiche vier Sprachen (Deutsch, Englisch, Russisch, Arabisch), gleicher Datenschutz. Unterschiedlich ist nur der Auftritt. Jede Demo läuft direkt aus diesem Ordner, auch ohne Internet.</p>
+</header>
+<div class="tips">
+  <div class="tip"><b>Demo zeigen:</b> Auf "Demo öffnen" klicken. Die Seite öffnet sich im Browser. Oben links die Sprache wechseln.</div>
+  <div class="tip"><b>Handy-Ansicht:</b> Browserfenster schmal ziehen oder in Chrome F12 drücken und das Handy-Symbol wählen.</div>
+  <div class="tip"><b>Selbst ändern:</b> "Bearbeiten" öffnen, index.html wählen, Texte anklicken und tippen, speichern. Anleitung liegt in ANLEITUNG.txt.</div>
+  <div class="tip"><b>Hinweis:</b> Das Kontaktformular sendet in der Demo nicht (braucht den Webserver). Live funktioniert es.</div>
+</div>
+<main>
+    <article class="card">
+      <div class="shots"><a href="01-Holo-Industrial/index.html"><img src="_vorschau/01-Holo-Industrial-desk.webp" alt="Holo Industrial, Desktop" loading="lazy"></a><a href="01-Holo-Industrial/index.html" class="mob"><img src="_vorschau/01-Holo-Industrial-mob.webp" alt="Holo Industrial, Handy" loading="lazy"></a></div>
+      <div class="body">
+        <span class="num">Variante 01</span>
+        <h2>Holo Industrial</h2>
+        <p>Die Hauptfassung. Echtes Schleif-Foto mit Funkenflug, interaktiver Holo-Explorer (Schleifen, Schweißen, Vermessen anklickbar), Weltkarte, warme Akzente, Laufband, 3D-Neigung auf Karten.</p>
+        <p class="fit"><b>Passt zu:</b> Technisch orientierte Einkäufer und Instandhalter, die Tiefe und Interaktion schätzen.</p>
+        <div class="row">
+          <a class="btn" href="01-Holo-Industrial/index.html">Demo öffnen</a>
+          <a class="btn ghost" href="01-Holo-Industrial/en/index.html">EN</a><a class="btn ghost" href="01-Holo-Industrial/ru/index.html">RU</a><a class="btn ghost" href="01-Holo-Industrial/ar/index.html">AR</a>
+          <a class="btn edit" href="01-Holo-Industrial/bearbeiten.html">Bearbeiten</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shots"><a href="02-Clear-Minimal/index.html"><img src="_vorschau/02-Clear-Minimal-desk.webp" alt="Clear Minimal, Desktop" loading="lazy"></a><a href="02-Clear-Minimal/index.html" class="mob"><img src="_vorschau/02-Clear-Minimal-mob.webp" alt="Clear Minimal, Handy" loading="lazy"></a></div>
+      <div class="body">
+        <span class="num">Variante 02</span>
+        <h2>Clear Minimal</h2>
+        <p>Apple-Stil: weiß, ruhig, große zentrierte Headline, Foto als abgerundetes Bild darunter, weiche Flächen, keine Linien, Pill-Buttons. Gleiche Inhalte, maximale Klarheit.</p>
+        <p class="fit"><b>Passt zu:</b> Geschäftsführung und Entscheider, die Premium und Übersicht wollen.</p>
+        <div class="row">
+          <a class="btn" href="02-Clear-Minimal/index.html">Demo öffnen</a>
+          <a class="btn ghost" href="02-Clear-Minimal/en/index.html">EN</a><a class="btn ghost" href="02-Clear-Minimal/ru/index.html">RU</a><a class="btn ghost" href="02-Clear-Minimal/ar/index.html">AR</a>
+          <a class="btn edit" href="02-Clear-Minimal/bearbeiten.html">Bearbeiten</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shots"><a href="03-Dark-Bento/index.html"><img src="_vorschau/03-Dark-Bento-desk.webp" alt="Dark Bento, Desktop" loading="lazy"></a><a href="03-Dark-Bento/index.html" class="mob"><img src="_vorschau/03-Dark-Bento-mob.webp" alt="Dark Bento, Handy" loading="lazy"></a></div>
+      <div class="body">
+        <span class="num">Variante 03</span>
+        <h2>Dark Bento</h2>
+        <p>Durchgehend dunkel mit Glas-Kacheln, Leuchtkanten, Verlaufsschrift und Aurora-Licht im Hero. Kennzahlen als Bento-Kacheln. Wirkt wie ein Tech-Produkt.</p>
+        <p class="fit"><b>Passt zu:</b> Logistik-Konzerne und Automatisierer mit Technik-Affinität.</p>
+        <div class="row">
+          <a class="btn" href="03-Dark-Bento/index.html">Demo öffnen</a>
+          <a class="btn ghost" href="03-Dark-Bento/en/index.html">EN</a><a class="btn ghost" href="03-Dark-Bento/ru/index.html">RU</a><a class="btn ghost" href="03-Dark-Bento/ar/index.html">AR</a>
+          <a class="btn edit" href="03-Dark-Bento/bearbeiten.html">Bearbeiten</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shots"><a href="04-Editorial/index.html"><img src="_vorschau/04-Editorial-desk.webp" alt="Editorial, Desktop" loading="lazy"></a><a href="04-Editorial/index.html" class="mob"><img src="_vorschau/04-Editorial-mob.webp" alt="Editorial, Handy" loading="lazy"></a></div>
+      <div class="body">
+        <span class="num">Variante 04</span>
+        <h2>Editorial</h2>
+        <p>Magazin-Charakter: Serifenschrift Playfair Display, Creme-Papierton, Haarlinien, nummerierte Kapitel, Bildunterschriften. Ruhig, hochwertig, erzählend.</p>
+        <p class="fit"><b>Passt zu:</b> Traditionsbewusste Kunden, Fachpresse, Messeauftritt.</p>
+        <div class="row">
+          <a class="btn" href="04-Editorial/index.html">Demo öffnen</a>
+          <a class="btn ghost" href="04-Editorial/en/index.html">EN</a><a class="btn ghost" href="04-Editorial/ru/index.html">RU</a><a class="btn ghost" href="04-Editorial/ar/index.html">AR</a>
+          <a class="btn edit" href="04-Editorial/bearbeiten.html">Bearbeiten</a>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shots"><a href="05-Scroll-Story/index.html"><img src="_vorschau/05-Scroll-Story-desk.webp" alt="Scroll Story, Desktop" loading="lazy"></a><a href="05-Scroll-Story/index.html" class="mob"><img src="_vorschau/05-Scroll-Story-mob.webp" alt="Scroll Story, Handy" loading="lazy"></a></div>
+      <div class="body">
+        <span class="num">Variante 05</span>
+        <h2>Scroll Story</h2>
+        <p>Immersives Scroll-Erlebnis: Hero bleibt als Vorhang stehen, Vollbild-Kapitel, Leistungen gleiten horizontal beim Scrollen, Texte füllen sich, Punkt-Navigation rechts.</p>
+        <p class="fit"><b>Passt zu:</b> Markenauftritt mit Wow-Effekt, Präsentationen, Social-Media-Links.</p>
+        <div class="row">
+          <a class="btn" href="05-Scroll-Story/index.html">Demo öffnen</a>
+          <a class="btn ghost" href="05-Scroll-Story/en/index.html">EN</a><a class="btn ghost" href="05-Scroll-Story/ru/index.html">RU</a><a class="btn ghost" href="05-Scroll-Story/ar/index.html">AR</a>
+          <a class="btn edit" href="05-Scroll-Story/bearbeiten.html">Bearbeiten</a>
+        </div>
+      </div>
+    </article>
+</main>
+<footer>RackRail Solution · Website-Demos · Stand November 2026</footer>
+</body>
+</html>

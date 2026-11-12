@@ -1,0 +1,49 @@
+RACKRAIL SOLUTION, WEBSITE-DEMOS
+================================
+
+INHALT DIESES ORDNERS
+  START.html             Übersicht aller fünf Varianten mit Vorschaubildern. Hier anfangen (Doppelklick).
+  01-Holo-Industrial     Hauptfassung (interaktiver Explorer, Funkenflug, Weltkarte)
+  02-Clear-Minimal       Apple-Stil, hell und ruhig
+  03-Dark-Bento          dunkel, Glas-Kacheln, Leuchtkanten
+  04-Editorial           Magazin-Stil mit Serifenschrift
+  05-Scroll-Story        immersives Scroll-Erlebnis
+  ANLEITUNG.txt          diese Datei
+
+Jede Variante ist eine komplette Website: vier Sprachen (index.html = Deutsch, en/, ru/, ar/),
+Impressum, Datenschutz, Kontaktformular, PDF-Leistungsübersicht, Schriften, Bilder. Alles liegt im Ordner,
+nichts wird aus dem Internet nachgeladen.
+
+
+DEMO ZEIGEN
+  1. START.html doppelklicken, dann "Demo öffnen" bei der gewünschten Variante.
+  2. Oder direkt: im Variantenordner die Datei index.html doppelklicken.
+  3. Sprache: oben links im Menü. Englisch: en/index.html, Russisch: ru/index.html, Arabisch: ar/index.html.
+  4. Handy-Ansicht am PC: Browserfenster schmal ziehen, oder in Chrome F12 und das Handy-Symbol anklicken.
+  5. Das Kontaktformular sendet in der Demo nicht, weil dafür ein Webserver mit PHP nötig ist.
+     Beim Absenden öffnet sich stattdessen das E-Mail-Programm mit der fertigen Anfrage.
+
+
+SELBST BEARBEITEN (ohne Programmierkenntnisse)
+  1. Im Variantenordner die Datei bearbeiten.html doppelklicken.
+  2. "Datei öffnen" und die index.html aus demselben Ordner wählen (für Englisch: en/index.html usw.).
+  3. In der Vorschau auf einen Text klicken und tippen. Auf ein Bild klicken, um es zu ersetzen
+     (Fotos vom Handy gehen direkt, sie werden automatisch verkleinert).
+  4. Rechts: Seitentitel, Google-Beschreibung und die Texte der anklickbaren Punkte im Explorer.
+  5. "Speichern". Je nach Browser wird die Datei direkt überschrieben (Chrome, Edge) oder landet als
+     index.html im Download-Ordner. Dann diese Datei in den Website-Ordner kopieren und die alte ersetzen.
+  6. Jede Sprache wird einzeln bearbeitet.
+  Hinweis: Orange markierte Platzhalter (USt-IdNr., Hosting-Anbieter) im Impressum und Datenschutz einfach überschreiben.
+
+
+WELCHE VARIANTE?
+  Die Entscheidung ist reine Geschmackssache, die Technik ist bei allen gleich.
+  Nach der Wahl wird die gewählte Variante live gestellt (Hoster mit PHP, Domain, SSL, Formularversand).
+  Die Anleitung dafür liegt im Livegang-Paket (LIVEGANG-ANLEITUNG.txt).
+
+
+TECHNIK (für den Hoster oder Dienstleister)
+  Statische HTML-Dateien, ein PHP-Skript für das Formular (kontakt.php), keine Datenbank, keine Cookies,
+  keine externen Dienste, Content-Security-Policy ohne unsafe-inline, HSTS, Clickjacking-Schutz.
+  Automatisch geprüft: 166 Tests je Variante (Layout, Barrierefreiheit WCAG 2.1 AA, Sicherheit, vier Sprachen,
+  Desktop und Handy) sowie Offline-Betrieb aus dem Ordner.

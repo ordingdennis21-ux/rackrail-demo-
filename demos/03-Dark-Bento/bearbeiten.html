@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RackRail Solution · Seite bearbeiten</title>
+<style>
+:root{--bg:#f3f5f8;--panel:#ffffff;--ink:#0b1220;--ink2:#55637a;--line:#dde3ec;--accent:#0f3b7a;--accent2:#2f6bd6;--warm:#e8792b;--ok:#1f8a4c;--err:#c0392b;--top:58px}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);display:grid;grid-template-rows:var(--top) 1fr;grid-template-columns:1fr 340px;height:100vh;overflow:hidden}
+header{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--panel);border-bottom:1px solid var(--line);z-index:5}
+header .brand{font-weight:700;letter-spacing:-.01em;margin-right:6px;white-space:nowrap}
+header .brand small{font-weight:500;color:var(--ink2);margin-left:6px}
+header .sp{flex:1}
+button,.btn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);font:600 14px/1 inherit;padding:10px 14px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+button:hover{border-color:#b9c4d6}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{background:var(--accent2);border-color:var(--accent2)}
+button.warm{background:var(--warm);border-color:var(--warm);color:#fff}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.ghost{border-color:transparent;background:transparent;color:var(--ink2)}
+.status{font-size:13px;color:var(--ink2);white-space:nowrap}
+.status b{color:var(--ink)}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+main{position:relative;overflow:hidden;background:#e9edf3}
+iframe{width:100%;height:100%;border:0;background:#fff;display:block}
+.empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px}
+.empty .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px 36px;max-width:560px;box-shadow:0 24px 60px -30px rgba(10,20,40,.35)}
+.empty h1{font-size:1.5rem;margin:0 0 8px;letter-spacing:-.02em}
+.empty p{margin:0 0 14px;color:var(--ink2)}
+.empty ol{margin:0 0 18px 18px;padding:0;color:var(--ink2)}
+.empty li{margin:4px 0}
+aside{border-left:1px solid var(--line);background:var(--panel);overflow:auto;padding:14px 14px 40px}
+aside h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:16px 0 8px}
+aside h2:first-child{margin-top:4px}
+aside label{display:block;font-size:12px;font-weight:600;color:var(--ink2);margin:10px 0 4px}
+aside input[type=text],aside textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:14px/1.4 inherit;color:var(--ink);background:#fff}
+aside textarea{min-height:70px;resize:vertical}
+aside input:focus,aside textarea:focus{outline:2px solid var(--accent2);outline-offset:1px;border-color:transparent}
+.tip{font-size:13px;color:var(--ink2);background:#f6f8fb;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.tip b{color:var(--ink)}
+.hot{border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:8px 0}
+.hot summary{cursor:pointer;font-weight:600;font-size:13px}
+.hot details{margin:4px 0}
+.hot details summary{font-weight:500;color:var(--ink2)}
+.viewtabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.viewtabs button{padding:6px 10px;font-size:12px;border-radius:999px}
+.viewtabs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.badge{display:inline-block;background:#fff4ea;color:#9a4a0f;border:1px solid #f3cfae;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.kbd{font:12px ui-monospace,Consolas,monospace;background:#eef1f6;border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);opacity:0;transition:opacity .25s;pointer-events:none;z-index:9;max-width:90vw;text-align:center}
+#toast.show{opacity:1}
+.hidden{display:none!important}
+@media (max-width:900px){body{grid-template-columns:1fr;grid-template-rows:var(--top) 1fr auto}aside{border-left:0;border-top:1px solid var(--line);max-height:38vh}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">RackRail Solution <small>Seite bearbeiten</small></span>
+  <button id="b-open" class="primary">Datei öffnen</button>
+  <button id="b-save" disabled>Speichern</button>
+  <button id="b-reset" class="ghost" disabled>Zurücksetzen</button>
+  <span class="sp"></span>
+  <span class="status" id="status">Keine Datei geöffnet</span>
+  <button id="b-help" class="ghost">Hilfe</button>
+  <input type="file" id="f-open" accept=".html,.htm,text/html" class="hidden">
+  <input type="file" id="f-img" accept="image/*" class="hidden">
+</header>
+
+<main>
+  <div class="empty" id="empty">
+    <div class="card">
+      <h1>Website selbst bearbeiten</h1>
+      <p>Texte direkt in der Seite ändern, Bilder tauschen, speichern. Ohne Programm, ohne Server, ohne Programmierkenntnisse.</p>
+      <ol>
+        <li>Auf <b>Datei öffnen</b> klicken und <b>index.html</b> aus diesem Ordner wählen (für Englisch: <b>en/index.html</b>, Russisch <b>ru/</b>, Arabisch <b>ar/</b>).</li>
+        <li>In der Vorschau auf einen Text klicken und tippen. Auf ein Bild klicken, um es zu ersetzen.</li>
+        <li>Auf <b>Speichern</b> klicken. Die neue Datei ersetzt die alte.</li>
+      </ol>
+      <button class="primary" id="b-open2">Datei öffnen</button>
+    </div>
+  </div>
+  <iframe id="pv" title="Vorschau" class="hidden"></iframe>
+</main>
+
+<aside>
+  <h2>Datei</h2>
+  <div class="tip" id="fileinfo">Noch keine Datei geöffnet.</div>
+  <h2>Seitentitel und Beschreibung</h2>
+  <label for="m-title">Titel im Browser-Tab</label>
+  <input type="text" id="m-title" disabled>
+  <label for="m-desc">Beschreibung für Google (bis 160 Zeichen)</label>
+  <textarea id="m-desc" disabled></textarea>
+  <h2>Interaktiver Explorer</h2>
+  <div class="tip">Die Texte der anklickbaren Punkte stehen hier, weil sie in der Vorschau erst nach dem Klick sichtbar wären.</div>
+  <div id="hotspots"><div class="tip">Erscheint nach dem Öffnen einer Datei.</div></div>
+  <h2>Hinweise</h2>
+  <div class="tip"><b>Texte:</b> Klicken, tippen, fertig. <span class="kbd">Enter</span> macht in Absätzen einen Zeilenumbruch. In Überschriften und Buttons ist Enter aus.</div>
+  <div class="tip"><b>Bilder:</b> In der Vorschau auf ein Bild klicken, neues Bild wählen. Es wird automatisch verkleinert und direkt in die Seite eingebettet. Fotos aus dem Handy gehen direkt.</div>
+  <div class="tip"><b>Orange markierte Platzhalter</b> (USt-IdNr., Hoster) einfach überschreiben.</div>
+  <div class="tip"><b>Speichern:</b> Wenn der Browser es erlaubt, wird die Datei direkt überschrieben. Sonst landet eine neue <b>index.html</b> im Download-Ordner: diese Datei in den Website-Ordner kopieren und die alte ersetzen.</div>
+  <div class="tip"><b>Jede Sprache einzeln:</b> Deutsch ist index.html im Hauptordner, Englisch in en/, Russisch in ru/, Arabisch in ar/.</div>
+</aside>
+
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s);};
+  var pv=$("#pv"), empty=$("#empty"), status=$("#status"), toast=$("#toast");
+  var bOpen=$("#b-open"), bOpen2=$("#b-open2"), bSave=$("#b-save"), bReset=$("#b-reset"), bHelp=$("#b-help");
+  var fOpen=$("#f-open"), fImg=$("#f-img"), mTitle=$("#m-title"), mDesc=$("#m-desc"), hot=$("#hotspots"), fileinfo=$("#fileinfo");
+
+  var state={doc:null, original:"", name:"index.html", handle:null, lang:"de", changes:0, imgTarget:null, dirty:false};
+
+  /* ---------- Hilfen ---------- */
+  function say(msg,cls){status.textContent=msg;status.className="status "+(cls||"");}
+  var toastT=0;
+  function flash(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){toast.classList.remove("show");},2600);}
+  function markDirty(){state.changes++;state.dirty=true;bSave.disabled=false;bReset.disabled=false;say("Ungespeicherte Änderungen: "+state.changes);}
+  function editorDir(){var h=location.href;return h.slice(0,h.lastIndexOf("/")+1);}
+
+  /* Elemente, deren Text direkt bearbeitet werden darf */
+  var EDITABLE="h1,h2,h3,h4,p,li,figcaption,summary,dt,dd,blockquote,.eyebrow,.badge,.lede,.lead,.note,.k,.v,a.btn,.btn,.hint,.read,.kpi b,.kpi span,.map-side h3,.check ol li,td,th,.brand span,.nav-foot a.btn,nav.main a,.lang-dd a,.foot-note,.copyright,.todo";
+  var SKIP_INSIDE=".holo-info,.hud,form,.sparks,script,style,.hs";
+
+  function isEditable(el){
+    if(!el.matches(EDITABLE))return false;
+    if(el.closest(SKIP_INSIDE))return false;
+    if(el.querySelector("img,picture,input,select,textarea,button,svg,canvas"))return false;
+    if(!el.textContent.trim())return false;
+    return true;
+  }
+
+  /* ---------- Öffnen ---------- */
+  function openFromText(text,name,handle){
+    var parser=new DOMParser();
+    var doc=parser.parseFromString(text,"text/html");
+    if(!doc.querySelector('meta[name="rr-lang"]') && !/RackRail/i.test(text)){ say("Das ist keine RackRail-Seite.","err"); flash("Bitte die index.html der Website wählen."); return; }
+    state.doc=doc; state.original=text; state.name=name||"index.html"; state.handle=handle||null; state.changes=0; state.dirty=false;
+    var ml=doc.querySelector('meta[name="rr-lang"]'); state.lang=ml?ml.getAttribute("content"):(doc.documentElement.getAttribute("lang")||"de");
+    /* IDs vergeben */
+    var n=0;
+    doc.querySelectorAll(EDITABLE).forEach(function(el){ if(isEditable(el)){ el.setAttribute("data-rr",String(++n)); } });
+    /* verschachtelte Editierbereiche vermeiden: äußere Elemente mit editierbaren Kindern freigeben */
+    doc.querySelectorAll("[data-rr]").forEach(function(el){ if(el.querySelector("[data-rr]")) el.removeAttribute("data-rr"); });
+    n=doc.querySelectorAll("[data-rr]").length;
+    var k=0; doc.querySelectorAll("img").forEach(function(im){ im.setAttribute("data-rrimg",String(++k)); });
+    renderPreview();
+    fillPanel();
+    var where={de:"index.html (Deutsch)",en:"en/index.html (Englisch)",ru:"ru/index.html (Russisch)",ar:"ar/index.html (Arabisch)"}[state.lang]||state.name;
+    fileinfo.innerHTML="<b>"+where+"</b><br>"+n+" Textfelder, "+k+" Bilder"+(handle?"<br>Direktes Speichern möglich.":"<br>Speichern legt eine neue Datei im Download-Ordner ab.");
+    say("Geöffnet: "+where,"ok");
+    bSave.disabled=true; bReset.disabled=false; mTitle.disabled=false; mDesc.disabled=false;
+    empty.classList.add("hidden"); pv.classList.remove("hidden");
+  }
+
+  async function pickFile(){
+    if(window.showOpenFilePicker){
+      try{
+        var hs=await window.showOpenFilePicker({types:[{description:"HTML-Datei",accept:{"text/html":[".html",".htm"]}}],multiple:false});
+        var h=hs[0]; var f=await h.getFile(); var t=await f.text();
+        openFromText(t,f.name,h); return;
+      }catch(e){ if(e&&e.name==="AbortError")return; /* sonst Fallback */ }
+    }
+    fOpen.value=""; fOpen.click();
+  }
+  fOpen.addEventListener("change",function(){var f=fOpen.files&&fOpen.files[0];if(!f)return;var r=new FileReader();r.onload=function(){openFromText(String(r.result),f.name,null);};r.readAsText(f,"utf-8");});
+  bOpen.addEventListener("click",pickFile); bOpen2.addEventListener("click",pickFile);
+
+  /* ---------- Vorschau ---------- */
+  function previewHTML(){
+    var d=state.doc.cloneNode(true);
+    /* Skripte raus, CSP raus, Basis-URL rein */
+    d.querySelectorAll("script").forEach(function(s){s.remove();});
+    d.querySelectorAll('meta[http-equiv="Content-Security-Policy"]').forEach(function(m){m.remove();});
+    var base=d.createElement("base"); base.setAttribute("href",editorDir()+(state.lang==="de"?"":state.lang+"/")); d.head.insertBefore(base,d.head.firstChild);
+    /* Alles sichtbar machen, Animationen aus, Unterseiten einblenden */
+    var st=d.createElement("style"); st.textContent=
+      ".reveal{opacity:1!important;transform:none!important;transition:none!important}"+
+      ".ticker ul{animation:none!important;flex-wrap:wrap;width:auto!important}.ticker li:nth-child(n+9){display:none}"+
+      ".steps .num::after{transform:scaleX(1)!important}.hs .lbl{opacity:1!important}.hud .scan,.hud .cross{display:none!important}"+
+      ".holo-stage{animation:none!important}.holo-info::after{animation:none!important}.pin::after,.hs .ring{animation:none!important}"+
+      ".legal-view{display:block!important}.legal-view::before{content:attr(data-rrlabel);display:block;background:#0b1220;color:#fff;font:700 13px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:14px 22px;margin:40px 0 20px}"+
+      "[data-rr]{outline:1px dashed rgba(47,107,214,.0);outline-offset:3px;transition:outline-color .15s;cursor:text;min-width:1ch}"+
+      "[data-rr]:hover{outline-color:rgba(47,107,214,.55)}[data-rr]:focus{outline:2px solid #2f6bd6!important;outline-offset:3px;box-shadow:0 0 0 6px rgba(47,107,214,.15)}"+
+      "img[data-rrimg]{cursor:pointer}img[data-rrimg]:hover{outline:3px solid #e8792b;outline-offset:-3px}picture:hover img{outline:3px solid #e8792b;outline-offset:-3px}"+
+      ".mbar,.totop,.progress,.scroll-label,.lang-dd{display:none!important}html{scroll-behavior:auto!important}"+
+      ".rr-imgtip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);background:#0b1220;color:#fff;font:600 13px/1 Inter,sans-serif;padding:10px 14px;border-radius:10px;z-index:99999;pointer-events:none;opacity:.92}";
+    d.head.appendChild(st);
+    d.querySelectorAll(".faq details, details[name=\"faq\"]").forEach(function(x){x.setAttribute("open","");}); d.querySelectorAll("details.lang-dd").forEach(function(x){x.removeAttribute("open");});
+    var labels={"view-impressum":"Unterseite: Impressum","view-datenschutz":"Unterseite: Datenschutz"};
+    d.querySelectorAll(".legal-view").forEach(function(v){v.removeAttribute("hidden");v.setAttribute("data-rrlabel",labels[v.id]||"Unterseite");});
+    d.querySelectorAll("[data-rr]").forEach(function(el){el.setAttribute("contenteditable","true");el.setAttribute("spellcheck","true");});
+    d.querySelectorAll("[hidden]").forEach(function(x){ if(x.closest(".legal-view")) x.removeAttribute("hidden"); });
+    var tip=d.createElement("div"); tip.className="rr-imgtip"; tip.textContent="Text anklicken und tippen · Bild anklicken zum Tauschen"; d.body.appendChild(tip);
+    return "<!DOCTYPE html>\n"+d.documentElement.outerHTML;
+  }
+
+  function renderPreview(){
+    pv.srcdoc=previewHTML();
+    pv.onload=function(){ wirePreview(pv.contentDocument); };
+  }
+
+  function partnerTicker(el){ /* Laufband-Einträge sind doppelt vorhanden, beide synchron halten */
+    var ul=el.closest(".ticker ul"); if(!ul) return null;
+    var items=Array.prototype.slice.call(ul.children); var i=items.indexOf(el); var n=items.length/2;
+    if(n!==Math.floor(n)) return null; return items[(i+n)%items.length];
+  }
+
+  function wirePreview(pd){
+    if(!pd) return;
+    /* Links nicht folgen, Formulare nicht senden */
+    pd.addEventListener("click",function(e){
+      var a=e.target.closest("a"); if(a){ e.preventDefault(); var h=a.getAttribute("href")||""; if(h.charAt(0)==="#"&&h.length>1){var t=pd.getElementById(h.slice(1)); if(t) t.scrollIntoView({block:"start"});} }
+      var im=e.target.closest("img[data-rrimg]"); if(im){ e.preventDefault(); state.imgTarget=im.getAttribute("data-rrimg"); fImg.value=""; fImg.click(); }
+      var btn=e.target.closest("button"); if(btn && !btn.hasAttribute("data-rr")) e.preventDefault();
+    },true);
+    pd.addEventListener("submit",function(e){e.preventDefault();},true);
+    pd.querySelectorAll("[data-rr]").forEach(function(el){
+      el.addEventListener("input",function(){ sync(el); });
+      el.addEventListener("keydown",function(e){
+        if(e.key==="Enter"){
+          var tag=el.tagName.toLowerCase();
+          if(tag==="p"||tag==="li"||tag==="dd"||tag==="blockquote"){ e.preventDefault(); pd.execCommand("insertLineBreak"); sync(el); }
+          else { e.preventDefault(); }
+        }
+        if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){ e.preventDefault(); save(); }
+      });
+      el.addEventListener("paste",function(e){ e.preventDefault(); var t=(e.clipboardData||window.clipboardData).getData("text/plain"); pd.execCommand("insertText",false,t.replace(/\r?\n+/g," ")); sync(el); });
+    });
+    pd.addEventListener("keydown",function(e){ if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){ e.preventDefault(); save(); } });
+  }
+
+  function clean(html){ /* Reste des Editors entfernen */
+    return html.replace(/\s*contenteditable="true"/g,"").replace(/\s*spellcheck="true"/g,"").replace(/<div><br><\/div>/g,"<br>").replace(/<\/div><div>/g,"<br>").replace(/<div>/g,"").replace(/<\/div>/g,"").replace(/&nbsp;/g," ");
+  }
+  function sync(previewEl){
+    var id=previewEl.getAttribute("data-rr"); var src=state.doc.querySelector('[data-rr="'+id+'"]'); if(!src) return;
+    var html=clean(previewEl.innerHTML); src.innerHTML=html;
+    var p=partnerTicker(src); if(p){ p.innerHTML=html; var pp=partnerTicker(previewEl); if(pp&&pp!==previewEl) pp.innerHTML=html; }
+    markDirty();
+  }
+
+  /* ---------- Bilder ---------- */
+  fImg.addEventListener("change",function(){
+    var f=fImg.files&&fImg.files[0]; if(!f||!state.imgTarget) return;
+    var target=state.imgTarget; state.imgTarget=null;
+    var src=state.doc.querySelector('img[data-rrimg="'+target+'"]'); if(!src) return;
+    var maxW=parseInt(src.getAttribute("width")||"0",10)||1600; maxW=Math.min(Math.max(maxW,800),1800);
+    shrink(f,maxW).then(function(dataUrl){
+      [src, pv.contentDocument&&pv.contentDocument.querySelector('img[data-rrimg="'+target+'"]')].forEach(function(im){
+        if(!im) return;
+        im.setAttribute("src",dataUrl); im.removeAttribute("srcset"); im.removeAttribute("sizes");
+        var pic=im.closest("picture"); if(pic) pic.querySelectorAll("source").forEach(function(s){s.remove();});
+      });
+      var kb=Math.round(dataUrl.length*0.75/1024);
+      markDirty(); flash("Bild ersetzt ("+kb+" KB)"+(kb>900?" · Hinweis: recht groß, lädt langsamer":""));
+    }).catch(function(){ flash("Bild konnte nicht gelesen werden."); });
+  });
+  function shrink(file,maxW){
+    return new Promise(function(res,rej){
+      var img=new Image(); var url=URL.createObjectURL(file);
+      img.onload=function(){
+        var w=img.naturalWidth,h=img.naturalHeight; var s=Math.min(1,maxW/w); var cw=Math.round(w*s),ch=Math.round(h*s);
+        var c=document.createElement("canvas"); c.width=cw; c.height=ch; var x=c.getContext("2d"); x.drawImage(img,0,0,cw,ch);
+        var out=c.toDataURL("image/webp",0.84); if(out.indexOf("data:image/webp")!==0) out=c.toDataURL("image/jpeg",0.86);
+        URL.revokeObjectURL(url); res(out);
+      };
+      img.onerror=function(){URL.revokeObjectURL(url);rej();};
+      img.src=url;
+    });
+  }
+
+  /* ---------- Seitenleiste ---------- */
+  function fillPanel(){
+    var d=state.doc;
+    var t=d.querySelector("title"); mTitle.value=t?t.textContent:"";
+    var md=d.querySelector('meta[name="description"]'); mDesc.value=md?md.getAttribute("content"):"";
+    mTitle.oninput=function(){ var tt=d.querySelector("title"); if(tt){ tt.textContent=mTitle.value; markDirty(); } };
+    mDesc.oninput=function(){ var m=d.querySelector('meta[name="description"]'); if(m){ m.setAttribute("content",mDesc.value); markDirty(); } };
+    /* Explorer-Punkte */
+    hot.innerHTML="";
+    var views=d.querySelectorAll(".holo-view");
+    if(!views.length){ hot.innerHTML='<div class="tip">In dieser Seite gibt es keinen Explorer.</div>'; return; }
+    var names={schleifen:"Schleifen",schweissen:"Schweißen",vermessen:"Vermessen"};
+    views.forEach(function(v){
+      var box=document.createElement("details"); box.className="hot"; if(v.classList.contains("is-on")) box.open=true;
+      var sum=document.createElement("summary"); sum.textContent="Ansicht: "+(names[v.getAttribute("data-view")]||v.getAttribute("data-view")); box.appendChild(sum);
+      v.querySelectorAll(".hs").forEach(function(b,i){
+        var it=document.createElement("details"); var s2=document.createElement("summary"); s2.textContent=(i+1)+". "+(b.getAttribute("aria-label")||""); it.appendChild(s2);
+        function field(lbl,attr,multi){
+          var l=document.createElement("label"); l.textContent=lbl; it.appendChild(l);
+          var inp=document.createElement(multi?"textarea":"input"); if(!multi) inp.type="text"; inp.value=b.getAttribute(attr)||""; it.appendChild(inp);
+          inp.addEventListener("input",function(){ b.setAttribute(attr,inp.value);
+            if(attr==="aria-label"){
+              var lb=b.querySelector(".lbl"); if(lb) lb.textContent=inp.value;
+              var tg=b.getAttribute("data-tag")||""; b.setAttribute("data-tag",tg.replace(/·.*$/,"· "+inp.value));
+              s2.textContent=(i+1)+". "+inp.value;
+              var pd=pv.contentDocument; var pbs=pd?pd.querySelectorAll('.holo-view[data-view="'+v.getAttribute("data-view")+'"] .hs'):[];
+              if(pbs[i]){ pbs[i].setAttribute("aria-label",inp.value); var pl=pbs[i].querySelector(".lbl"); if(pl) pl.textContent=inp.value; }
+            }
+            markDirty(); });
+        }
+        field("Kurzname am Punkt","aria-label",false);
+        field("Überschrift","data-title",false);
+        field("Text","data-text",true);
+        field("Wert links","data-v1",false);
+        field("Wert rechts","data-v2",false);
+        box.appendChild(it);
+      });
+      hot.appendChild(box);
+    });
+  }
+
+  /* ---------- Speichern ---------- */
+  function outputHTML(){
+    var d=state.doc.cloneNode(true);
+    d.querySelectorAll("[data-rr]").forEach(function(el){el.removeAttribute("data-rr");});
+    d.querySelectorAll("[data-rrimg]").forEach(function(el){el.removeAttribute("data-rrimg");});
+    return "<!DOCTYPE html>\n"+d.documentElement.outerHTML+"\n";
+  }
+  async function save(){
+    if(!state.doc) return;
+    var html=outputHTML();
+    if(state.handle){
+      try{
+        var w=await state.handle.createWritable(); await w.write(html); await w.close();
+        state.changes=0; state.dirty=false; bSave.disabled=true; say("Gespeichert: "+state.name,"ok"); flash("Gespeichert. Die Seite ist aktualisiert."); return;
+      }catch(e){ /* Fallback: Download */ }
+    }
+    var blob=new Blob([html],{type:"text/html;charset=utf-8"}); var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=state.name||"index.html"; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},2000);
+    state.changes=0; state.dirty=false; bSave.disabled=true;
+    var where={de:"im Hauptordner",en:"im Ordner en",ru:"im Ordner ru",ar:"im Ordner ar"}[state.lang]||"";
+    say("Heruntergeladen: "+(state.name||"index.html"),"ok");
+    flash("Datei liegt im Download-Ordner. Damit die alte index.html "+where+" ersetzen.");
+  }
+  bSave.addEventListener("click",save);
+  bReset.addEventListener("click",function(){ if(!state.original) return; if(state.dirty && !window.confirm("Alle ungespeicherten Änderungen verwerfen?")) return; openFromText(state.original,state.name,state.handle); flash("Zurückgesetzt."); });
+  bHelp.addEventListener("click",function(){ flash("Text anklicken und tippen. Bild anklicken zum Tauschen. Speichern oben rechts. Strg+S geht auch."); });
+  document.addEventListener("keydown",function(e){ if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){ e.preventDefault(); save(); } });
+  window.addEventListener("beforeunload",function(e){ if(state.dirty){ e.preventDefault(); e.returnValue=""; } });
+})();
+</script>
+</body>
+</html>

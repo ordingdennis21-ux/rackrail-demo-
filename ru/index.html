@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-IXJneBaDvz8A1KwRuA/2oj+h6PLqvStjfY4LJd9vcW4='; img-src 'self' data:; font-src 'self'; manifest-src 'self'; media-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-YOciK+Ovj59NaPqR6f5F+skiDLZ6fF3ZRQ1FrstjHco='; img-src 'self' data:; font-src 'self'; manifest-src 'self'; media-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'none'; object-src 'none'; upgrade-insecure-requests">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -25,7 +25,7 @@
 <link rel="alternate" hreflang="ru" href="https://www.rackrail-solution.de/ru/">
 <link rel="alternate" hreflang="ar" href="https://www.rackrail-solution.de/ar/">
 <link rel="alternate" hreflang="x-default" href="https://www.rackrail-solution.de/">
-<title>RackRail Solution</title>
+<title>RackRail Solution · Шлифовка рельсов на высотных складах</title>
 <meta name="rr-lang" content="ru">
 <meta name="description" content="Шлифовка рельсов на высотных складах: RackRail Solution шлифует, сваривает и восстанавливает ходовые рельсы кранов-штабелёров. Измерение 0,1 мм, без остановки склада, в Германии и по всему миру.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -367,6 +367,9 @@ tr:last-child td{border-bottom:0}
 .band p{color:#dfe6f0;margin-top:12px;max-width:46ch}
 .band .btn{background:#fff;color:var(--accent)}
 .band .btn.ghost{background:var(--ground);color:#fff}
+#view-home > section{position:relative;overflow:clip;isolation:isolate}
+.ghost{position:absolute;z-index:-1;inset-inline-start:var(--gutter);top:clamp(6px,1.5vw,20px);font-family:var(--font-display);font-weight:700;font-size:clamp(4rem,14vw,13rem);line-height:1;letter-spacing:-.05em;color:currentColor;opacity:.045;pointer-events:none;white-space:nowrap;user-select:none}
+.ghost::before{content:attr(data-t)}
 
 /* Kontakt: Coupon zum Ausschneiden */
 .contact-sec{padding-block:var(--m-lg);position:relative;z-index:3;background:var(--ground);border-radius:34px 34px 0 0;margin-top:-48px;box-shadow:0 -30px 60px -34px rgba(8,12,20,.55)}
@@ -857,9 +860,9 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
         <li><a href="#faq" data-nav>Вопросы</a></li>
         <li><a href="#kontakt" data-nav>Контакт</a></li>
       </ul>
-    <div class="nav-foot"><a class="btn acc" href="#kontakt" data-nav>Отправить запрос</a><a class="nav-tel" href="tel:+491778920307" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 177 8920307</a></div></nav>
+    <div class="nav-foot"><a class="btn acc" href="#kontakt" data-nav>Отправить запрос</a><a class="nav-tel" href="mailto:info@rackrail-solution.de" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@rackrail-solution.de</a></div></nav>
     <div class="head-right">
-      <a class="head-tel" href="tel:+491778920307">+49 177 8920307</a>
+      <a class="head-tel" href="mailto:info@rackrail-solution.de" dir="ltr">info@rackrail-solution.de</a>
       <a class="btn acc head-cta" href="#kontakt">Запрос</a>
       <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -907,7 +910,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
       <div><span class="badge">Ключевая услуга</span><div class="num">01</div><h3>Шлифовка и восстановление</h3><p>Волнообразность, наплывы и просевшие стыки, прочь, пока они не привели к шуму, износу и простою. Направляемая шлифовальная машина собственной конструкции, с защитой от искр и отсосом.</p>
         <ul class="pills"><li><span class="dot"></span>Волнообразность и наплывы</li><li><span class="dot"></span>Просевшие стыки</li><li><span class="dot"></span>Своя шлифмашина</li><li><span class="dot"></span>Защита от искр и отсос</li></ul>
       </div>
-      <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 700w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Шлифовка стальной рельсы с искрами" loading="lazy" decoding="async"></figure>
+      <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 560w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Шлифовка стальной рельсы с искрами" loading="lazy" decoding="async"></figure>
     </div>
     <div class="svc-grid"><div class="svc-card reveal tilt"><div class="num">02</div><h3>Сварка и наплавка</h3><p>Стыки рельса сварены профессионально, MIG/MAG включая CMT, TIG и ручная дуга, в зависимости от профиля и нагрузки. Профиль восстановлен, стыки закрыты.</p></div><div class="svc-card reveal tilt"><div class="num">03</div><h3>Измерение и протокол</h3><p>Лазерное измерение до 0,1 мм, состояние оценено по вашим данным об износе и отказах. Протокол до и после включён.</p></div><div class="svc-card reveal tilt"><div class="num">04</div><h3>Восстановление</h3><p>Вырезать и сдвинуть стыки, вставить пригоночный рельс или заменить рельс, с опорой или без. Решает конкретный случай.</p></div><div class="svc-card reveal tilt"><div class="num">05</div><h3>Строительный надзор</h3><p>Анализ состояния, сопровождение на месте и приёмка при новом строительстве и перестройке, включая координацию площадки и сварки.</p></div><div class="svc-card reveal tilt"><div class="num">06</div><h3>Обучение</h3><p>Практические обучения по сварке и шлифовке рельсовых систем, консультации для высотных складов, производства и кранов.</p></div><div class="svc-card reveal tilt"><div class="num">07</div><h3>Технология процессов</h3><p>Технико-экономические исследования, адаптированные стыковые соединения, собственные профили рельса и шлифовальные приспособления для узких проходов.</p></div></div>
     <a class="dl" href="../downloads/RackRail-Solution-Uslugi.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Обзор услуг в PDF<small>1 страница, 115 КБ</small></span></a>
@@ -939,9 +942,9 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
 <section class="gal-sec" aria-label="Кадры">
   <div class="wrap">
     <div class="gal-grid reveal">
-      <figure class="tilt"><img src="../img/gal-schleifen.webp" srcset="../img/gal-schleifen-s.webp 700w, ../img/gal-schleifen.webp 900w" sizes="(max-width:760px) 100vw, 33vw" width="900" height="600" alt="Шлифовка ходовой рельсы на месте" loading="lazy" decoding="async"><figcaption>Шлифовка в деле</figcaption></figure>
-      <figure class="tilt"><img src="../img/gal-schweissen.webp" srcset="../img/gal-schweissen-s.webp 700w, ../img/gal-schweissen.webp 900w" sizes="(max-width:760px) 50vw, 33vw" width="900" height="600" alt="Сварка на стыке рельса" loading="lazy" decoding="async"><figcaption>Сварка и наплавка</figcaption></figure>
-      <figure class="tilt"><img src="../img/gal-schiene.webp" srcset="../img/gal-schiene-s.webp 700w, ../img/gal-schiene.webp 900w" sizes="(max-width:760px) 50vw, 33vw" width="900" height="600" alt="Крупный план восстановленной поверхности катания" loading="lazy" decoding="async"><figcaption>Поверхность катания крупно</figcaption></figure>
+      <figure class="tilt"><img src="../img/gal-schleifen.webp" srcset="../img/gal-schleifen-s.webp 500w, ../img/gal-schleifen.webp 900w" sizes="(max-width:760px) 100vw, 33vw" width="900" height="600" alt="Шлифовка ходовой рельсы на месте" loading="lazy" decoding="async"><figcaption>Шлифовка в деле</figcaption></figure>
+      <figure class="tilt"><img src="../img/gal-schweissen.webp" srcset="../img/gal-schweissen-s.webp 500w, ../img/gal-schweissen.webp 900w" sizes="(max-width:760px) 50vw, 33vw" width="900" height="600" alt="Сварка на стыке рельса" loading="lazy" decoding="async"><figcaption>Сварка и наплавка</figcaption></figure>
+      <figure class="tilt"><img src="../img/gal-schiene.webp" srcset="../img/gal-schiene-s.webp 500w, ../img/gal-schiene.webp 900w" sizes="(max-width:760px) 50vw, 33vw" width="900" height="600" alt="Крупный план восстановленной поверхности катания" loading="lazy" decoding="async"><figcaption>Поверхность катания крупно</figcaption></figure>
     </div>
   </div>
 </section>
@@ -972,7 +975,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
     <div class="faq reveal"><details name="faq"><summary>Как быстро вы можете приехать?<span class="pm" aria-hidden="true"></span></summary><div class="body">В срочных случаях обычно в течение нескольких дней. Мы работаем также по выходным и в технологические паузы, чтобы простой был минимальным.</div></details><details name="faq"><summary>Нужно ли останавливать склад?<span class="pm" aria-hidden="true"></span></summary><div class="body">Нет. Мы шлифуем проход за проходом. Закрытый проход обычно освобождается уже после одной смены, остальной склад работает.</div></details><details name="faq"><summary>Сколько занимает шлифовка одного прохода?<span class="pm" aria-hidden="true"></span></summary><div class="body">В зависимости от длины, состояния и доступа планируем одну смену на проход и нитку рельса. После обследования называем точный график.</div></details><details name="faq"><summary>Как понять, что рельс пора шлифовать?<span class="pm" aria-hidden="true"></span></summary><div class="body">Типичные признаки: растущий шум хода, вибрация крана-штабелёра, видимая волнообразность на поверхности катания и повышенный износ ходовых колёс.</div></details><details name="faq"><summary>Получу ли я документацию?<span class="pm" aria-hidden="true"></span></summary><div class="body">Да. Вы получаете протокол «до и после» с измерениями с точностью 0,1 мм и рекомендацией по следующему интервалу обслуживания.</div></details><details name="faq"><summary>Вы также свариваете стыки рельсов?<span class="pm" aria-hidden="true"></span></summary><div class="body">Да. Просевшие или сломанные стыки свариваем квалифицированно, в зависимости от профиля MIG/MAG, CMT, TIG или ручной дугой, затем шлифуем заподлицо.</div></details></div>
   </div>
 </section>
-<section class="band-img" aria-label="Шлифовка"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 960w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Углошлифовальная машина с искрами при обработке стали" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Шлифовка, это точная работа.</h2><p>Каждая десятая доля миллиметра решает плавность хода, износ и срок службы рельса.</p></div></section>
+<section class="band-img" aria-label="Шлифовка"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 810w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Углошлифовальная машина с искрами при обработке стали" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Шлифовка, это точная работа.</h2><p>Каждая десятая доля миллиметра решает плавность хода, износ и срок службы рельса.</p></div></section>
 <section class="contact-sec" id="kontakt" aria-labelledby="k-h">
   <div class="wrap">
     <div class="intro reveal"><span class="eyebrow">Контакт</span><h2 id="k-h">Поговорим о вашем рельсе.</h2><p class="lead" style="margin-top:18px">Коротко опишите установку и проблему. Обычно мы отвечаем в тот же рабочий день.</p></div>
@@ -981,10 +984,8 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
         <address class="addr">
           <div class="row"><div><span class="k">Компания</span><span class="v">RackRail Solution</span></div></div>
           <div class="row"><div><span class="k">Адрес</span><span class="v">Heinrichstraße 9-23, 51373 Leverkusen, Германия</span></div></div>
-          <div class="row"><div><span class="k">Мобильный</span><span class="v" id="c-mobil">+49 177 8920307</span></div><button class="copy" type="button" data-copy="c-mobil">Копировать</button></div>
-          <div class="row"><div><span class="k">Телефон</span><span class="v" id="c-tel">+49 214 31209978</span></div><button class="copy" type="button" data-copy="c-tel">Копировать</button></div>
           <div class="row"><div><span class="k">E-mail</span><span class="v" id="c-mail">info@rackrail-solution.de</span></div><button class="copy" type="button" data-copy="c-mail">Копировать</button></div>
-          <div class="row"><div><span class="k">Контактное лицо</span><span class="v">Mark Bräuninger</span></div></div>
+          <div class="row"><div><span class="k">Контактное лицо</span><span class="v">Robert Wangen, управляющий директор</span></div></div>
         </address>
         <p class="note">Доступны с понедельника по пятницу, в выходные во время текущих проектов.</p>
         <div class="social-row"><span class="k">Мы в соцсетях</span>
@@ -1041,7 +1042,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
     <h3>Представлена</h3>
     <p>управляющим директором Robert Wangen</p>
     <h3>Контакт</h3>
-    <p>Телефон: +49 214 31209978<br>Мобильный: +49 177 8920307<br>E-mail: info@rackrail-solution.de</p>
+    <p>E-mail: info@rackrail-solution.de</p>
     <h3>Запись в реестре</h3>
     <p>Регистрирующий суд: участковый суд Кёльна (Amtsgericht Köln)<br>Номер в реестре: HRB 129691<br>Местонахождение: Леверкузен<br>Уставный капитал: 25 000,00 евро</p>
     <h3>Идентификационный номер НДС</h3>
@@ -1065,7 +1066,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
     <p>Редакция: ноябрь 2026. Юридически обязательна немецкая версия.</p>
 
     <h3>1. Ответственный за обработку</h3>
-    <p>RRS Rack Rail Solutions GmbH (RackRail Solution)<br>в лице управляющего директора Robert Wangen<br>Heinrichstraße 9-23, 51373 Leverkusen, Германия<br>Телефон: +49 214 31209978<br>E-mail: info@rackrail-solution.de</p>
+    <p>RRS Rack Rail Solutions GmbH (RackRail Solution)<br>в лице управляющего директора Robert Wangen<br>Heinrichstraße 9-23, 51373 Leverkusen, Германия<br>E-mail: info@rackrail-solution.de</p>
     <p>Уполномоченный по защите данных не назначен, так как предусмотренные законом условия для этого отсутствуют.</p>
 
     <h3>2. Коротко: чего этот сайт не делает</h3>
@@ -1137,8 +1138,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
       <div>
         <h3>Контакт</h3>
         <ul>
-          <li><a href="tel:+491778920307">+49 177 8920307</a></li>
-          <li><a href="tel:+4921431209978">+49 214 31209978</a></li>
+          <li><a href="mailto:info@rackrail-solution.de" dir="ltr">info@rackrail-solution.de</a></li>
           <li><a href="#kontakt">Форма запроса</a></li>
         </ul>
       </div>
@@ -1163,7 +1163,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
 </footer>
 
 <div class="mbar" id="mbar">
-  <a class="call" href="tel:+491778920307">Позвонить</a>
+  <a class="call" href="mailto:info@rackrail-solution.de">E-mail</a>
   <a class="ask" href="#kontakt">Запрос</a>
 </div>
 <button class="totop" id="totop" type="button" aria-label="Наверх">
@@ -1171,7 +1171,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
 </button>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"RackRail Solution","legalName":"RRS Rack Rail Solutions GmbH","description":"Шлифовка, сварка и восстановление рельсов для кранов-штабелёров, высотных складов, крановых и производственных установок.","sameAs":["https://www.instagram.com/rackrailsolution","https://www.facebook.com/rackrailsolution","https://www.linkedin.com/company/rackrailsolution","https://www.tiktok.com/@rackrailsolution"],"telephone":"+49 214 31209978","email":"info@rackrail-solution.de","foundingDate":"2026","address":{"@type":"PostalAddress","streetAddress":"Heinrichstraße 9-23","postalCode":"51373","addressLocality":"Leverkusen","addressCountry":"DE"},"areaServed":["DE","AT","CH","BE","NL","FR","DK","SE"],"knowsAbout":["Шлифовка рельсов","Сварка рельсов","Краны-штабелёры","Высотные склады","Крановые пути"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"RackRail Solution","legalName":"RRS Rack Rail Solutions GmbH","description":"Шлифовка, сварка и восстановление рельсов для кранов-штабелёров, высотных складов, крановых и производственных установок.","sameAs":["https://www.instagram.com/rackrailsolution","https://www.facebook.com/rackrailsolution","https://www.linkedin.com/company/rackrailsolution","https://www.tiktok.com/@rackrailsolution"],"email":"info@rackrail-solution.de","foundingDate":"2026","address":{"@type":"PostalAddress","streetAddress":"Heinrichstraße 9-23","postalCode":"51373","addressLocality":"Leverkusen","addressCountry":"DE"},"areaServed":["DE","AT","CH","BE","NL","FR","DK","SE"],"knowsAbout":["Шлифовка рельсов","Сварка рельсов","Краны-штабелёры","Высотные склады","Крановые пути"]}
 </script>
 
 <script src="../vendor/lenis.min.js" defer></script>
@@ -1182,10 +1182,10 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
   document.documentElement.classList.add("js");
   var LANG=(document.querySelector('meta[name="rr-lang"]')||{}).content||"de";
   var TT={
-  en:{imp:"Legal notice",ds:"Privacy",menuOpen:"Open menu",menuClose:"Close menu",copied:"Copied",marked:"Selected",copy:"Copy",blocked:"The request could not be sent.",fill:"Please fill in name, e-mail and a short description.",mail:"Please enter a valid e-mail address.",consent:"Please confirm the privacy policy.",sending:"Sending …",send:"Send request",ok:"Thank you, your request has been received. We will get back to you as quickly as possible.",fail:"Sending failed.",attach:" Please attach the selected files ({n}) to the e-mail.",mailto:"Your e-mail program opens with the prepared request, you only need to click Send.{a} If nothing opens: send the text to info@rackrail-solution.de or call +49 177 8920307.",subject:"Rail enquiry: ",w:"Head width 65 mm",h:"Height 153 mm",dot:"."},
-  de:{imp:"Impressum",ds:"Datenschutz",menuOpen:"Menü öffnen",menuClose:"Menü schließen",copied:"Kopiert",marked:"Markiert",copy:"Kopieren",blocked:"Die Anfrage konnte nicht gesendet werden.",fill:"Bitte Name, E-Mail und eine kurze Beschreibung ausfüllen.",mail:"Bitte eine gültige E-Mail-Adresse angeben.",consent:"Bitte bestätigen Sie die Datenschutzerklärung.",sending:"Wird gesendet …",send:"Anfrage senden",ok:"Danke, Ihre Anfrage ist eingegangen. Wir melden uns schnellstmöglich.",fail:"Versand fehlgeschlagen.",attach:" Bitte hängen Sie die gewählten Dateien ({n}) in der E-Mail an.",mailto:"Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage, Sie müssen nur noch auf Senden klicken.{a} Falls sich nichts öffnet: Text an info@rackrail-solution.de senden oder +49 177 8920307 anrufen.",subject:"Anfrage Schienen: ",w:"Kopfbreite 65 mm",h:"Höhe 153 mm",dot:","},
-  ru:{imp:"Выходные данные",ds:"Конфиденциальность",menuOpen:"Открыть меню",menuClose:"Закрыть меню",copied:"Скопировано",marked:"Выделено",copy:"Копировать",blocked:"Запрос не удалось отправить.",fill:"Заполните имя, e-mail и краткое описание.",mail:"Укажите корректный адрес e-mail.",consent:"Подтвердите согласие с политикой конфиденциальности.",sending:"Отправка …",send:"Отправить запрос",ok:"Спасибо, ваш запрос получен. Мы ответим как можно скорее.",fail:"Отправка не удалась.",attach:" Пожалуйста, прикрепите выбранные файлы ({n}) к письму.",mailto:"Откроется ваша почтовая программа с готовым запросом, останется нажать «Отправить».{a} Если ничего не открылось: отправьте текст на info@rackrail-solution.de или позвоните +49 177 8920307.",subject:"Запрос по рельсам: ",w:"Ширина головки 65 мм",h:"Высота 153 мм",dot:","},
-  ar:{imp:"بيانات الناشر",ds:"الخصوصية",menuOpen:"فتح القائمة",menuClose:"إغلاق القائمة",copied:"تم النسخ",marked:"تم التحديد",copy:"نسخ",blocked:"تعذر إرسال الطلب.",fill:"يرجى إدخال الاسم والبريد الإلكتروني ووصف قصير.",mail:"يرجى إدخال عنوان بريد إلكتروني صحيح.",consent:"يرجى تأكيد سياسة الخصوصية.",sending:"جارٍ الإرسال …",send:"إرسال الطلب",ok:"شكرًا، وصلنا طلبكم. سنرد في أقرب وقت ممكن.",fail:"فشل الإرسال.",attach:" يرجى إرفاق الملفات المحددة ({n}) بالبريد الإلكتروني.",mailto:"سيفتح برنامج البريد لديكم مع الطلب الجاهز، ويكفي الضغط على إرسال.{a} إذا لم يفتح شيء: أرسلوا النص إلى info@rackrail-solution.de أو اتصلوا على ‎+49 177 8920307.",subject:"طلب بخصوص السكك: ",w:"عرض الرأس 65 مم",h:"الارتفاع 153 مم",dot:"."}};
+  en:{imp:"Legal notice",ds:"Privacy",menuOpen:"Open menu",menuClose:"Close menu",copied:"Copied",marked:"Selected",copy:"Copy",blocked:"The request could not be sent.",fill:"Please fill in name, e-mail and a short description.",mail:"Please enter a valid e-mail address.",consent:"Please confirm the privacy policy.",sending:"Sending …",send:"Send request",ok:"Thank you, your request has been received. We will get back to you as quickly as possible.",fail:"Sending failed.",attach:" Please attach the selected files ({n}) to the e-mail.",mailto:"Your e-mail program opens with the prepared request, you only need to click Send.{a} If nothing opens: send the text to info@rackrail-solution.de.",subject:"Rail enquiry: ",w:"Head width 65 mm",h:"Height 153 mm",dot:"."},
+  de:{imp:"Impressum",ds:"Datenschutz",menuOpen:"Menü öffnen",menuClose:"Menü schließen",copied:"Kopiert",marked:"Markiert",copy:"Kopieren",blocked:"Die Anfrage konnte nicht gesendet werden.",fill:"Bitte Name, E-Mail und eine kurze Beschreibung ausfüllen.",mail:"Bitte eine gültige E-Mail-Adresse angeben.",consent:"Bitte bestätigen Sie die Datenschutzerklärung.",sending:"Wird gesendet …",send:"Anfrage senden",ok:"Danke, Ihre Anfrage ist eingegangen. Wir melden uns schnellstmöglich.",fail:"Versand fehlgeschlagen.",attach:" Bitte hängen Sie die gewählten Dateien ({n}) in der E-Mail an.",mailto:"Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage, Sie müssen nur noch auf Senden klicken.{a} Falls sich nichts öffnet: Text an info@rackrail-solution.de senden.",subject:"Anfrage Schienen: ",w:"Kopfbreite 65 mm",h:"Höhe 153 mm",dot:","},
+  ru:{imp:"Выходные данные",ds:"Конфиденциальность",menuOpen:"Открыть меню",menuClose:"Закрыть меню",copied:"Скопировано",marked:"Выделено",copy:"Копировать",blocked:"Запрос не удалось отправить.",fill:"Заполните имя, e-mail и краткое описание.",mail:"Укажите корректный адрес e-mail.",consent:"Подтвердите согласие с политикой конфиденциальности.",sending:"Отправка …",send:"Отправить запрос",ok:"Спасибо, ваш запрос получен. Мы ответим как можно скорее.",fail:"Отправка не удалась.",attach:" Пожалуйста, прикрепите выбранные файлы ({n}) к письму.",mailto:"Откроется ваша почтовая программа с готовым запросом, останется нажать «Отправить».{a} Если ничего не открылось: отправьте текст на info@rackrail-solution.de.",subject:"Запрос по рельсам: ",w:"Ширина головки 65 мм",h:"Высота 153 мм",dot:","},
+  ar:{imp:"بيانات الناشر",ds:"الخصوصية",menuOpen:"فتح القائمة",menuClose:"إغلاق القائمة",copied:"تم النسخ",marked:"تم التحديد",copy:"نسخ",blocked:"تعذر إرسال الطلب.",fill:"يرجى إدخال الاسم والبريد الإلكتروني ووصف قصير.",mail:"يرجى إدخال عنوان بريد إلكتروني صحيح.",consent:"يرجى تأكيد سياسة الخصوصية.",sending:"جارٍ الإرسال …",send:"إرسال الطلب",ok:"شكرًا، وصلنا طلبكم. سنرد في أقرب وقت ممكن.",fail:"فشل الإرسال.",attach:" يرجى إرفاق الملفات المحددة ({n}) بالبريد الإلكتروني.",mailto:"سيفتح برنامج البريد لديكم مع الطلب الجاهز، ويكفي الضغط على إرسال.{a} إذا لم يفتح شيء: أرسلوا النص إلى info@rackrail-solution.de.",subject:"طلب بخصوص السكك: ",w:"عرض الرأس 65 مم",h:"الارتفاع 153 مم",dot:"."}};
   var T=TT[LANG]||TT.de;window.RR_T=T;
   var home=document.getElementById("view-home");
   var views={impressum:document.getElementById("view-impressum"),datenschutz:document.getElementById("view-datenschutz")};
@@ -1194,15 +1194,16 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
   function setHH(){document.documentElement.style.setProperty("--hh",hdr.offsetHeight+"px");}
   setHH();window.addEventListener("resize",setHH);
 
+  var baseTitle=document.title;
   function route(){
     var h=(location.hash||"").replace("#","");
     var legal=views[h];
     Object.keys(views).forEach(function(k){views[k].hidden=(k!==h);});
     home.hidden=!!legal;
     var bar=document.getElementById("mbar");if(bar){bar.hidden=!!legal;}
-    if(legal){window.scrollTo(0,0);document.title="RackRail Solution · "+(h==="impressum"?T.imp:T.ds);}
+    if(legal){window.scrollTo(0,0);document.title=(h==="impressum"?T.imp:T.ds)+" · RackRail Solution";}
     else{
-      document.title="RackRail Solution";
+      document.title=baseTitle;
       if(h&&h!=="start"){var el=document.getElementById(h);if(el){el.scrollIntoView();}}
       navLinks.forEach(function(a){a.setAttribute("aria-current",a.getAttribute("href")==="#"+h?"true":"false");});
     }
@@ -1434,7 +1435,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
     if(window.matchMedia("(min-width:701px)").matches&&M.scroll){
       document.querySelectorAll("#view-home > section").forEach(function(sec,i){
         var ey=sec.querySelector(".eyebrow");if(!ey||sec.classList.contains("hero")||sec.classList.contains("story"))return;
-        var g=document.createElement("span");g.className="ghost";g.setAttribute("aria-hidden","true");g.textContent=ey.textContent.replace(/\/\s*0\d/,"").trim();
+        var g=document.createElement("span");g.className="ghost";g.setAttribute("aria-hidden","true");g.setAttribute("data-t",ey.textContent.replace(/\/\s*0\d/,"").trim());
         sec.insertBefore(g,sec.firstChild);
         var dir=i%2?1:-1;
         M.scroll(M.animate(g,{x:[dir*-18+"vw",dir*18+"vw"]},{ease:"linear"}),{target:sec,offset:["start end","end start"]});
@@ -1896,7 +1897,6 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
   }
 })();
 </script>
-
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как быстро вы можете приехать?", "acceptedAnswer": {"@type": "Answer", "text": "В срочных случаях обычно в течение нескольких дней. Мы работаем также по выходным и в технологические паузы, чтобы простой был минимальным."}}, {"@type": "Question", "name": "Нужно ли останавливать склад?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Мы шлифуем проход за проходом. Закрытый проход обычно освобождается уже после одной смены, остальной склад работает."}}, {"@type": "Question", "name": "Сколько занимает шлифовка одного прохода?", "acceptedAnswer": {"@type": "Answer", "text": "В зависимости от длины, состояния и доступа планируем одну смену на проход и нитку рельса. После обследования называем точный график."}}, {"@type": "Question", "name": "Как понять, что рельс пора шлифовать?", "acceptedAnswer": {"@type": "Answer", "text": "Типичные признаки: растущий шум хода, вибрация крана-штабелёра, видимая волнообразность на поверхности катания и повышенный износ ходовых колёс."}}, {"@type": "Question", "name": "Получу ли я документацию?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Вы получаете протокол «до и после» с измерениями с точностью 0,1 мм и рекомендацией по следующему интервалу обслуживания."}}, {"@type": "Question", "name": "Вы также свариваете стыки рельсов?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Просевшие или сломанные стыки свариваем квалифицированно, в зависимости от профиля MIG/MAG, CMT, TIG или ручной дугой, затем шлифуем заподлицо."}}]}</script>
 </body>
 </html>

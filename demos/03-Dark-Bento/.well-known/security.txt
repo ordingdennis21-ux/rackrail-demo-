@@ -1,0 +1,4 @@
+Contact: mailto:info@rackrail-solution.de
+Expires: 2027-12-31T23:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://www.rackrail-solution.de/.well-known/security.txt
