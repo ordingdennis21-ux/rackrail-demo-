@@ -10,7 +10,7 @@ INHALT DIESES ORDNERS
   05-Scroll-Story        immersives Scroll-Erlebnis
   ANLEITUNG.txt          diese Datei
 
-Jede Variante ist eine komplette Website: vier Sprachen (index.html = Deutsch, en/, ru/, ar/),
+Jede Variante ist eine komplette Website: sieben Sprachen (index.html = Deutsch, en/, ru/, ar/, it/, es/, fr/),
 Impressum, Datenschutz, Kontaktformular, PDF-Leistungsübersicht, Schriften, Bilder. Alles liegt im Ordner,
 nichts wird aus dem Internet nachgeladen.
 
@@ -18,7 +18,8 @@ nichts wird aus dem Internet nachgeladen.
 DEMO ZEIGEN
   1. START.html doppelklicken, dann "Demo öffnen" bei der gewünschten Variante.
   2. Oder direkt: im Variantenordner die Datei index.html doppelklicken.
-  3. Sprache: oben links im Menü. Englisch: en/index.html, Russisch: ru/index.html, Arabisch: ar/index.html.
+  3. Sprache: oben links im Menü. Englisch: en/index.html, Russisch: ru/, Arabisch: ar/, Italienisch: it/,
+     Spanisch: es/, Französisch: fr/ (jeweils index.html).
   4. Handy-Ansicht am PC: Browserfenster schmal ziehen, oder in Chrome F12 und das Handy-Symbol anklicken.
   5. Das Kontaktformular sendet in der Demo nicht, weil dafür ein Webserver mit PHP nötig ist.
      Beim Absenden öffnet sich stattdessen das E-Mail-Programm mit der fertigen Anfrage.
@@ -45,5 +46,5 @@ WELCHE VARIANTE?
 TECHNIK (für den Hoster oder Dienstleister)
   Statische HTML-Dateien, ein PHP-Skript für das Formular (kontakt.php), keine Datenbank, keine Cookies,
   keine externen Dienste, Content-Security-Policy ohne unsafe-inline, HSTS, Clickjacking-Schutz.
-  Automatisch geprüft: 166 Tests je Variante (Layout, Barrierefreiheit WCAG 2.1 AA, Sicherheit, vier Sprachen,
+  Automatisch geprüft: über 270 Tests je Variante (Layout, Barrierefreiheit WCAG 2.1 AA, Sicherheit, sieben Sprachen,
   Desktop und Handy) sowie Offline-Betrieb aus dem Ordner.

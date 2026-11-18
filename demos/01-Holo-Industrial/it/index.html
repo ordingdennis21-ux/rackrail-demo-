@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-o1e+QmnZg2Lobj83buxmHproWnyhn6PQBnBWHdjquIw='; img-src 'self' data:; font-src 'self'; manifest-src 'self'; media-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta property="og:title" content="RackRail Solution · Molatura delle rotaie nei magazzini verticali">
+<meta property="og:description" content="Molatura e misurazione delle rotaie dei trasloelevatori. Riprofilatura durante l'esercizio, fino a 120 m al giorno.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://ordingdennis21-ux.github.io/rackrail-demo-/demos/01-Holo-Industrial/og-image-it.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.rackrail-solution.de/it/">
+<link rel="preload" as="image" href="../img/einsatz-hero-s.webp" media="(max-width: 900px)">
+<link rel="preload" as="image" href="../img/einsatz-hero.webp" media="(min-width: 901px)">
+<link rel="alternate" hreflang="de" href="https://www.rackrail-solution.de/">
+<link rel="alternate" hreflang="en" href="https://www.rackrail-solution.de/en/">
+<link rel="alternate" hreflang="ru" href="https://www.rackrail-solution.de/ru/">
+<link rel="alternate" hreflang="ar" href="https://www.rackrail-solution.de/ar/">
+<link rel="alternate" hreflang="it" href="https://www.rackrail-solution.de/it/">
+<link rel="alternate" hreflang="es" href="https://www.rackrail-solution.de/es/">
+<link rel="alternate" hreflang="fr" href="https://www.rackrail-solution.de/fr/">
+<link rel="alternate" hreflang="x-default" href="https://www.rackrail-solution.de/">
+<title>RackRail Solution · Molatura delle rotaie nei magazzini verticali</title>
+<meta name="rr-lang" content="it">
+<meta name="description" content="Molatura delle rotaie nei magazzini verticali: RackRail Solution riprofila le rotaie di scorrimento dei trasloelevatori durante l'esercizio, fino a 120 m al giorno, in Germania e nel mondo.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>
+/* RackRail Solution, Fassung v20. Richtung "One motif": das Vignol-Schienenprofil ist die einzige Form der Seite.
+   Flache Farbflächen, eine Akzentfarbe (Marken-Navy), Tonstufen statt Linien, keine Verläufe, keine Schatten in Ruhe. */
+@font-face{font-family:'Inter v';font-style:normal;font-weight:400 650;font-display:swap;src:url(../fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter v';font-style:normal;font-weight:400 650;font-display:swap;src:url(../fonts/inter-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Grotesk v';font-style:normal;font-weight:500 700;font-display:swap;src:url(../fonts/space-grotesk.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122}
+:root{
+  --ground:#ffffff;--ground-2:#f5f7fa;--ground-3:#e6ebf2;--ink:#0b1220;--ink-2:#55637a;--accent:#0f3b7a;--accent-2:#2f6bd6;--warm:#e8792b;--warm-2:#f6a24a;--accent-ink:#ffffff;--silver:#8a8f96;
+  --radius:16px;--radius-s:4px;--ring:0 0 0 4px rgba(47,107,214,.22);
+  --shadow-s:0 1px 2px rgba(11,18,32,.06),0 2px 8px rgba(11,18,32,.05);
+  --shadow-m:0 8px 24px -10px rgba(11,18,32,.18),0 2px 6px rgba(11,18,32,.06);
+  --shadow-l:0 24px 60px -24px rgba(11,18,32,.28),0 8px 20px -12px rgba(11,18,32,.12);
+  --font:'Inter v',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:'Grotesk v','Inter v',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --step-small:clamp(.84rem,.8rem + .15vw,.9rem);--step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);--step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);--step-head:clamp(2rem,1.3rem + 3.2vw,4rem);--step-display:clamp(2.6rem,6.4vw,6.25rem);
+  --m:14px;--m-lg:clamp(48px,9vw,140px);--maxw:1280px;--gutter:max(20px,env(safe-area-inset-left,0px));--gutter-r:max(20px,env(safe-area-inset-right,0px));--hh:64px;--ok:#2e9e6b;
+  color-scheme:light;
+}
+:root[data-theme="light"]{--ground:#ffffff;--ground-2:#f5f7fa;--ground-3:#e6ebf2;--ink:#0b1220;--ink-2:#55637a;--accent:#0f3b7a;--accent-2:#2f6bd6;--warm:#e8792b;--warm-2:#f6a24a;--accent-ink:#ffffff;--silver:#8a8f96;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ground:#080c14;--ground-2:#0f1724;--ground-3:#1a2434;--ink:#eef2f8;--ink-2:#9fabbd;--accent:#3f74d8;--accent-2:#6b9bea;--warm:#f59e42;--warm-2:#f6b968;--accent-ink:#06101f;--silver:#c6ccd4;--shadow-s:0 1px 2px rgba(0,0,0,.4);--shadow-m:0 10px 30px -12px rgba(0,0,0,.6);--shadow-l:0 30px 70px -28px rgba(0,0,0,.7);color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#080c14;--ground-2:#0f1724;--ground-3:#1a2434;--ink:#eef2f8;--ink-2:#9fabbd;--accent:#3f74d8;--accent-2:#6b9bea;--warm:#f59e42;--warm-2:#f6b968;--accent-ink:#06101f;--silver:#c6ccd4;--shadow-s:0 1px 2px rgba(0,0,0,.4);--shadow-m:0 10px 30px -12px rgba(0,0,0,.6);--shadow-l:0 30px 70px -28px rgba(0,0,0,.7);color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 var(--step-body)/1.5 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ground)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:600;letter-spacing:-.025em;line-height:1.02;text-wrap:balance}
+h2{font-size:var(--step-head)}
+h3{font-size:var(--step-lead);letter-spacing:-.02em;line-height:1.15}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+section{scroll-margin-top:var(--hh)}
+.lead{font-size:var(--step-lead);line-height:1.35;color:var(--ink-2);letter-spacing:-.01em}
+.soft{color:var(--ink-2)}
+.small{font-size:var(--step-small)}
+
+/* Das Motiv: Schienenkopf (oben rund, unten gerade). Als Bild-Maske, Knopf, Aufzählungszeichen. */
+.m{border-radius:var(--m) var(--m) 2px 2px}
+.photo{border-radius:clamp(36px,8vw,120px) clamp(36px,8vw,120px) 0 0;overflow:hidden;background:var(--ground-2)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.bul{display:inline-block;width:.7em;height:.7em;background:var(--accent);border-radius:.3em .3em 0 0;vertical-align:-.02em;flex:none}
+
+/* Knöpfe: eine Form, eine Farbe */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;background:var(--ink);color:var(--ground);text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:var(--step-body);letter-spacing:-.01em;border:0;border-radius:var(--m) var(--m) 2px 2px;cursor:pointer;box-shadow:var(--shadow-s);transition:background .22s,color .22s,transform .22s cubic-bezier(.22,.61,.36,1),box-shadow .22s}
+.btn:hover{background:#000;transform:translateY(-2px);box-shadow:var(--shadow-m)}
+.btn.acc{background:var(--accent);color:var(--accent-ink)}
+.btn.acc:hover{background:var(--accent-2);box-shadow:var(--shadow-m),0 10px 30px -12px var(--accent-2)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:none;box-shadow:var(--ring)}
+.btn svg{width:18px;height:18px}
+.link{color:var(--ink);font-weight:600;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:2px;text-decoration-color:var(--accent)}
+.link:hover{text-decoration-color:var(--ink)}
+:focus-visible{outline:3px solid var(--silver);outline-offset:3px}
+.skip{position:absolute;inset-inline-start:16px;top:8px;clip-path:inset(50%);background:var(--accent);color:#fff;padding:8px 12px;z-index:70;border-radius:var(--m) var(--m) 2px 2px}
+.skip:focus{clip-path:none}
+
+/* Kopfzeile: Wortmarke, wenige Links, eine Aktion */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--ground) 80%,transparent);backdrop-filter:saturate(1.5) blur(16px);-webkit-backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid color-mix(in srgb,var(--ground-3) 70%,transparent)}
+@supports not (backdrop-filter:blur(1px)){header.top{background:var(--ground)}}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
+.brand{display:inline-flex;flex:0 0 auto;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:1.08rem;letter-spacing:-.02em;white-space:nowrap}
+.logo-mark{width:36px;height:36px;object-fit:contain}
+.lm-dark,.lf-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lm-dark,:root:not([data-theme="light"]) .lf-dark{display:block}:root:not([data-theme="light"]) .lm-light,:root:not([data-theme="light"]) .lf-light{display:none}}
+:root[data-theme="dark"] .lm-dark,:root[data-theme="dark"] .lf-dark{display:block}:root[data-theme="dark"] .lm-light,:root[data-theme="dark"] .lf-light{display:none}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;align-items:center}
+nav.main a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;white-space:nowrap;text-decoration:none;font-size:var(--step-small);font-weight:500;color:var(--ink-2);border-radius:var(--m) var(--m) 2px 2px}
+nav.main a:hover,nav.main a[aria-current="true"]{color:var(--ink);background:var(--ground-2)}
+.head-right{display:flex;gap:10px;align-items:center}
+.head-tel{text-decoration:none;font-weight:600;font-size:var(--step-small);color:var(--ink);padding:0 12px;min-height:44px;display:inline-flex;align-items:center;font-variant-numeric:tabular-nums;white-space:nowrap}
+.head-cta{min-height:44px;padding:0 18px;font-size:var(--step-small)}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:var(--ground-2);color:var(--ink);border-radius:var(--m) var(--m) 2px 2px;align-items:center;justify-content:center;cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+.progress{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@media (max-width:1360px){
+  nav.main{position:fixed;left:0;right:0;top:calc(var(--hh) + env(safe-area-inset-top,0px));height:calc(100dvh - var(--hh) - env(safe-area-inset-top,0px));background:var(--ground);display:none;padding:12px var(--gutter-r) 24px var(--gutter);overflow:auto}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;align-items:stretch;gap:2px}
+  nav.main a{font-size:1.4rem;font-weight:600;min-height:56px;color:var(--ink)}
+  .head-tel{display:none}
+  .menu-btn{display:inline-flex}
+  body.menu-open{overflow:hidden}
+}
+.nav-foot{display:none}
+@media (max-width:1360px){
+  nav.main .nav-foot{display:grid;gap:14px;margin-top:30px;padding-top:26px;border-top:1px solid var(--ground-3)}
+  nav.main .nav-foot .btn{width:100%;min-height:58px}
+  nav.main .nav-foot .nav-tel{display:inline-flex;align-items:center;gap:10px;min-height:48px;font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--ink);text-decoration:none;font-variant-numeric:tabular-nums}
+  nav.main .nav-foot .nav-tel svg{width:22px;height:22px;color:var(--accent);flex:none}
+}
+@media (max-width:560px){.head-cta{display:none}.brand span{display:none}}
+
+
+/* Sprachwahl oben links: Klappliste mit vollen Sprachnamen */
+.lang-dd{position:relative;flex:0 0 auto;margin-inline-end:6px}
+.lang-dd summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--ground-3);border-radius:var(--m) var(--m) 2px 2px;font-size:var(--step-small);font-weight:600;color:var(--ink);background:var(--ground);white-space:nowrap}
+.lang-dd summary::-webkit-details-marker{display:none}
+.lang-dd summary svg{width:18px;height:18px;flex:none;color:var(--accent)}
+.lang-dd summary .chev{width:14px;height:14px;color:var(--ink-2);transition:transform .2s}
+.lang-dd[open] summary .chev{transform:rotate(180deg)}
+.lang-dd summary:hover,.lang-dd[open] summary{border-color:var(--accent)}
+.lang-dd ul{position:absolute;inset-inline-start:0;top:calc(100% + 6px);z-index:60;min-width:200px;margin:0;padding:6px;list-style:none;background:var(--ground);border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px;box-shadow:0 18px 40px -20px rgba(15,23,38,.35)}
+.lang-dd li a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:0 12px;text-decoration:none;color:var(--ink);border-radius:8px;font-size:var(--step-small)}
+.lang-dd li a:hover{background:var(--ground-2)}
+.lang-dd li a[aria-current="page"]{color:var(--accent);font-weight:700}
+.lang-dd li a[aria-current="page"]::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+@media (max-width:560px){.lang-dd summary{padding:0 10px}}
+/* Sprachwähler: vier Sprachen als Segment, im Mobilmenü als Zeile */
+.langs{display:flex;gap:2px;margin-inline-start:8px;padding:3px;background:var(--ground-2);border-radius:var(--m) var(--m) 2px 2px}
+nav.main .langs a{min-height:38px;padding:0 10px;font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--ink-2);border-radius:calc(var(--m) - 3px) calc(var(--m) - 3px) 1px 1px}
+nav.main .langs a:hover{color:var(--ink);background:var(--ground-3)}
+nav.main .langs a[aria-current="page"]{background:var(--ink);color:var(--ground)}
+@media (max-width:1360px){.langs{margin:16px 0 0}nav.main .langs a{flex:1;justify-content:center;min-height:52px;font-size:1rem}}
+/* Rechts-nach-links (Arabisch): Spiegelung der gerichteten Teile, keine Laufweite in arabischer Schrift */
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] .tab,[dir="rtl"] .btn,[dir="rtl"] .langs a{letter-spacing:0}
+[dir="rtl"] .hero .shape{left:auto;right:58%}
+[dir="rtl"] .progress{transform-origin:100% 50%}
+[dir="rtl"] .folder .tab{margin-left:0;margin-right:clamp(16px,4vw,48px)}
+[dir="rtl"] .compare,[dir="rtl"] .story-hud,[dir="rtl"] .head-tel,[dir="rtl"] .addr .v{direction:ltr}
+[dir="rtl"] .cmp-stage{direction:ltr}
+[dir="rtl"] .coupon .left{border-right:0;border-left:5px dotted var(--ground)}
+[dir="rtl"] .coupon::before,[dir="rtl"] .coupon::after{left:auto;right:calc(46% - var(--notch) / 2)}
+[lang="ru"] nav.main a{padding:0 7px}
+.head-cta{white-space:nowrap}
+@media (max-width:1500px){nav.main a{padding:0 7px}.head-tel{display:none}[lang="ru"] .brand span{display:none}}
+
+/* Hero: der Schienenkopf als riesige, beschnittene Fläche rechts; Headline links */
+.hero{position:relative;min-height:calc(100svh - var(--hh));display:grid;align-items:center;overflow:hidden;background:var(--ground)}
+.hero .shape{position:absolute;top:50%;left:58%;width:min(96vh,70vw);height:min(96vh,70vw);transform:translateY(-50%);color:var(--accent);pointer-events:none}
+.hero .shape svg{width:100%;height:100%;display:block;overflow:visible}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(56px,10vh,120px);width:100%}
+.hero-copy{max-width:min(56%,680px)}
+.hero h1{font-size:var(--step-display);font-weight:700;letter-spacing:-.04em;line-height:.98;max-width:16ch}
+.hero .lede{margin-top:28px;max-width:38ch;font-size:var(--step-lead);line-height:1.4;color:var(--ink-2)}
+.hero .cta{margin-top:36px;display:flex;gap:16px 24px;align-items:center;flex-wrap:wrap}
+.hero .meta{margin-top:40px;display:flex;gap:10px 28px;flex-wrap:wrap;color:var(--ink-2);font-size:var(--step-small)}
+.hero .meta span{display:inline-flex;align-items:center;gap:10px}
+@media (max-width:900px){
+  .hero{min-height:auto;display:flex;flex-direction:column;padding-bottom:0}
+  .hero .shape{position:static;order:2;width:100%;height:72vw;transform:none;margin-top:8px;animation-name:shutter-m}
+  .hero .shape svg{width:100%;height:100%}
+  .hero-copy{max-width:100%}
+  .hero h1{font-size:clamp(2.6rem,11.5vw,4.6rem)}
+  .hero .meta{display:none}
+  .hero .wrap{padding-block:40px 0}
+}
+
+/* Statement mit Miniaturen in der Zeile */
+.statement{padding-block:clamp(72px,14vh,180px)}
+.statement p{max-width:66%;margin-inline:auto;text-align:center;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.18;font-weight:500;letter-spacing:-.02em}
+.statement .th{display:inline-block;width:1.25em;height:.85em;vertical-align:-.1em;margin:0 .12em;border-radius:.3em .3em 0 0;overflow:hidden;background:var(--ground-2)}
+.statement .th img{width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.statement p{max-width:100%;text-align:left;font-size:clamp(1.25rem,6vw,1.5rem)}.statement{padding-block:80px}}
+
+/* Scroll-Szene: Schiene aus Verschleiß zu geschliffen (3D) */
+.story{background:var(--ground-2);color:var(--ink);padding:0;height:420vh;position:relative}
+.story-pin{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}
+.story-canvas{grid-column:1;grid-row:1;position:relative;width:100%;height:100%}
+.story-canvas canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.story-canvas .ov{pointer-events:none}
+.story-text{grid-column:2;grid-row:1;position:relative;height:100%;padding-right:var(--gutter-r)}
+.story .st{position:absolute;left:0;right:0;top:50%;margin-top:-120px;max-width:34rem;opacity:0;transition:opacity .25s linear,transform .25s linear;will-change:opacity,transform}
+.story .st h2{font-size:clamp(1.9rem,3.8vw,3.2rem);margin:0 0 16px}
+.story .st p{color:var(--ink-2);font-size:var(--step-body);line-height:1.5;max-width:46ch}
+.story-hud{position:absolute;left:var(--gutter);bottom:36px;background:var(--ground-3);border-radius:var(--m) var(--m) 2px 2px;padding:12px 16px;display:grid;gap:2px}
+.story-hud small{font-size:var(--step-small);color:var(--ink-2)}
+.story-hud b{font-size:1.4rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.story-bar{position:absolute;left:0;right:0;top:0;height:3px;background:var(--ground-3)}
+.story-bar i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+@media (max-width:900px){.story{height:380vh}.story-pin{grid-template-columns:1fr;grid-template-rows:55% 45%;align-items:end}.story-canvas{grid-row:1;grid-column:1}.story-text{grid-row:2;grid-column:1;padding-inline:var(--gutter) var(--gutter-r)}.story .st{top:0;margin-top:0;padding-top:8px}.story-hud{bottom:auto;top:16px}}
+@media (prefers-reduced-motion:reduce){.story{height:auto}.story-pin{position:static;height:auto;min-height:70vh}.story .st{position:static;opacity:1;margin:24px 0}.story-text{height:auto;padding-block:40px;display:grid}}
+.story.nogl{display:none}
+
+/* Leistungen: Foto in der Form links, Punkte mit Formzeichen rechts */
+/* Leistungen als Bento, Schleifen als Kern */
+.svc{padding-block:var(--m-lg)}
+.sec-head .eyebrow,.intro .eyebrow,.faq-sec .eyebrow,.holo-sec .eyebrow,.map-sec .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--warm);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.sec-head .eyebrow::before,.intro .eyebrow::before,.faq-sec .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--warm),var(--warm-2))}
+.svc-core{position:relative;overflow:hidden;background:var(--ground);border:1px solid var(--accent);border-radius:var(--m) var(--m) 2px 2px;padding:clamp(28px,4vw,46px);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,48px);align-items:center;box-shadow:var(--shadow-m)}
+.svc-core::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--accent),var(--warm))}
+.svc-core .badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--warm) 16%,transparent);color:var(--warm);font-weight:700;font-size:.78rem;letter-spacing:.04em;padding:7px 14px;border-radius:999px}
+.svc-core .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--warm)}
+.svc-core .num{font-family:var(--font-display);color:var(--accent);font-weight:600;font-size:.9rem;margin-top:22px}
+.svc-core h3{font-size:clamp(1.8rem,3.5vw,2.9rem);letter-spacing:-.025em;margin-top:8px}
+.svc-core>div>p{color:var(--ink-2);font-size:1.08rem;line-height:1.55;margin-top:16px;max-width:44ch}
+.svc-core .pills{margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.svc-core .pills li{list-style:none;display:flex;align-items:center;gap:11px;background:var(--ground-2);border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px;padding:14px 16px;font-size:.92rem;font-weight:500}
+.svc-core .pills .dot{width:7px;height:7px;border-radius:50%;background:var(--warm);flex:none}
+.svc-core .shot{margin:0;position:relative;overflow:hidden;border-radius:12px 12px 2px 2px;align-self:stretch;min-height:280px;box-shadow:var(--shadow-s)}
+.svc-core .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-core .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,transparent 50%,rgba(232,121,43,.28))}
+.gal-sec{padding-block:clamp(10px,2vw,22px) 0}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal-grid figure{margin:0;position:relative;overflow:hidden;border-radius:12px 12px 2px 2px;aspect-ratio:4/3;box-shadow:var(--shadow-s)}
+.gal-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 16px 14px;color:#fff;font-weight:600;font-size:.92rem;letter-spacing:.01em;background:linear-gradient(0deg,rgba(8,12,20,.82),rgba(8,12,20,.1) 70%,transparent)}
+.gal-grid figcaption::before{content:"";display:block;width:24px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--warm),var(--warm-2));margin-bottom:9px}
+@media (max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.gal-grid figure:first-child{grid-column:1/-1;aspect-ratio:16/9}}
+@media (max-width:460px){.gal-grid{grid-template-columns:1fr}.gal-grid figure:first-child{aspect-ratio:4/3}}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px;margin-top:16px}
+.svc-card{background:var(--ground);border:1px solid var(--ground-3);border-radius:var(--m) var(--m) 2px 2px;padding:26px 24px;transition:border-color .25s,box-shadow .25s,transform .25s}
+.svc-card:hover{border-color:var(--accent);box-shadow:var(--shadow-m);transform:translateY(-3px)}
+.svc-card .num{font-family:var(--font-display);color:var(--accent);font-weight:600;font-size:.85rem}
+.svc-card h3{font-size:1.16rem;letter-spacing:-.02em;margin-top:10px}
+.svc-card p{color:var(--ink-2);font-size:.95rem;line-height:1.5;margin-top:10px}
+.svc .dl{margin-top:26px}
+@media (max-width:860px){.svc-core{grid-template-columns:1fr}}
+.features{padding-block:var(--m-lg)}
+.features .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:start}
+.features .photo{height:78svh;min-height:420px;margin-left:-12%;width:112%}
+.features h2{max-width:18ch}
+.points{margin:56px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 40px}
+.points li{display:grid;gap:8px}
+.points b{display:flex;align-items:center;gap:12px;font-size:1.0625rem;font-weight:600;letter-spacing:-.01em}
+.points p{color:var(--ink-2);font-size:var(--step-small);line-height:1.5}
+@media (max-width:900px){.features .wrap{grid-template-columns:1fr}.features .photo{height:60svh;min-height:300px;width:82vw;margin-left:calc(-1 * var(--gutter))}.points{grid-template-columns:1fr;gap:28px}}
+
+/* Problem finden: zwei Spalten, Symptom und Maßnahme, ohne Kästen */
+.symptoms{padding-block:var(--m-lg);background:var(--ground-2)}
+.symptoms .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,96px)}
+.symptoms h2{position:sticky;top:calc(var(--hh) + 24px)}
+.sym{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.sym a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:center;padding:26px 0;text-decoration:none;color:inherit;background:transparent;transition:background .2s;border-radius:var(--m) var(--m) 2px 2px}
+.sym a:hover{background:var(--ground-3)}
+.sym .q{font-size:var(--step-lead);font-weight:600;letter-spacing:-.02em;line-height:1.2;display:flex;gap:14px;align-items:flex-start}
+.sym .q .bul{margin-top:.35em}
+.sym .a{grid-column:1;color:var(--ink-2);font-size:var(--step-small);padding-left:calc(.7em + 14px)}
+.sym .l{grid-column:2;grid-row:1 / span 2;font-weight:600;color:var(--ink);white-space:nowrap;font-size:var(--step-small);background:var(--accent);color:#fff;padding:10px 14px;border-radius:var(--m) var(--m) 2px 2px}
+@media (max-width:900px){.symptoms .wrap{grid-template-columns:1fr}.symptoms h2{position:static}.sym a{grid-template-columns:1fr}.sym .l{grid-column:1;grid-row:auto;justify-self:start;margin-left:calc(.7em + 14px);white-space:normal}}
+
+/* Ablauf: Kacheln, die wachsen */
+.process{padding-block:var(--m-lg);background:var(--ground-2);border-block:1px solid var(--ground-3)}
+.tiles{display:grid;grid-template-columns:3fr 4fr 5fr;gap:10px;align-items:end;margin-top:0}
+.tiles figure{margin:0;display:grid;gap:14px}
+.tiles .photo{border-radius:clamp(28px,6vw,96px) clamp(28px,6vw,96px) 0 0}
+.tiles figure:nth-child(1) .photo{height:30vh}.tiles figure:nth-child(2) .photo{height:44vh}.tiles figure:nth-child(3) .photo{height:60vh}
+.tiles figcaption b{display:block;font-size:1.25rem;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}
+.tiles figcaption p{color:var(--ink-2);font-size:var(--step-body);max-width:34ch}
+.process-head{display:grid;grid-template-columns:7fr 5fr;gap:24px;align-items:end;margin-bottom:28px}
+.process-head p{max-width:40ch}
+@media (max-width:900px){.tiles{grid-template-columns:1fr}.tiles figure:nth-child(1) .photo{height:34vw}.tiles figure:nth-child(2) .photo{height:46vw}.tiles figure:nth-child(3) .photo{height:62vw}.process-head{grid-template-columns:1fr}}
+
+/* Vergleich: das Mitmach-Element */
+.compare-sec{padding-block:var(--m-lg);background:var(--ground-2)}
+.compare-sec .intro{display:grid;grid-template-columns:7fr 5fr;gap:24px;align-items:end;margin-bottom:28px}
+.compare-sec .intro p{max-width:44ch}
+.cmp-stage{position:relative;aspect-ratio:16/8;max-width:100%;border-radius:clamp(36px,8vw,120px) clamp(36px,8vw,120px) 0 0;overflow:hidden;background:#06090f;touch-action:none;cursor:ew-resize}
+.cmp-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.cmp-before{position:absolute;inset:0;width:50%;overflow:hidden;border-right:3px solid #fff}
+.cmp-before canvas{width:calc(100% / var(--w,.5));max-width:none}
+.cmp-handle{position:absolute;top:0;bottom:0;left:50%;width:0;pointer-events:none}
+.cmp-handle span{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:var(--m) var(--m) 2px 2px;background:#fff;color:#0b1220;display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.cmp-handle span::before{content:"◀ ▶";letter-spacing:-.1em;font-size:.8rem}
+.cmp-lab{position:absolute;top:18px;font-size:var(--step-small);font-weight:600;color:#fff;background:var(--accent);padding:8px 14px;border-radius:var(--m) var(--m) 2px 2px}
+.cmp-lab.l{left:18px}.cmp-lab.r{right:18px}
+#cmp-range{width:100%;margin:16px 0 0;accent-color:var(--accent);height:44px}
+@media (max-width:640px){.cmp-stage{aspect-ratio:4/3}.compare-sec .intro{grid-template-columns:1fr}}
+.tbl{overflow-x:auto;margin-top:48px;background:var(--ground-3);border-radius:var(--m) var(--m) 2px 2px}
+table{border-collapse:collapse;width:100%;font-size:var(--step-small);min-width:640px}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--ground);vertical-align:top}
+th{font-weight:600;color:var(--ink-2);white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+td:last-child{color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+
+/* Nachweise: große Marken auf Kacheln */
+.proof-sec{padding-block:var(--m-lg)}
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.proof li{background:var(--ground-2);aspect-ratio:3/2;padding:24px;display:grid;align-content:space-between;border-radius:var(--m) var(--m) 2px 2px}
+.proof li.head{grid-column:span 2;aspect-ratio:3/1;background:var(--accent);color:#fff}
+.proof li.head h2{font-size:clamp(1.8rem,3vw,2.8rem);max-width:12ch}
+.proof b{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.proof b span{font-size:inherit;color:inherit;font-variant-numeric:tabular-nums}
+.proof span{color:var(--ink-2);font-size:var(--step-small);line-height:1.4}
+.proof li.head span{color:#dfe6f0}
+@media (max-width:760px){.proof{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.proof li{min-width:0}.proof b{overflow-wrap:anywhere}.proof li.head{grid-column:span 2;aspect-ratio:auto;min-height:120px}.proof b{font-size:1.25rem}}
+
+/* Einsätze: gestapelte Mappen mit Reitern */
+.work{padding-block:var(--m-lg) 0}
+.work h2{margin-bottom:72px}
+.folders{display:grid}
+.folder{position:sticky;background:var(--ground-2);border-radius:var(--m) var(--m) 0 0;padding:0 0 clamp(40px,6vw,72px);min-height:80svh}
+.folder:nth-child(2){background:var(--ground-3)}
+.folder:nth-child(3){background:var(--accent);color:#fff}
+.folder:nth-child(3) .soft{color:#dfe6f0}
+.folder .tab{display:inline-flex;align-items:center;height:44px;padding:0 22px;background:var(--ink);color:var(--ground);font-weight:600;font-size:1.1rem;letter-spacing:-.01em;border-radius:var(--m) var(--m) 0 0;margin-left:clamp(16px,4vw,48px);position:relative;top:-44px;margin-bottom:-44px}
+.folder:nth-child(3) .tab{background:#fff;color:var(--accent)}
+.folder .cat{position:absolute;right:clamp(16px,4vw,48px);top:18px;font-size:var(--step-small);color:var(--ink-2)}
+.folder:nth-child(3) .cat{color:#dfe6f0}
+.folder .inner{display:grid;grid-template-columns:7fr 1fr 4fr;gap:24px;padding:72px clamp(16px,4vw,48px) 0}
+.folder .photo{aspect-ratio:16/10;border-radius:clamp(28px,5vw,80px) clamp(28px,5vw,80px) 0 0}
+.folder .text{grid-column:3;display:grid;gap:14px;align-content:start}
+.folder .text h3{font-size:clamp(1.4rem,2.2vw,1.9rem)}
+.folder dl{margin:8px 0 0;display:grid;gap:6px;font-size:var(--step-small)}
+.folder dl div{display:flex;gap:10px}.folder dt{color:var(--ink-2)}.folder:nth-child(3) dt{color:#dfe6f0}.folder dd{margin:0;font-weight:600}
+@media (max-width:900px){.folder{position:static;min-height:auto;border-radius:0}.folder .cat{position:static;display:block;padding:14px var(--gutter-r) 0 var(--gutter)}.folder .inner{grid-template-columns:1fr;padding-top:24px}.folder .text{grid-column:1}.folder .photo{aspect-ratio:4/3}}
+
+/* Über uns */
+.about{padding-block:var(--m-lg)}
+.about .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:start}
+.about .text{display:grid;gap:22px}
+.about .text p{color:var(--ink-2);max-width:60ch}
+.about .text p.lead{color:var(--ink)}
+.about .photo{aspect-ratio:3/2}
+.facts{margin:10px 0 0;padding:24px;background:var(--ground-2);border-radius:var(--m) var(--m) 2px 2px;display:grid;gap:14px}
+.facts div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;font-size:var(--step-small)}
+.facts dt{color:var(--ink-2)}.facts dd{margin:0;font-weight:600}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr}}
+
+/* Fragen: Akkordeon aus gefüllten Kacheln, Überschrift bleibt stehen */
+.faq-sec{padding-block:var(--m-lg);background:var(--ground-2)}
+.faq-sec .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,96px);align-items:start}
+.faq-sec h2{font-size:clamp(1.7rem,2.6vw,2.5rem);letter-spacing:-.025em;text-wrap:balance}.faq-sec .wrap>div:first-child{position:sticky;top:calc(var(--hh) + 24px)}
+.faq{display:grid;gap:8px}
+.faq details{background:var(--ground-3);border-radius:var(--m) var(--m) 2px 2px;padding:0 24px}
+.faq details[open]{background:var(--accent);color:#fff}
+.faq summary{cursor:pointer;padding:24px 0;font-weight:600;font-size:1.25rem;letter-spacing:-.015em;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:72px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{flex:none;width:16px;height:16px;position:relative}
+.faq summary .pm::before,.faq summary .pm::after{content:"";position:absolute;background:currentColor;left:0;top:6.5px;width:16px;height:3px}
+.faq summary .pm::after{transform:rotate(90deg);transition:transform .25s}
+.faq details[open] summary .pm::after{transform:rotate(0)}
+.faq .body{padding:0 0 26px;max-width:52ch;line-height:1.6;color:inherit}
+.faq details[open] .body{color:#eef3fa}
+@media (max-width:900px){.faq-sec .wrap{grid-template-columns:1fr}.faq-sec .wrap>div:first-child{position:static}.faq summary{font-size:1.1rem;min-height:64px}}
+
+/* Band mit Gasse (3D) und Anruf */
+.band{background:var(--accent);color:#fff;position:relative;overflow:hidden}
+.band-3d{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.55;mix-blend-mode:luminosity}
+.band .wrap{position:relative;z-index:1;display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap;padding-block:clamp(56px,8vw,96px)}
+.band h2{font-size:clamp(1.9rem,3.6vw,3rem);max-width:18ch}
+.band p{color:#dfe6f0;margin-top:12px;max-width:46ch}
+.band .btn{background:#fff;color:var(--accent)}
+.band .btn.ghost{background:var(--ground);color:#fff}
+#view-home > section{position:relative;overflow:clip;isolation:isolate}
+.ghost{position:absolute;z-index:-1;inset-inline-start:var(--gutter);top:clamp(6px,1.5vw,20px);font-family:var(--font-display);font-weight:700;font-size:clamp(4rem,14vw,13rem);line-height:1;letter-spacing:-.05em;color:currentColor;opacity:.045;pointer-events:none;white-space:nowrap;user-select:none}
+.ghost::before{content:attr(data-t)}
+
+/* Kontakt: Coupon zum Ausschneiden */
+.contact-sec{padding-block:var(--m-lg);position:relative;z-index:3;background:var(--ground);border-radius:34px 34px 0 0;margin-top:-48px;box-shadow:0 -30px 60px -34px rgba(8,12,20,.55)}
+@media (max-width:560px){.contact-sec{border-radius:24px 24px 0 0;margin-top:-32px}}
+.contact-sec .intro{max-width:60ch;margin-bottom:40px}
+.coupon{position:relative;display:grid;grid-template-columns:46fr 54fr;background:var(--ground-2);border-radius:var(--m) var(--m) 2px 2px;--notch:28px}
+.coupon::before,.coupon::after{content:"";position:absolute;left:calc(46% - var(--notch) / 2);width:var(--notch);height:calc(var(--notch) / 2);background:var(--ground)}
+.coupon::before{top:0;border-radius:0 0 var(--notch) var(--notch)}
+.coupon::after{bottom:0;border-radius:var(--notch) var(--notch) 0 0}
+.coupon .left{padding:48px;display:grid;align-content:space-between;gap:32px;border-right:5px dotted var(--ground)}
+.coupon .left h2{font-size:clamp(1.75rem,3vw,2.75rem)}
+.addr{font-style:normal;display:grid;gap:14px}
+.addr .row{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.addr .k{display:block;font-size:var(--step-small);color:var(--ink-2)}
+.addr .v{display:block;font-weight:600}
+.copy{font:600 var(--step-small) var(--font);background:var(--ground-3);border:0;color:var(--ink);padding:10px 14px;border-radius:var(--m) var(--m) 2px 2px;cursor:pointer;min-height:40px}
+.copy:hover{background:var(--accent);color:#fff}
+.coupon form{padding:48px;display:grid;gap:10px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{display:grid;gap:6px;font-size:var(--step-small);font-weight:600}
+input,select,textarea{font:inherit;padding:14px 16px;border:1px solid var(--ground-3);background:var(--ground);color:var(--ink);border-radius:var(--m) var(--m) 2px 2px;width:100%;min-width:0;min-height:52px}
+textarea{min-height:140px;resize:vertical}
+input::placeholder,textarea::placeholder{color:var(--ink-2)}
+.file-hint{font-weight:400;color:var(--ink-2)}
+.consent{display:flex;gap:12px;align-items:flex-start;font-weight:400;color:var(--ink-2);line-height:1.5}
+.consent input{width:20px;height:20px;margin-top:2px;flex:none;min-height:0}
+.consent a{color:var(--ink)}
+.hp{position:absolute;inset-inline-start:0;top:0;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
+#f-submit{width:100%;min-height:56px;background:var(--ink);color:var(--ground)}
+.msg{padding:14px 16px;border-radius:var(--m) var(--m) 2px 2px;background:var(--ground-3);font-size:var(--step-small);line-height:1.5}
+.msg.err{background:#4a1d1d;color:#ffd9d9}
+.note{font-size:var(--step-small);color:var(--ink-2)}
+@media (max-width:900px){
+  .coupon{grid-template-columns:1fr;margin-inline:-8px}
+  .coupon::before,.coupon::after{left:auto;top:calc(46% - var(--notch) / 2);bottom:auto;width:calc(var(--notch) / 2);height:var(--notch)}
+  .coupon::before{left:0;border-radius:0 var(--notch) var(--notch) 0}
+  .coupon::after{right:0;border-radius:var(--notch) 0 0 var(--notch)}
+  .coupon .left{border-right:0;border-bottom:5px dotted var(--ground);padding:28px 20px}
+  .coupon form{padding:28px 20px}
+  .f2{grid-template-columns:1fr}
+}
+
+/* Rechtstexte */
+.legal-view{padding-block:clamp(48px,6vw,80px)}
+.legal{max-width:76ch}
+.legal h2{margin-bottom:18px}
+.legal h3{margin:30px 0 8px;font-size:1.1rem}
+.legal p,.legal li{color:var(--ink-2);line-height:1.65}
+.legal ul{padding-left:20px}
+.todo{background:var(--ground-3);border-radius:6px;padding:2px 8px;font-weight:600;font-size:var(--step-small);color:#ffb783}
+.crumb{font-size:var(--step-small);color:var(--ink-2);margin-bottom:22px}
+.crumb a{color:var(--ink)}
+
+/* Fuß: die Marke als großes Profil, dann die Links */
+footer{background:var(--ground-2);padding-block:clamp(40px,6vw,72px) 28px}
+.foot-mark{color:var(--accent);height:min(34svh,320px);display:flex;align-items:flex-end;gap:4px;justify-content:space-between}
+.foot-mark svg{height:100%;width:auto;flex:1 1 0;min-width:0;display:block}
+.foot-mark svg:nth-child(n+4){display:none}
+@media (min-width:700px){.foot-mark svg:nth-child(n+4){display:block}}
+.foot-top{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:56px}
+.foot-top h3{font-size:var(--step-small);color:var(--ink-2);font-weight:500;margin-bottom:12px;letter-spacing:0}
+.foot-top ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.foot-top a{text-decoration:none;color:var(--ink);font-size:var(--step-small);display:inline-flex;align-items:center;min-height:44px}
+.foot-top a:hover{text-decoration:underline}
+.foot-top p{font-size:var(--step-small);color:var(--ink-2)}
+.foot-brand{grid-column:span 2}
+.logo-full{height:56px;width:auto;object-fit:contain;margin-bottom:16px}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;font-size:var(--step-small);color:var(--ink-2);align-items:center}
+.foot-bottom ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+.foot-bottom a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:760px){.foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:span 2}.foot-mark{height:22svh}}
+
+/* Mobile Leiste, nach oben */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:19;background:var(--ground-2);padding:10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom,0px)) var(--gutter);gap:10px}
+.mbar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;text-decoration:none;font-weight:600;border-radius:var(--m) var(--m) 2px 2px;font-size:1rem}
+.mbar .call{background:var(--ground-3);color:var(--ink)}
+.mbar .ask{background:var(--accent);color:#fff}
+@media (max-width:900px){.mbar{display:flex}body{padding-bottom:70px}}
+.totop{position:fixed;right:var(--gutter-r);bottom:calc(16px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:var(--m) var(--m) 2px 2px;background:var(--ground-3);border:0;color:var(--ink);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:18}
+.totop.show{display:inline-flex}
+@media (max-width:900px){.totop{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+
+/* Bewegung: Einblenden; unter Reduced Motion bleibt alles sichtbar und still */
+.js html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-smooth iframe{pointer-events:none}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.motion .reveal{transition:none}
+.motion .reveal.in{opacity:1;transform:none}
+.sec-head h2 .w{display:inline-block;white-space:pre}
+.hero .shape{clip-path:inset(0 0 0 0)}
+@media (prefers-reduced-motion:no-preference){
+  .hero .shape{animation:shutter 1.1s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes shutter{from{clip-path:inset(0 0 0 100%);transform:translateY(-50%) scale(1.12)}to{clip-path:inset(0 0 0 0);transform:translateY(-50%) scale(1)}}
+  @keyframes shutter-m{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+  @media (max-width:900px){.hero .shape{animation-name:shutter-m}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}*{animation:none!important}.progress{display:none}}
+@media print{header.top,.mbar,.totop,.band,.story,.hero .shape,#view-datenschutz,#view-impressum,.compare-sec,form,.cta,.menu-btn,.foot-mark{display:none!important}body{background:#fff;color:#000}}
+
+/* Mehr Bewegung: Fotos im Rahmen, Atmen der Hero-Form, Knöpfe */
+.photo img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.photo:hover img{transform:scale(1.05)}
+.features .photo img,.folder .photo img,.about .photo img{transform:scale(1.16)}
+@media (prefers-reduced-motion:no-preference){
+  .hero .shape svg{animation:breathe 9s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5%)}}
+  .btn{transition:background .2s,color .2s,transform .25s cubic-bezier(.2,.7,.2,1)}
+  .btn:hover{transform:translateY(-2px)}
+  .sym a .l{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+  .sym a:hover .l{transform:translateX(6px)}
+  .faq details[open] summary .pm::before{transform:rotate(180deg);transition:transform .3s}
+  .cmp-handle span{animation:nudge 2.4s ease-in-out 3}
+  @keyframes nudge{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(calc(-50% - 10px),-50%)}}
+}
+
+/* Flüssiger: Compositing-Hinweise und eine gemeinsame Kurve */
+:root{--ease:cubic-bezier(.22,1,.36,1)}
+.photo,.tiles .photo,.folder .photo,.statement .th,.foot-mark svg,.hero .shape{will-change:transform,clip-path;transform:translateZ(0)}
+.photo img{backface-visibility:hidden}
+.btn,.sym a,.faq details,.proof li,nav.main a,.copy{transition-timing-function:var(--ease)}
+.faq .body{transition:none}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* Karriere */
+.career{padding-block:var(--m-lg);background:var(--accent);color:#fff}
+.career .lead,.career-list{color:#dfe6f0}
+.career-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:center}
+.career-text{display:grid;gap:24px}
+.career-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;font-size:var(--step-body)}
+.career-list li{display:flex;gap:14px;align-items:flex-start}
+.career-list .bul{background:#fff;margin-top:.35em}
+.career .cta{display:flex;gap:16px 24px;align-items:center;flex-wrap:wrap}
+.career .btn.acc{background:#fff;color:var(--accent)}
+.career .link{color:#fff;text-decoration-color:#fff}
+.career-photo{aspect-ratio:4/3}
+@media (max-width:900px){.career-grid{grid-template-columns:1fr}}
+
+/* Film: Wort-für-Wort-Überschrift beim Scrollen, dann öffnet sich der Film aus einem Kreis (nach 21st.dev "Hero Scroll Video Pin Reveal", in Vanilla übertragen) */
+.film{background:var(--ground-2);position:relative}
+.film-intro{padding-block:clamp(72px,12vh,140px) 24px;text-align:center;display:grid;justify-items:center;gap:28px}
+.film-intro h2{max-width:22ch;font-size:clamp(2rem,5.2vw,4.4rem)}
+.film-intro h2 .w{display:inline-block;transform-origin:0 100%;will-change:transform,opacity}
+.film-tags{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.film-tags span{display:inline-block;padding:12px 22px;background:var(--accent);color:#fff;font-weight:600;font-size:var(--step-body);border-radius:var(--m) var(--m) 2px 2px;clip-path:inset(0 100% 0 0);opacity:0}
+.film-pin{height:260vh;position:relative}
+.film-box{position:sticky;top:var(--hh);height:calc(100svh - var(--hh));overflow:hidden;background:var(--ground-2);display:grid;place-items:center;clip-path:circle(10% at 50% 50%)}
+.film-box video{width:100%;height:100%;object-fit:cover;display:block}
+.film-sound{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);opacity:0;pointer-events:none;transition:opacity .3s}
+.film-box.open .film-sound{opacity:1;pointer-events:auto}
+.film-box.sound .film-sound{display:none}
+@media (max-width:900px){.film-pin{height:200vh}.film-box{clip-path:circle(18% at 50% 50%)}}
+@media (prefers-reduced-motion:reduce){.film-pin{height:auto}.film-box{position:static;height:auto;aspect-ratio:16/9;clip-path:none;border-radius:var(--m) var(--m) 2px 2px}.film-box .film-sound{opacity:1;pointer-events:auto}.film-tags span{clip-path:none;opacity:1}}
+
+/* Kleine lebende Grafiken in den Nachweis-Kacheln (nach dem 21st.dev Bento-Prinzip) */
+.proof li{grid-template-rows:auto 1fr auto}
+.days{display:flex;gap:6px;align-self:center}
+.days i{width:14px;height:14px;background:color-mix(in srgb,var(--ink) 12%,transparent);border-radius:6px 6px 0 0}
+.gauge{display:block;align-self:center;height:6px;background:color-mix(in srgb,var(--ink) 12%,transparent);border-radius:3px;overflow:hidden;position:relative}
+.gauge i{position:absolute;top:0;bottom:0;width:18%;background:var(--accent);border-radius:3px}
+@media (prefers-reduced-motion:no-preference){
+  .days i{animation:day 5.6s linear infinite}
+  .days i:nth-child(1){animation-delay:0s}.days i:nth-child(2){animation-delay:.8s}.days i:nth-child(3){animation-delay:1.6s}.days i:nth-child(4){animation-delay:2.4s}.days i:nth-child(5){animation-delay:3.2s}.days i:nth-child(6){animation-delay:4s}.days i:nth-child(7){animation-delay:4.8s}
+  @keyframes day{0%,12%{background:var(--accent)}13%,100%{background:color-mix(in srgb,var(--ink) 12%,transparent)}}
+  .gauge i{animation:gauge 4s cubic-bezier(.45,0,.2,1) infinite alternate}
+  @keyframes gauge{from{left:0}to{left:82%}}
+}
+
+/* ===== Industrie-Standard (Konzern-Look): Foto-Hero, Kennzahlenleiste, Karten mit Kante, Branchen ===== */
+.hero{min-height:min(88svh,820px);background:#0b1220;color:#fff;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block;filter:saturate(.9)}
+.hrl .ph{position:relative}
+.motion [data-parallax]{position:absolute!important;left:0;right:auto;top:-11%!important;bottom:auto!important;width:100%;height:122%!important;object-fit:cover;will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(75% 90% at 84% 16%,rgba(47,107,214,.28) 0%,rgba(47,107,214,0) 58%),linear-gradient(90deg,rgba(7,13,26,.92) 0%,rgba(7,13,26,.78) 38%,rgba(7,13,26,.35) 70%,rgba(7,13,26,.15) 100%),linear-gradient(0deg,rgba(7,13,26,.7) 0%,rgba(7,13,26,0) 40%)}
+[dir="rtl"] .hero-bg::after{background:linear-gradient(270deg,rgba(7,13,26,.92) 0%,rgba(7,13,26,.78) 38%,rgba(7,13,26,.35) 70%,rgba(7,13,26,.15) 100%),linear-gradient(0deg,rgba(7,13,26,.7) 0%,rgba(7,13,26,0) 40%)}
+.hero .shape{z-index:0;color:#fff;opacity:.06;mix-blend-mode:screen}
+.hero h1,.hero .lede,.hero .meta{color:#fff}
+.hero .lede{color:#d5dce8}
+.hero .meta{color:#c3ccdb}
+.hero .meta .bul{background:#fff}
+.hero .link{color:#fff;text-decoration-color:rgba(255,255,255,.6)}
+.hero .btn.acc{background:#fff;color:#0f3b7a}
+.hero .btn.acc:hover{background:#eaf0f8}
+@media (max-width:900px){.hero{min-height:auto}.hero .shape{display:none}.hero-bg::after{background:linear-gradient(0deg,rgba(7,13,26,.95) 0%,rgba(7,13,26,.8) 55%,rgba(7,13,26,.55) 100%)}.hero .wrap{padding-block:72px 56px}.hero .meta{display:flex}}
+/* Kennzahlenleiste unter dem Hero */
+.kpi{background:var(--ground);border-bottom:1px solid var(--ground-3)}
+.kpi ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.kpi li{padding:26px 24px;display:grid;gap:4px;border-inline-start:1px solid var(--ground-3)}
+.kpi li:first-child{border-inline-start:0;padding-inline-start:0}
+.kpi b{font-family:var(--font-display);font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;color:var(--accent);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--ink-2);font-size:var(--step-small)}
+@media (max-width:760px){.kpi ul{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi li{padding:18px 16px;border-inline-start:0;border-top:1px solid var(--ground-3)}.kpi li:nth-child(-n+2){border-top:0}.kpi li:nth-child(odd){padding-inline-start:0}}
+/* Leistungen als Kartenraster */
+.points{gap:14px}
+.points li{background:var(--ground);border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px;padding:22px 22px 24px;gap:10px;transition:border-color .25s,box-shadow .25s,transform .25s}
+.points li:hover{border-color:var(--accent);box-shadow:0 12px 32px -18px rgba(15,59,122,.35);transform:translateY(-2px)}
+.points b{font-size:1.0625rem}
+.features .photo{border:0}
+.dl{display:inline-flex;align-items:center;gap:14px;margin-top:28px;padding:14px 18px;border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px;text-decoration:none;color:var(--ink);font-weight:600;transition:border-color .25s,box-shadow .25s}
+.dl:hover{border-color:var(--accent);box-shadow:0 12px 32px -18px rgba(15,59,122,.35)}
+.dl svg{width:24px;height:24px;color:var(--accent);flex:none}
+.dl small{display:block;font-weight:400;color:var(--ink-2);font-size:var(--step-small)}
+video::cue{background:rgba(7,13,26,.72);color:#fff;font-family:var(--font);font-size:clamp(.9rem,1.6vw,1.3rem);line-height:1.35}
+/* Soziale Netzwerke: reine Links, keine eingebetteten Skripte oder Plugins (Datenschutz) */
+.social,.foot-top ul.social{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.social a:hover,.social a:focus-visible{background:#fff;color:#0b1220;border-color:#fff;transform:translateY(-2px)}
+.social svg{width:22px;height:22px;flex:none}
+.social span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.contact-sec .social a{border-color:var(--ground-3);color:var(--ink);background:var(--ground)}
+.contact-sec .social a:hover,.contact-sec .social a:focus-visible{background:var(--accent);color:#fff;border-color:var(--accent)}
+.contact-sec .social-row{margin-top:8px;display:grid;gap:10px}
+.contact-sec .social-row .k{font-size:var(--step-small);color:var(--ink-2)}
+footer .foot-top{grid-template-columns:1.6fr 1fr 1fr 1fr}
+footer .foot-brand{grid-column:span 1}
+@media (max-width:760px){footer .foot-top{grid-template-columns:1fr 1fr}footer .foot-brand{grid-column:span 2}.social-col{grid-column:span 2}}
+/* Ablauf: klare, helle Prozess-Schritte */
+.process{padding-block:var(--m-lg);background:var(--ground-2);border-block:1px solid var(--ground-3)}
+.process .sec-head{max-width:62ch;margin-bottom:clamp(30px,5vw,54px)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--ground-3);border:1px solid var(--ground-3);border-radius:var(--m) var(--m) 2px 2px;overflow:hidden}
+.steps li{background:var(--ground);padding:28px 26px;display:flex;flex-direction:column}
+
+.steps .num{font-family:var(--font-display);font-weight:600;font-size:2.4rem;color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.steps h3{font-size:1.1rem;letter-spacing:-.02em;line-height:1.3;margin-top:22px}
+.steps p{color:var(--ink-2);font-size:.92rem;line-height:1.55;margin-top:12px}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.bran-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.bran-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:300px;border-radius:var(--m) var(--m) 2px 2px;overflow:hidden;padding:22px;text-decoration:none;color:#fff;isolation:isolate;transition:transform .25s,box-shadow .25s}
+.bran-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}
+.bran-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,12,20,.12) 0%,rgba(8,12,20,.5) 55%,rgba(8,12,20,.9) 100%)}
+.bran-card:hover{box-shadow:var(--shadow-l);transform:translateY(-3px)}
+.bran-card:hover>img{transform:scale(1.06)}
+.bran-card .n{font-family:var(--font-display);color:rgba(255,255,255,.8);font-weight:600;font-size:.85rem}
+.bran-card b{font-family:var(--font-display);font-size:1.22rem;letter-spacing:-.02em;margin-top:8px;color:#fff}
+.bran-card .more{margin-top:10px;font-size:.85rem;color:rgba(255,255,255,.92)}
+@media (max-width:860px){.bran-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.bran-grid{grid-template-columns:1fr}.bran-card{min-height:240px}}
+.band-img{position:relative;min-height:46svh;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.band-img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:-2}
+.band-img::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,28,56,.88) 0%,rgba(20,34,62,.5) 55%,rgba(232,121,43,.28) 100%)}
+[dir="rtl"] .band-img::after{background:linear-gradient(270deg,rgba(14,28,56,.88) 0%,rgba(20,34,62,.5) 55%,rgba(232,121,43,.28) 100%)}
+.band-img .wrap{padding-block:clamp(48px,8vw,92px)}
+.band-img h2{color:#fff;font-size:clamp(1.8rem,4vw,3.1rem);letter-spacing:-.025em;max-width:20ch}
+.band-img p{color:rgba(255,255,255,.85);font-size:1.08rem;line-height:1.55;margin-top:16px;max-width:46ch}
+.hrl{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(30px,5vw,50px)}
+.hrl .ph{border-radius:var(--m) var(--m) 2px 2px;overflow:hidden;aspect-ratio:4/3}
+.hrl .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hrl-points{display:grid;gap:0}
+.hrl-points .p{padding:20px 0;border-top:1px solid var(--ground-3)}
+.hrl-points .p:first-child{border-top:0;padding-top:0}
+.hrl-points b{font-family:var(--font-display);font-size:1.16rem;letter-spacing:-.02em;display:block}
+.hrl-points span{color:var(--ink-2);font-size:.96rem;line-height:1.5;margin-top:6px;display:block}
+.hrl-more{margin-top:clamp(26px,4vw,42px);color:var(--ink-2);font-size:1rem;padding-top:22px;border-top:1px solid var(--ground-3)}
+@media (max-width:860px){.hrl{grid-template-columns:1fr}}
+/* Branchen */
+.industries{padding-block:var(--m-lg);background:var(--ground-2)}
+.industries .sec-head{max-width:60ch;margin-bottom:36px}
+.ind{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ind a{display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;background:var(--ground);border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px;overflow:hidden;height:100%;transition:border-color .25s,box-shadow .25s,transform .25s}
+.ind a:hover{border-color:var(--accent);box-shadow:0 12px 32px -18px rgba(15,59,122,.35);transform:translateY(-2px)}
+.ind .ph{aspect-ratio:4/3;overflow:hidden;background:var(--ground-3)}
+.ind .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.ind a:hover .ph img{transform:scale(1.05)}
+.ind .tx{padding:18px 20px 22px;display:grid;gap:6px;align-content:start}
+.ind b{font-size:1.125rem;font-weight:600;letter-spacing:-.01em}
+.ind span{color:var(--ink-2);font-size:var(--step-small);line-height:1.5}
+.ind .more{margin-top:8px;color:var(--accent);font-weight:600;font-size:var(--step-small)}
+@media (max-width:900px){.ind{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.ind{grid-template-columns:1fr}}
+/* Karten, Kacheln, Akkordeon, Formular: klare Kanten statt Flächen */
+.proof li{border:1px solid var(--ground-3);background:var(--ground);border-radius:10px 10px 2px 2px}
+.proof li.head{border-color:var(--accent)}
+.proof b{font-size:clamp(1.35rem,2.2vw,1.9rem);overflow-wrap:anywhere}
+.proof li.head h2 span{font-size:inherit;color:inherit}
+@media (max-width:760px){.proof li{aspect-ratio:auto;min-height:150px}.proof b{font-size:1.25rem;overflow-wrap:normal;hyphens:auto}}
+.sym a{border-bottom:1px solid var(--ground-3)}
+.faq details{background:var(--ground);border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px}
+.faq details[open]{border-color:var(--accent)}
+.coupon{border:1px solid var(--ground-3)}
+.tbl table{border:1px solid var(--ground-3);border-radius:10px 10px 2px 2px;overflow:hidden}
+.folder{border:1px solid var(--ground-3)}
+.statement{background:var(--ground)}
+.film,.story{background:#0b1220;color:#f2f5f9}
+footer{background:#0b1220;color:#dfe6f0;border-top:4px solid var(--accent)}
+footer h3{color:#fff}
+footer .foot-top a,footer .foot-top p{color:#dfe6f0}
+footer .foot-top h3{color:#8e9bb0}
+footer .foot-mark{height:min(16svh,140px);opacity:.9}
+footer .foot-bottom{color:#aab5c5}
+footer .foot-bottom a,footer .brand{color:#fff}
+footer .foot-mark{color:#192538}
+.lf-light{display:none}.lf-dark{display:block}
+.totop{border:1px solid var(--ground-3)}
+
+/* Druck: nur Inhalt, keine Bewegung, keine dunklen Flächen */
+@media print{
+  header.top,.mbar,.totop,.film,.story,.band,.compare,.hero-bg,.hero .shape,.progress,.menu-btn,.langs,.foot-mark,.skip,canvas,video{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .hero{min-height:auto;background:#fff!important;color:#000!important}
+  .hero h1,.hero .lede{color:#000!important}
+  .reveal,.w,.kin,[data-count]{opacity:1!important;transform:none!important;clip-path:none!important}
+  .folder{position:static!important;min-height:auto;border:0}
+  .legal-view[hidden]{display:none}
+  a{color:#000;text-decoration:none}
+  footer{background:#fff!important;color:#000!important;border-top:1px solid #000}
+  footer .foot-top a,footer .foot-top p,footer .foot-top h3,footer .foot-bottom,footer .foot-bottom a{color:#000!important}
+  .points li,.ind a,.proof li,.faq details,.coupon{break-inside:avoid;border:1px solid #999}
+  .faq details{page-break-inside:avoid}
+  .faq details:not([open]) .body{display:block}
+  .faq details[open]{background:#fff!important;color:#000!important}
+  .faq details[open] .body{color:#000!important}
+}
+
+/* Spezialeffekte */
+.sparks{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:.95}
+.ticker{overflow:hidden;background:var(--ink);color:#fff;position:relative;z-index:1}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}.ticker::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.ticker ul{display:flex;margin:0;padding:0;list-style:none;width:max-content;animation:tick 38s linear infinite}
+.ticker li{display:inline-flex;align-items:center;gap:22px;padding:13px 22px 13px 0;font-family:"Grotesk v",var(--font-display);font-weight:600;font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#dfe6f1}
+.ticker li::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--warm);box-shadow:0 0 12px var(--warm)}
+.ticker:hover ul{animation-play-state:paused}
+[dir="rtl"] .ticker ul{animation-direction:reverse}
+[dir="rtl"] .ticker li{padding:13px 0 13px 22px}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker ul{animation:none;flex-wrap:wrap;width:auto}}
+.tilt{transform-style:preserve-3d;will-change:transform;position:relative}
+.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(246,162,74,.22),transparent 55%);z-index:3}
+.tilt:hover::after{opacity:1}
+.svc-card.tilt,.svc-core.tilt{overflow:hidden}
+.btn.mag{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .2s,box-shadow .2s;position:relative;overflow:hidden}
+.btn.mag::before{content:"";position:absolute;inset:0;background:radial-gradient(140px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 60%);opacity:0;transition:opacity .3s}
+.btn.mag:hover::before{opacity:1}
+.hero-copy{position:relative;z-index:2}
+
+/* Feinschliff */
+.hrl .ph img{filter:brightness(1.14) contrast(1.04) saturate(1.05)}
+.steps .num::after{content:"";display:block;width:30px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--warm),var(--warm-2));margin-top:10px;transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+[dir="rtl"] .steps .num::after{transform-origin:right}
+.steps.in li:nth-child(1) .num::after{transform:scaleX(1);transition-delay:.1s}.steps.in li:nth-child(2) .num::after{transform:scaleX(1);transition-delay:.3s}.steps.in li:nth-child(3) .num::after{transform:scaleX(1);transition-delay:.5s}.steps.in li:nth-child(4) .num::after{transform:scaleX(1);transition-delay:.7s}
+.steps li{position:relative;transition:background .3s}
+.steps li:hover{background:color-mix(in srgb,var(--warm) 5%,var(--ground))}
+input[type="file"]{display:block;width:100%;padding:10px;border:1.5px dashed color-mix(in srgb,var(--accent) 35%,var(--ground-3));border-radius:10px;background:var(--ground-2);color:var(--ink-2);font-size:.9rem;cursor:pointer;transition:border-color .25s,background .25s}
+input[type="file"]:hover{border-color:var(--warm);background:color-mix(in srgb,var(--warm) 6%,var(--ground-2))}
+input[type="file"]::file-selector-button{appearance:none;border:0;background:var(--ink);color:#fff;font:600 .85rem/1 var(--font-body);padding:10px 16px;border-radius:8px;margin-inline-end:14px;cursor:pointer;transition:background .2s}
+input[type="file"]:hover::file-selector-button{background:var(--accent)}
+#f-submit{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:0;box-shadow:0 10px 30px -12px rgba(47,107,214,.7);transition:transform .25s,box-shadow .25s,filter .25s}
+#f-submit:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(232,121,43,.65);filter:saturate(1.1)}
+#f-submit::after{content:"→";margin-inline-start:10px;transition:transform .25s;display:inline-block}
+[dir="rtl"] #f-submit::after{content:"←"}
+#f-submit:hover::after{transform:translateX(4px)}
+[dir="rtl"] #f-submit:hover::after{transform:translateX(-4px)}
+
+/* Weltkarte */
+.map-sec{background:#0b1220;color:#fff;padding-block:clamp(56px,8vw,110px);position:relative;overflow:hidden}
+.map-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 70% 40%,rgba(95,212,255,.12),transparent 70%);pointer-events:none}
+.map-sec .sec-head h2{color:#fff}.map-sec .sec-head .lead{color:#b9c4d6}
+.map-wrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:28px;align-items:center;margin-top:30px}
+.map-stage{position:relative;min-width:0}
+.map-stage img{width:100%;height:auto;display:block;filter:drop-shadow(0 0 18px rgba(95,212,255,.25))}
+.pin{position:absolute;left:var(--x);top:var(--y);width:14px;height:14px;margin:-7px 0 0 -7px;pointer-events:none}
+.pin::before{content:"";position:absolute;inset:3px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(246,162,74,.9),0 0 14px rgba(246,162,74,1)}
+.pin::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid rgba(246,162,74,.8);animation:hsPulse 2.4s ease-out infinite;animation-delay:var(--d,0s)}
+.pin.home::before{background:var(--warm);box-shadow:0 0 0 3px rgba(255,255,255,.9),0 0 22px rgba(246,162,74,1)}
+.pin.home span{position:absolute;left:18px;top:50%;transform:translateY(-50%);white-space:nowrap;font:600 .72rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(6,16,31,.75);border:1px solid rgba(246,162,74,.6);padding:5px 8px;border-radius:4px}
+[dir="rtl"] .pin.home span{left:auto;right:18px}
+.map-list{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.map-list li{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(95,212,255,.3);background:rgba(10,22,44,.6);color:#dbe7f5;font-size:.86rem;font-weight:500;padding:8px 12px;border-radius:999px}
+.map-list li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--warm);box-shadow:0 0 8px var(--warm)}
+.map-list li.home{border-color:var(--warm);color:#fff;font-weight:600}
+.map-side h3{font-family:"Grotesk v",var(--font-display);font-size:clamp(1.3rem,2vw,1.7rem);letter-spacing:-.02em;margin:0 0 10px}
+.map-side p{color:#b9c4d6;line-height:1.6;margin:0}
+.map-side .note{font-size:.8rem;color:#7f93ad;margin-top:16px}
+@media (max-width:900px){.map-wrap{grid-template-columns:1fr}.pin.home span{display:none}}
+@media (prefers-reduced-motion:reduce){.pin::after{animation:none}}
+/* Erstbewertung */
+.check-sec{padding-block:clamp(40px,6vw,80px)}
+.check{display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:26px;align-items:center;padding:clamp(26px,4vw,44px);border-radius:var(--m) var(--m) 2px 2px;background:linear-gradient(120deg,color-mix(in srgb,var(--warm) 14%,var(--ground-2)),var(--ground-2) 60%);border:1px solid color-mix(in srgb,var(--warm) 30%,var(--ground-3));position:relative;overflow:hidden}
+.check::before{content:"";position:absolute;inset:auto -60px -80px auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(232,121,43,.25),transparent 65%);pointer-events:none}
+.check h2{font-size:clamp(1.5rem,2.8vw,2.2rem);letter-spacing:-.025em;margin:0 0 10px}
+.check p{color:var(--ink-2);margin:0;max-width:60ch;line-height:1.6}
+.check ol{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 0;padding:0;list-style:none;counter-reset:c}
+.check ol li{counter-increment:c;display:flex;align-items:center;gap:10px;font-size:.92rem;font-weight:500}
+.check ol li::before{content:counter(c,decimal-leading-zero);font-family:"Grotesk v",var(--font-display);font-weight:600;color:var(--warm);font-size:1.05rem}
+.check .btn.acc{white-space:nowrap}
+@media (max-width:760px){.check{grid-template-columns:1fr}}
+
+/* Holo-Explorer */
+.holo-stage{animation:holoGlow 5s ease-in-out infinite}
+@keyframes holoGlow{0%,100%{box-shadow:0 0 0 1px rgba(95,212,255,.18),0 0 34px -6px rgba(95,212,255,.45),0 30px 80px -30px rgba(0,0,0,.9),inset 0 0 120px rgba(5,15,35,.6)}50%{box-shadow:0 0 0 1px rgba(232,121,43,.22),0 0 34px -6px rgba(232,121,43,.4),0 30px 80px -30px rgba(0,0,0,.9),inset 0 0 120px rgba(5,15,35,.6)}}
+.holo-view::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 90% at 50% 50%,transparent 55%,rgba(95,212,255,.22) 100%);mix-blend-mode:screen}
+.hs .orbit{position:absolute;inset:-6px;border-radius:50%;opacity:0;background:conic-gradient(from 0deg,transparent 0 70%,rgba(246,162,74,.95) 85%,transparent 100%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));animation:orbit 1.6s linear infinite;transition:opacity .3s}
+.hs.is-on .orbit{opacity:1}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hud .tick{position:absolute;left:12px;right:12px;height:6px;background:repeating-linear-gradient(90deg,rgba(95,212,255,.55) 0 1px,transparent 1px 14px);opacity:.5}
+.hud .tick.t{top:50px}.hud .tick.b{bottom:50px}
+.hud .edge{position:absolute;top:50px;bottom:50px;width:6px;background:repeating-linear-gradient(0deg,rgba(95,212,255,.55) 0 1px,transparent 1px 14px);opacity:.5}
+.hud .edge.l{left:12px}.hud .edge.r{right:12px}
+.hud .read{top:66px}
+.holo-info::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#5fd4ff 40%,var(--warm) 60%,transparent);background-size:200% 100%;animation:sweep 3.2s linear infinite;opacity:.9}
+@keyframes sweep{to{background-position:-200% 0}}
+.holo-tag{color:#7fe2ff}
+.hs .dot{box-shadow:0 0 0 3px rgba(95,212,255,.65),0 0 22px rgba(95,212,255,1),0 0 44px rgba(95,212,255,.5)}
+@media (prefers-reduced-motion:reduce){.holo-stage,.hs .orbit,.holo-info::after{animation:none}}
+
+.holo-sec{background:#0b1220;color:#fff;padding-block:clamp(56px,8vw,110px);position:relative;overflow:hidden}
+.holo-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%,rgba(47,107,214,.25),transparent 60%),radial-gradient(40% 40% at 10% 100%,rgba(232,121,43,.18),transparent 60%);pointer-events:none}
+.holo-sec .sec-head h2,.holo-sec .sec-head p{color:#fff}.holo-sec .sec-head .lead{color:#b9c4d6}
+.holo{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,1fr);gap:22px;position:relative;margin-top:36px}
+.holo-modes{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.holo-modes button{appearance:none;border:1px solid rgba(95,212,255,.35);background:rgba(10,22,44,.6);color:#cfe8ff;font:600 .84rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;padding:12px 18px;border-radius:999px;cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s,color .25s;display:inline-flex;align-items:center;gap:10px}
+.holo-modes button::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(95,212,255,.5);box-shadow:0 0 10px rgba(95,212,255,.6)}
+.holo-modes button[aria-pressed="true"]{background:rgba(232,121,43,.16);border-color:var(--warm);color:#fff;box-shadow:0 0 0 1px rgba(232,121,43,.35),0 0 26px rgba(232,121,43,.35)}
+.holo-modes button[aria-pressed="true"]::before{background:var(--warm);box-shadow:0 0 12px var(--warm)}
+.holo-modes button:focus-visible{outline:2px solid #5fd4ff;outline-offset:3px}
+.holo-stage{position:relative;aspect-ratio:16/10;border-radius:var(--m) var(--m) 2px 2px;overflow:hidden;background:#06101f;border:1px solid rgba(95,212,255,.22);box-shadow:0 0 0 1px rgba(95,212,255,.08),0 30px 80px -30px rgba(0,0,0,.9),inset 0 0 120px rgba(5,15,35,.6);min-width:0}
+.holo-view{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .4s}
+.holo-view.is-on{opacity:1;visibility:visible;animation:holoIn .7s cubic-bezier(.2,.7,.2,1)}
+@keyframes holoIn{0%{clip-path:inset(0 0 100% 0);filter:brightness(2.4) saturate(.2)}55%{clip-path:inset(0 0 0% 0)}70%{filter:brightness(1.4)}75%{filter:brightness(.9)}100%{filter:none}}
+.holo-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+.holo-view::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,31,.45),transparent 30%,transparent 70%,rgba(6,16,31,.65));pointer-events:none}
+.hs{position:absolute;left:var(--x);top:var(--y);width:44px;height:44px;margin:-22px 0 0 -22px;border:0;background:transparent;padding:0;cursor:pointer;z-index:3;border-radius:50%}
+.hs .dot{position:absolute;inset:14px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(95,212,255,.55),0 0 18px rgba(95,212,255,.9);transition:background .25s,box-shadow .25s,transform .25s}
+.hs .ring{position:absolute;inset:4px;border-radius:50%;border:1.5px solid rgba(95,212,255,.8);animation:hsPulse 2.2s ease-out infinite}
+.hs .ring:nth-child(2){animation-delay:.7s}
+@keyframes hsPulse{0%{transform:scale(.55);opacity:1}100%{transform:scale(1.7);opacity:0}}
+.hs .lbl{position:absolute;left:calc(100% + 6px);top:50%;transform:translateY(-50%);white-space:nowrap;font:600 .74rem/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:#dff3ff;background:rgba(6,16,31,.72);border:1px solid rgba(95,212,255,.35);padding:6px 9px;border-radius:4px;backdrop-filter:blur(6px);opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
+[dir="rtl"] .hs .lbl{left:auto;right:calc(100% + 6px)}
+.hs:hover .lbl,.hs:focus-visible .lbl,.hs.is-on .lbl{opacity:1}
+.hs.is-on .dot{background:var(--warm);box-shadow:0 0 0 3px rgba(232,121,43,.5),0 0 22px rgba(232,121,43,1);transform:scale(1.15)}
+.hs.is-on .ring{border-color:rgba(232,121,43,.9)}
+.hs:focus-visible{outline:2px solid #5fd4ff;outline-offset:2px}
+.hud{position:absolute;inset:0;pointer-events:none;z-index:2}
+.hud .c{position:absolute;width:26px;height:26px;border:2px solid #5fd4ff;opacity:.9;filter:drop-shadow(0 0 6px rgba(95,212,255,.8))}
+.hud .tl{left:12px;top:12px;border-right:0;border-bottom:0}.hud .tr{right:12px;top:12px;border-left:0;border-bottom:0}.hud .bl{left:12px;bottom:12px;border-right:0;border-top:0}.hud .br{right:12px;bottom:12px;border-left:0;border-top:0}
+.hud .grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(95,212,255,.07) 0 1px,transparent 1px 60px),repeating-linear-gradient(0deg,rgba(95,212,255,.07) 0 1px,transparent 1px 60px);mask-image:radial-gradient(80% 80% at 50% 50%,#000 40%,transparent 100%)}
+.hud .scan{position:absolute;left:0;right:0;height:18%;top:-20%;background:linear-gradient(180deg,transparent,rgba(95,212,255,.22) 60%,rgba(140,230,255,.7) 98%,transparent);animation:scan 3s linear infinite;mix-blend-mode:screen}
+@keyframes scan{to{top:110%}}
+.hud .lines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px);mix-blend-mode:overlay}
+.hud .read{position:absolute;left:18px;top:48px;font:500 .68rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:rgba(190,236,255,.85);text-shadow:0 0 8px rgba(95,212,255,.6)}
+[dir="rtl"] .hud .read{left:auto;right:18px;text-align:right}
+.hud .read b{color:#fff;font-weight:600}
+.hud .cross{position:absolute;left:var(--cx,50%);top:var(--cy,50%);width:0;height:0;opacity:0;transition:opacity .3s}
+.holo-stage:hover .hud .cross{opacity:.9}
+.hud .cross::before,.hud .cross::after{content:"";position:absolute;background:rgba(95,212,255,.45)}
+.hud .cross::before{left:-9999px;right:-9999px;top:0;height:1px}.hud .cross::after{top:-9999px;bottom:-9999px;left:0;width:1px}
+.holo-info{position:relative;border-radius:var(--m) var(--m) 2px 2px;padding:26px 26px 28px;background:linear-gradient(160deg,rgba(14,30,58,.85),rgba(8,18,36,.9));border:1px solid rgba(95,212,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 60px -30px rgba(0,0,0,.8);backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.holo-info::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,#5fd4ff,var(--warm));border-radius:3px}
+[dir="rtl"] .holo-info::before{left:auto;right:0}
+.holo-tag{display:inline-flex;align-items:center;gap:10px;font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;color:#9fdcff;text-transform:uppercase}
+.holo-tag::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(95,212,255,.6),transparent)}
+.holo-info h3{font-family:"Grotesk v",var(--font-display);font-size:clamp(1.35rem,2.2vw,1.8rem);letter-spacing:-.02em;color:#fff;margin:0;min-height:2.2em}
+.holo-info p{color:#c6d2e3;line-height:1.6;margin:0;font-size:1rem;min-height:5.5em}
+.holo-info.is-typing h3::after{content:"▍";color:var(--warm);animation:blink .8s steps(1) infinite;margin-left:3px}
+@keyframes blink{50%{opacity:0}}
+.holo-info .val{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(95,212,255,.18)}
+.holo-info .val div{font:600 .72rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:#8fb2cf;text-transform:uppercase}
+.holo-info .val b{display:block;text-transform:none;letter-spacing:-.01em;font-family:"Grotesk v",var(--font-display);font-size:1.25rem;letter-spacing:-.01em;color:#fff;margin-top:2px}
+.holo-info .hint{font-size:.82rem;color:#8fa4bf;display:flex;align-items:center;gap:8px}
+.holo-info .hint::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--warm);box-shadow:0 0 10px var(--warm);animation:blink 1.6s steps(1) infinite}
+.holo.flash .holo-stage{animation:glitch .35s steps(2)}
+@keyframes glitch{0%{filter:hue-rotate(40deg) brightness(1.6)}50%{transform:translateX(2px);filter:brightness(.8)}100%{filter:none;transform:none}}
+@media (max-width:900px){.holo{grid-template-columns:1fr}.holo-stage{aspect-ratio:4/3}.hs{width:40px;height:40px;margin:-20px 0 0 -20px}.hs .lbl{display:none}.hud .read{display:none}.holo-info p{min-height:0}.holo-info h3{min-height:0}}
+@media (prefers-reduced-motion:reduce){.hs .ring,.hud .scan,.holo-view.is-on,.holo.flash .holo-stage,.holo-info .hint::before{animation:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="top">
+  <span class="progress" id="progress" aria-hidden="true"></span>
+  <div class="wrap">
+    <details class="lang-dd" id="lang-dd"><summary aria-label="Scegli la lingua: Italiano"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span class="lang-cur" lang="it">Italiano</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul aria-label="Scegli la lingua"><li><a href="../index.html" lang="de" hreflang="de">Deutsch</a></li><li><a href="../en/index.html" lang="en" hreflang="en">English</a></li><li><a href="../ru/index.html" lang="ru" hreflang="ru">Русский</a></li><li><a href="../ar/index.html" lang="ar" hreflang="ar">العربية</a></li><li><a href="../it/index.html" lang="it" hreflang="it" aria-current="page">Italiano</a></li><li><a href="../es/index.html" lang="es" hreflang="es">Español</a></li><li><a href="../fr/index.html" lang="fr" hreflang="fr">Français</a></li></ul></details>
+    <a class="brand" href="#start" id="brand-link" aria-label="RackRail Solution, all'inizio">
+      <img class="logo-mark lm-dark" src="../mark-light.png" alt="" width="40" height="40" decoding="async"><img class="logo-mark lm-light" src="../mark.png" alt="" width="40" height="40" decoding="async">
+      <span>RackRail Solution</span>
+    </a>
+    <nav class="main" id="main-nav" aria-label="Navigazione principale">
+      <ul>
+        <li><a href="#leistungen" data-nav>Servizi</a></li>
+        <li><a href="#einsatz" data-nav>Sul campo</a></li>
+        <li><a href="#story" data-nav>Come lavoriamo</a></li>
+        <li><a href="#faq" data-nav>FAQ</a></li>
+        <li><a href="#kontakt" data-nav>Contatti</a></li>
+      </ul>
+    <div class="nav-foot"><a class="btn acc" href="#kontakt" data-nav>Invia una richiesta</a><a class="nav-tel" href="mailto:info@rackrail-solution.de" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@rackrail-solution.de</a></div></nav>
+    <div class="head-right">
+      <a class="head-tel" href="mailto:info@rackrail-solution.de" dir="ltr">info@rackrail-solution.de</a>
+      <a class="btn acc head-cta" href="#kontakt">Richiesta</a>
+      <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<div id="view-home">
+
+<section class="hero" id="start" aria-labelledby="hero-h">
+  <picture class="hero-bg" aria-hidden="true"><source media="(max-width:900px)" srcset="../img/einsatz-hero-s.webp"><img src="../img/einsatz-hero.webp" srcset="../img/einsatz-hero-s.webp 960w, ../img/einsatz-hero.webp 1536w" sizes="100vw" alt="" width="1536" height="864" fetchpriority="high" decoding="async" data-parallax></picture>
+  <canvas class="sparks" aria-hidden="true"></canvas>
+  <div class="shape" aria-hidden="true">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" d="M8 100H92V94L60 86V32H75A6 6 0 0 0 81 26V10A10 10 0 0 0 71 0H29A10 10 0 0 0 19 10V26A6 6 0 0 0 25 32H40V86L8 94Z"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1 id="hero-h">Rotaie che tornano a scorrere lisce.</h1>
+      <p class="lede">RackRail Solution esegue la molatura e la misurazione delle rotaie di scorrimento dei trasloelevatori nei magazzini verticali. Molare significa risanare: la superficie di rotolamento viene riprofilata durante il normale esercizio, nella finestra di tempo che il vostro magazzino consente.</p>
+      <div class="cta">
+        <a class="btn acc mag" href="#kontakt">Invia una richiesta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="link" href="#leistungen">Scopri i nostri servizi</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="kpi" aria-label="Dati chiave"><div class="wrap"><ul><li><b>120 m</b><span>Resa di molatura al giorno</span></li><li><b>25+ anni</b><span>di esperienza sulle rotaie</span></li><li><b>12 paesi</b><span>Progetti nel mondo</span></li><li><b>7 giorni</b><span>Lavoriamo anche nel weekend</span></li></ul></div></div>
+<div class="ticker" aria-hidden="true"><ul><li>Molatura delle rotaie</li><li>Magazzini verticali</li><li>Trasloelevatori</li><li>Fino a 120 m al giorno</li><li>Riprofilatura</li><li>Durante l'esercizio</li><li>Molatrice semiautomatica</li><li>12 paesi</li><li>Molatura delle rotaie</li><li>Magazzini verticali</li><li>Trasloelevatori</li><li>Fino a 120 m al giorno</li><li>Riprofilatura</li><li>Durante l'esercizio</li><li>Molatrice semiautomatica</li><li>12 paesi</li></ul></div>
+
+
+<section class="process" id="story" aria-labelledby="p-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Procedura</span><h2 id="p-h">Quattro passi. Nessun fermo.</h2></div>
+    <ol class="steps"><li class="reveal"><span class="num">01</span><h3>Richiesta e colloquio</h3><p>Ci descrivete l'impianto e il problema. Chiariamo profilo della rotaia, accessi e finestra di tempo, weekend compresi.</p></li><li class="reveal"><span class="num">02</span><h3>Analisi specifica dell'impianto</h3><p>Analizziamo il vostro impianto: trasloelevatore, ruote, profilo della rotaia, giunti e superficie di contatto. Da qui dipende cosa viene molato.</p></li><li class="reveal"><span class="num">03</span><h3>Lavori durante l'esercizio</h3><p>Riprofilatura con la molatrice semiautomatica, fino a 120 m al giorno. Corsia per corsia, mentre il resto dell'impianto continua a funzionare.</p></li><li class="reveal"><span class="num">04</span><h3>Collaudo e raccomandazione</h3><p>Collaudo congiunto in corsia e una raccomandazione su quando ha senso il prossimo intervento.</p></li></ol>
+  </div>
+</section>
+
+<section class="svc" id="leistungen" aria-labelledby="l-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Servizi</span><h2 id="l-h">La molatura è il nostro cuore.</h2><p class="lead" style="margin-top:18px">La superficie di rotolamento decide scorrevolezza, usura e disponibilità. Noi la riportiamo in forma.</p></div>
+    <div class="svc-core reveal tilt">
+      <div><span class="badge">Servizio principale</span><div class="num">01</div><h3>Molatura delle rotaie</h3><p>Molare significa risanare. La riprofilatura è la regola: ondulazioni, bave laterali e giunti abbassati vengono rimossi prima che causino rumore, vibrazioni e fermi. Molatrice semiautomatica di nostra progettazione, asportazione da 0,4 a 0,8 mm per passata, fino a 120 m al giorno.</p>
+        <ul class="pills"><li><span class="dot"></span>Ondulazioni e bave</li><li><span class="dot"></span>Giunti abbassati</li><li><span class="dot"></span>Molatrice semiautomatica</li><li><span class="dot"></span>Da 0,4 a 0,8 mm per passata</li><li><span class="dot"></span>Fino a 120 m al giorno</li></ul>
+      </div>
+      <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 560w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Molatura di una rotaia d'acciaio con scintille" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="svc-grid"><div class="svc-card reveal tilt"><div class="num">02</div><h3>Analisi specifica dell'impianto</h3><p>Prima dell'intervento esaminiamo il vostro impianto: trasloelevatore, ruote, profilo della rotaia, giunti e superficie di contatto sull'intera larghezza del fungo. Così è chiaro cosa va molato e cosa no.</p></div><div class="svc-card reveal tilt"><div class="num">03</div><h3>Misurazione</h3><p>Altezza e allineamento della rotaia lungo tutta la corsia. Misurabile a 0,1 mm: anche uno scostamento di 1 mm su 80 m diventa visibile.</p></div><div class="svc-card reveal tilt"><div class="num">04</div><h3>Supervisione di cantiere</h3><p>Analisi dello stato, assistenza in loco e collaudo per nuove costruzioni e ristrutturazioni, coordinamento di cantiere compreso.</p></div><div class="svc-card reveal tilt"><div class="num">05</div><h3>Formazione</h3><p>Formazione pratica sulla molatura e sulla manutenzione dei sistemi a rotaia, consulenza per magazzini verticali, produzione e impianti a gru.</p></div></div>
+    <a class="dl" href="../downloads/RackRail-Solution-Servizi.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Panoramica dei servizi in PDF<small>1 pagina, 102 KB</small></span></a>
+  </div>
+</section>
+
+
+<section class="holo-sec" id="einsatz" aria-labelledby="holo-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Interattivo</span><h2 id="holo-h">Guardate come lavoriamo.</h2><p class="lead">Scegliete una vista, toccate i punti. Così lavoriamo nella vostra corsia.</p></div>
+    <div class="holo reveal">
+      <div class="holo-modes"><button type="button" data-mode="schleifen" aria-pressed="true">Molatura</button><button type="button" data-mode="vermessen" aria-pressed="false">Misurazione</button></div>
+      <div class="holo-stage"><div class="holo-view is-on" data-view="schleifen"><img src="../img/einsatz-hero.webp" alt="Intervento di molatura in un magazzino verticale" loading="lazy" decoding="async" width="900" height="600"><button type="button" class="hs" style="--x:50%;--y:55%" aria-label="Molatrice" aria-pressed="false" data-tag="01 / 05 · Molatrice" data-title="Molatrice semiautomatica di nostra progettazione" data-text="Scorre guidata sulla rotaia con avanzamento controllato. La riprofilatura è la regola: asportazione da 0,4 a 0,8 mm per passata, fino a 120 m al giorno." data-v1="Da 0,4 a 0,8 mm per passata" data-v2="Fino a 120 m al giorno"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Molatrice</span></button><button type="button" class="hs" style="--x:40%;--y:90%" aria-label="Scintille" aria-pressed="false" data-tag="02 / 05 · Scintille" data-title="Scintille sotto controllo" data-text="Le scintille di molatura vengono raffreddate e la polvere di abrasione viene legata. Massima riduzione della polvere, la merce stoccata resta intatta." data-v1="" data-v2="Nessuno sgombero"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Scintille</span></button><button type="button" class="hs" style="--x:46%;--y:22%" aria-label="Raffreddamento" aria-pressed="false" data-tag="03 / 05 · Raffreddamento" data-title="Serbatoio d'acqua per raffreddamento e abbattimento della polvere" data-text="La superficie di rotolamento viene raffreddata durante la molatura e la polvere viene legata. Nessuna deformazione termica, niente polvere su scaffali o merce." data-v1="20 l" data-v2="Niente polvere"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Raffreddamento</span></button><button type="button" class="hs" style="--x:85%;--y:74%" aria-label="Rotaia" aria-pressed="false" data-tag="04 / 05 · Rotaia" data-title="La superficie su cui scorre tutto" data-text="Qui si decidono la scorrevolezza e l'usura del trasloelevatore. Dopo la molatura: superficie di rotolamento riprofilata, giunti puliti, marcia silenziosa." data-v1="Profili da A65 ad A150" data-v2="Tutti i costruttori"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Rotaia</span></button><button type="button" class="hs" style="--x:68%;--y:40%" aria-label="Team" aria-pressed="false" data-tag="05 / 05 · Team" data-title="Team ridotto, nessuna squadra numerosa" data-text="Un piccolo team affiatato lavora la corsia mentre il resto del magazzino continua a funzionare. Coordinato direttamente con il vostro capoturno." data-v1="25+ anni" data-v2="Durante l'esercizio"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Team</span></button></div><div class="holo-view" data-view="vermessen"><img src="../img/gal-schiene.webp" alt="Misurazione della superficie di rotolamento" loading="lazy" decoding="async" width="900" height="600"><button type="button" class="hs" style="--x:50%;--y:50%" aria-label="Superficie di rotolamento" aria-pressed="false" data-tag="01 / 03 · Superficie di rotolamento" data-title="Altezza e allineamento lungo tutta la corsia" data-text="Misuriamo altezza e allineamento della rotaia per l'intera lunghezza della corsia. Il risultato mostra esattamente dove serve intervenire." data-v1="Misurabile a 0,1 mm" data-v2="Tutta la corsia"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Superficie di rotolamento</span></button><button type="button" class="hs" style="--x:30%;--y:70%" aria-label="Giunto" aria-pressed="false" data-tag="02 / 03 · Giunto" data-title="Ogni giunto singolarmente" data-text="Giunti abbassati o disallineati sono la causa più frequente di urti, vibrazioni e rumore. Ogni giunto viene rilevato e valutato singolarmente." data-v1="Per giunto" data-v2="Evitare vibrazioni"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Giunto</span></button><button type="button" class="hs" style="--x:70%;--y:30%" aria-label="Allineamento" aria-pressed="false" data-tag="03 / 03 · Allineamento" data-title="Misurare l'allineamento" data-text="La posizione laterale della rotaia viene rilevata lungo la corsia. Anche uno scostamento di 1 mm su 80 m diventa visibile." data-v1="1 mm su 80 m" data-v2="Tutta la corsia"><span class="ring"></span><span class="ring"></span><span class="orbit"></span><span class="dot"></span><span class="lbl" aria-hidden="true">Allineamento</span></button></div><div class="hud" aria-hidden="true"><div class="grid"></div><div class="lines"></div><div class="scan"></div><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><div class="tick t"></div><div class="tick b"></div><div class="edge l"></div><div class="edge r"></div><div class="read">RRS · LIVE VIEW<br><b>0.1 mm</b> · SCAN 100%<br>GASSE 07 · OK</div><div class="cross"></div></div></div>
+      <aside class="holo-info" aria-live="polite"><span class="holo-tag"></span><h3></h3><p></p><div class="val"><div>Valore chiave<b class="v1"></b></div><div>Sul campo<b class="v2"></b></div></div><span class="hint">Toccate un punto per i dettagli</span></aside>
+    </div>
+  </div>
+</section>
+<section class="industries" id="branchen" aria-labelledby="b-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Focus</span><h2 id="b-h">Di casa nel magazzino verticale.</h2><p class="lead" style="margin-top:18px">La nostra specialità sono le rotaie di scorrimento dei trasloelevatori nei magazzini verticali. Corsie lunghe, carichi pesanti, nessun margine per i fermi.</p></div>
+    <div class="hrl reveal">
+      <div class="ph"><img src="../img/branche-hochregal.webp" srcset="../img/branche-hochregal-s.webp 440w, ../img/branche-hochregal.webp 800w" sizes="(max-width:860px) 92vw, 48vw" width="800" height="1067" alt="Rotaia di scorrimento di un trasloelevatore in una corsia di magazzino verticale" loading="lazy" decoding="async" data-parallax></div>
+      <div class="hrl-points"><div class="p"><b>Trasloelevatori</b><span>Rotaie di scorrimento dei trasloelevatori, rotaia superiore e inferiore.</span></div><div class="p"><b>Tutti i profili</b><span>Profili di rotaia da A65 ad A150, indipendentemente dal costruttore.</span></div><div class="p"><b>Durante l'esercizio</b><span>Corsia per corsia, mentre il resto del magazzino continua a funzionare.</span></div></div>
+    </div>
+    <p class="hrl-more reveal">Inoltre interveniamo anche sulle rotaie di scorrimento in produzione, impianti a gru e impiantistica.</p>
+  </div>
+</section>
+
+<section class="gal-sec" aria-label="Immagini">
+  <div class="wrap">
+    <div class="gal-grid reveal">
+      <figure class="tilt"><img src="../img/gal-schleifen.webp" srcset="../img/gal-schleifen-s.webp 500w, ../img/gal-schleifen.webp 900w" sizes="(max-width:760px) 100vw, 33vw" width="900" height="600" alt="Molatura di una rotaia di scorrimento in loco" loading="lazy" decoding="async"><figcaption>Molatura in azione</figcaption></figure>
+      <figure class="tilt"><img src="../img/gasse-hoch.webp" srcset="../img/gasse-hoch-s.webp 450w, ../img/gasse-hoch.webp 900w" sizes="(max-width:760px) 50vw, 33vw" width="900" height="1200" alt="Corsia di un magazzino verticale" loading="lazy" decoding="async"><figcaption>La corsia in vista</figcaption></figure>
+      <figure class="tilt"><img src="../img/gal-schiene.webp" srcset="../img/gal-schiene-s.webp 500w, ../img/gal-schiene.webp 900w" sizes="(max-width:760px) 50vw, 33vw" width="900" height="600" alt="Primo piano di una superficie di rotolamento risanata" loading="lazy" decoding="async"><figcaption>Superficie di rotolamento nel dettaglio</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="map-sec" id="international" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Internazionale</span><h2 id="map-h">Da Leverkusen al mondo.</h2><p class="lead">I magazzini verticali sono ovunque. Noi andiamo dove c'è la rotaia.</p></div>
+    <div class="map-wrap">
+      <div class="map-stage reveal"><img src="../img/weltkarte.svg" alt="" width="1010" height="440" loading="lazy" decoding="async"><span class="pin home" style="--x:49.9%;--y:53.64%;--d:0.0s"><span>Leverkusen</span></span><span class="pin" style="--x:50.99%;--y:57.27%;--d:0.2s"></span><span class="pin" style="--x:49.31%;--y:57.73%;--d:0.4s"></span><span class="pin" style="--x:47.72%;--y:57.73%;--d:0.6s"></span><span class="pin" style="--x:48.32%;--y:54.09%;--d:0.8s"></span><span class="pin" style="--x:76.14%;--y:65.91%;--d:1.0s"></span><span class="pin" style="--x:66.34%;--y:71.82%;--d:1.2s"></span><span class="pin" style="--x:51.58%;--y:38.41%;--d:1.4s"></span><span class="pin" style="--x:49.6%;--y:48.41%;--d:1.6s"></span><span class="pin" style="--x:18.51%;--y:75.45%;--d:1.8s"></span><span class="pin" style="--x:61.19%;--y:75%;--d:2.0s"></span></div>
+      <div class="map-side reveal"><h3>Interventi realizzati, tra gli altri, in</h3><ul class="map-list"><li class=home>Germania</li><li>Austria</li><li>Svizzera</li><li>Francia</li><li>Belgio</li><li>Danimarca</li><li>Svezia</li><li>Cina</li><li>Pakistan</li><li>Messico</li><li>Qatar</li></ul><p style="margin-top:18px">Un team, una macchina, un furgone. Così siamo in Scandinavia in due giorni e oltreoceano entro una settimana, con dogana e briefing di sicurezza gestiti sul posto.</p><p class="note">Mappa schematica. Altri paesi su richiesta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="check-sec" aria-labelledby="check-h">
+  <div class="wrap">
+    <div class="check reveal">
+      <div><h2 id="check-h">Prima valutazione gratuita.</h2><p>Non siete sicuri che la vostra rotaia vada molata? Inviateci una foto o un breve video dal telefono della superficie di rotolamento e la lunghezza della corsia. Entro un giorno lavorativo vi diciamo cosa serve e, indicativamente, quanto costa.</p><ol><li>Scattate una foto o un video</li><li>Inviatela tramite il modulo</li><li>Ricevete la valutazione</li></ol></div>
+      <a class="btn acc mag" href="#kontakt">Inviare una foto</a>
+    </div>
+  </div>
+</section>
+<section class="faq-sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow sec-eyebrow">FAQ</span><h2 id="faq-h">Cosa chiedono i clienti prima del primo intervento.</h2><p class="lead" style="margin-top:18px">Risposte in breve. Tutto il resto lo chiariamo a voce.</p></div>
+    <div class="faq reveal"><details name="faq"><summary>In quanto tempo potete essere sul posto?<span class="pm" aria-hidden="true"></span></summary><div class="body">Di norma entro 14 giorni. Lavoriamo anche nei weekend e durante le pause di produzione, così il vostro impianto resta fermo il meno possibile.</div></details><details name="faq"><summary>Il magazzino deve fermarsi per i lavori?<span class="pm" aria-hidden="true"></span></summary><div class="body">No. Moliamo corsia per corsia. La corsia chiusa è di norma di nuovo libera dopo un turno, mentre il resto del magazzino continua a funzionare.</div></details><details name="faq"><summary>Quanto dura la molatura di una corsia?<span class="pm" aria-hidden="true"></span></summary><div class="body">Sono possibili fino a 120 m al giorno, a seconda di stato, accessi e profilo. Dopo l'analisi dell'impianto vi diamo un programma preciso.</div></details><details name="faq"><summary>Come capisco che la rotaia va molata?<span class="pm" aria-hidden="true"></span></summary><div class="body">Al più tardi quando si sostituiscono le ruote e quando la superficie di contatto si estende su tutta la larghezza del fungo. Altri segnali sono il rumore di marcia crescente, le vibrazioni ai giunti e le ondulazioni visibili sulla superficie di rotolamento.</div></details><details name="faq"><summary>Saldate anche i giunti?<span class="pm" aria-hidden="true"></span></summary><div class="body">Sì. Giunti abbassati e rotture della rotaia vengono saldati nell'ambito dell'intervento, a seconda del profilo con MIG/MAG, TIG o elettrodo, e poi molati a filo del profilo.</div></details></div>
+  </div>
+</section>
+<section class="band-img" aria-label="Molatura"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 810w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Smerigliatrice angolare che sprigiona scintille lavorando l'acciaio" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Molare è lavoro di precisione.</h2><p>La superficie di rotolamento decide scorrevolezza, usura e durata della rotaia.</p></div></section>
+<section class="contact-sec" id="kontakt" aria-labelledby="k-h">
+  <div class="wrap">
+    <div class="intro reveal"><span class="eyebrow">Contatti</span><h2 id="k-h">Parliamo della vostra rotaia.</h2><p class="lead" style="margin-top:18px">Descrivete brevemente l'impianto e il problema. Di norma rispondiamo lo stesso giorno lavorativo.</p></div>
+    <div class="coupon reveal">
+      <div class="left">
+        <address class="addr">
+          <div class="row"><div><span class="k">Azienda</span><span class="v">RackRail Solution</span></div></div>
+          <div class="row"><div><span class="k">Indirizzo</span><span class="v">Heinrichstraße 9-23, 51373 Leverkusen, Germania</span></div></div>
+          <div class="row"><div><span class="k">E-mail</span><span class="v" id="c-mail">info@rackrail-solution.de</span></div><button class="copy" type="button" data-copy="c-mail">Copia</button></div>
+          <div class="row"><div><span class="k">Referente</span><span class="v">Robert Wangen, Amministratore</span></div></div>
+        </address>
+        <p class="note">Reperibili dal lunedì al venerdì, nei weekend durante i progetti in corso.</p>
+        <div class="social-row"><span class="k">Seguiteci</span>
+        <ul class="social">
+          <li><a href="https://www.instagram.com/rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="Instagram (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a></li>
+          <li><a href="https://www.facebook.com/rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="Facebook (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4V14h2.8v8h3.3z"/></svg><span>Facebook</span></a></li>
+          <li><a href="https://www.linkedin.com/company/rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.4 9.5H3.2V21h3.2V9.5zM4.8 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM21 14c0-3.4-1.8-4.8-4.2-4.8-1.9 0-2.8 1-3.3 1.8V9.5H10.3c.1.9 0 11.5 0 11.5h3.2v-6.4c0-.3 0-.7.1-.9.3-.7.8-1.4 1.8-1.4 1.3 0 1.8 1 1.8 2.4V21H21v-7z"/></svg><span>LinkedIn</span></a></li>
+          <li><a href="https://www.tiktok.com/@rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="TikTok (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.3 1.6 3.7 3.8 3.9v3.1c-1.4.1-2.7-.3-3.8-1v6.2c0 3.1-2.5 5.6-5.6 5.6S5.3 18.3 5.3 15.2s2.5-5.6 5.6-5.6c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg><span>TikTok</span></a></li>
+        </ul>
+        </div>
+      </div>
+      <form id="anfrage" method="post" action="../kontakt.php" enctype="multipart/form-data" novalidate>
+        <div class="f2">
+          <label>Nome<input type="text" id="f-name" name="name" autocomplete="name" required></label>
+          <label>Azienda<input type="text" id="f-firma" name="firma" autocomplete="organization"></label>
+        </div>
+        <div class="f2">
+          <label>E-mail<input type="email" id="f-mail" name="email" autocomplete="email" required></label>
+          <label>Telefono<input type="tel" id="f-tel" name="telefon" autocomplete="tel"></label>
+        </div>
+        <label>Tipo di impianto
+          <select id="f-typ" name="anlage">
+            <option>Magazzino verticale / trasloelevatore</option>
+            <option>Impianto a gru / via di corsa</option>
+            <option>Impianto di produzione</option>
+            <option>Candidatura come montatore</option>
+            <option>Altro</option>
+          </select>
+        </label>
+        <label>Cosa osservate?<textarea id="f-text" name="nachricht" placeholder="es. rumore al giunto nella corsia 4, errori di posizionamento da due settimane, lunghezza rotaia circa 80 m" required></textarea></label>
+        <label>Foto o disegni <span class="file-hint">(facoltativo, JPG, PNG o PDF, fino a 10 MB)</span><input type="file" id="f-file" name="anhang[]" accept=".jpg,.jpeg,.png,.pdf" multiple></label>
+        <div class="hp" aria-hidden="true"><label>Lasciare vuoto<input type="text" id="f-web" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" id="f-t0" name="t0" value="0">
+        <input type="hidden" name="lang" value="it">
+        <label class="consent"><input type="checkbox" id="f-consent" name="einwilligung" required><span>Ho letto l'<a href="#datenschutz">informativa sulla privacy</a>. I miei dati vengono utilizzati esclusivamente per evadere questa richiesta e non vengono trasmessi a terzi.</span></label>
+        <div><button class="btn" type="submit" id="f-submit">Invia richiesta</button></div>
+        <div id="f-msg" class="msg" hidden role="status" aria-live="polite"></div>
+        <p class="note">Niente cookie, niente tracciamento. Il modulo trasmette solo ciò che inserite.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</div><!-- /view-home -->
+
+<section id="view-impressum" class="legal-view" hidden>
+  <div class="wrap legal">
+    <p class="crumb"><a href="#start">Home</a> / Note legali</p>
+    <h2>Note legali (Impressum)</h2>
+    <p>Informazioni obbligatorie ai sensi del § 5 della legge tedesca sui servizi digitali (DDG). Fa fede la versione tedesca.</p>
+    <h3>Titolare del sito</h3>
+    <p>RRS Rack Rail Solutions GmbH<br>Marchio: RackRail Solution<br>Heinrichstraße 9-23<br>51373 Leverkusen<br>Germania</p>
+    <h3>Rappresentata da</h3>
+    <p>l'amministratore Robert Wangen</p>
+    <h3>Contatti</h3>
+    <p>E-mail: info@rackrail-solution.de</p>
+    <h3>Iscrizione al registro</h3>
+    <p>Tribunale del registro: Amtsgericht Köln (Tribunale di Colonia)<br>Numero di registro: HRB 129691<br>Sede legale: Leverkusen<br>Capitale sociale: 25.000,00 EUR</p>
+    <h3>Partita IVA</h3>
+    <p>ai sensi del § 27a della legge tedesca sull'IVA (UStG): <span class="todo">[inserire la partita IVA non appena rilasciata dal Bundeszentralamt für Steuern]</span></p>
+    <h3>Responsabile dei contenuti ai sensi del § 18 cpv. 2 MStV</h3>
+    <p>Robert Wangen, indirizzo come sopra</p>
+    <h3>Risoluzione delle controversie</h3>
+    <p>Non siamo disposti né obbligati a partecipare a procedure di risoluzione delle controversie davanti a un organismo di conciliazione per i consumatori. I nostri servizi si rivolgono esclusivamente alle imprese.</p>
+    <h3>Responsabilità per contenuti e link</h3>
+    <p>In qualità di fornitore di servizi siamo responsabili dei contenuti propri di queste pagine secondo le leggi generali. Questo sito non contiene link a siti di terzi. Qualora in futuro vengano aggiunti link, dei relativi contenuti risponde il rispettivo gestore.</p>
+    <h3>Diritto d'autore</h3>
+    <p>I contenuti e le opere pubblicati su questo sito sono soggetti al diritto d'autore tedesco. Riproduzione, elaborazione e diffusione oltre i limiti del diritto d'autore richiedono il consenso scritto del titolare dei diritti.</p>
+    <p>Base cartografica della mappa del mondo: svg-maps/world, licenza CC BY 4.0, resa schematicamente come griglia di punti. Foto: scatti propri e immagini royalty-free di Pexels.</p>
+  </div>
+</section>
+
+<section id="view-datenschutz" class="legal-view" hidden>
+  <div class="wrap legal">
+    <p class="crumb"><a href="#start">Home</a> / Privacy</p>
+    <h2>Informativa sulla privacy</h2>
+    <p>Versione: novembre 2026. Fa fede la versione tedesca.</p>
+
+    <h3>1. Titolare del trattamento</h3>
+    <p>RRS Rack Rail Solutions GmbH (RackRail Solution)<br>rappresentata dall'amministratore Robert Wangen<br>Heinrichstraße 9-23, 51373 Leverkusen, Germania<br>E-mail: info@rackrail-solution.de</p>
+    <p>Non è stato nominato un responsabile della protezione dei dati, poiché non ricorrono i presupposti di legge.</p>
+
+    <h3>2. In sintesi: cosa questo sito non fa</h3>
+    <ul>
+      <li>Nessun cookie, né tecnici né di marketing. Per questo non c'è alcun banner dei cookie.</li>
+      <li>Nessun servizio di analisi o tracciamento (niente Google Analytics, Matomo o pixel).</li>
+      <li>Nessun font, script, mappa o video caricato da server esterni. Tutti i contenuti vengono forniti dal nostro server; nessun dato viene trasmesso a fornitori terzi o a paesi terzi.</li>
+      <li>Nessun accesso ai dispositivi finali ai sensi del § 25 TDDDG oltre quanto strettamente necessario per visualizzare la pagina.</li>
+    </ul>
+
+    <h3>3. File di log del server</h3>
+    <p>Quando visitate il sito, il server web elabora automaticamente i seguenti dati: indirizzo IP (abbreviato), data e ora, pagina richiesta, volume di dati trasferito, tipo di browser e sistema operativo, pagina di provenienza. La base giuridica è l'art. 6 par. 1 lett. f RGPD. Il nostro legittimo interesse consiste nel funzionamento sicuro e senza interruzioni del sito e nella difesa da attacchi. I file di log vengono cancellati al più tardi dopo 14 giorni, salvo siano necessari per chiarire un incidente di sicurezza.</p>
+    <p>Hosting provider: <span class="todo">[inserire hoster, sede, contratto di responsabile del trattamento ai sensi dell'art. 28 RGPD]</span></p>
+
+    <h3>4. Modulo di contatto e contatto via e-mail o telefono</h3>
+    <p>Se ci contattate tramite il modulo, per e-mail o per telefono, trattiamo i dati da voi forniti (nome, azienda, indirizzo e-mail, numero di telefono, tipo di impianto, messaggio, file allegati volontariamente) esclusivamente per gestire la vostra richiesta ed eventuali domande successive. I dati del modulo ci vengono trasmessi via e-mail e non vengono memorizzati sul server web.</p>
+    <p>La base giuridica è l'art. 6 par. 1 lett. b RGPD (misure precontrattuali o esecuzione di un contratto) oppure l'art. 6 par. 1 lett. f RGPD (legittimo interesse a rispondere alle richieste). Il modulo contiene un campo invisibile e un controllo temporale contro gli inserimenti automatici di spam, nonché un limite di richieste per connessione; a tal fine l'indirizzo IP viene elaborato brevemente in forma di hash, senza riferimento alla persona.</p>
+    <p>I dati vengono cancellati una volta evasa la richiesta e in assenza di obblighi legali di conservazione. Se ne deriva un ordine, si applicano i termini di conservazione commerciali e fiscali di 6 o 8 anni (§ 257 HGB, § 147 AO).</p>
+
+    <h3>5. Destinatari e trasferimenti</h3>
+    <p>I vostri dati non vengono venduti né trasmessi a fini pubblicitari. Gli unici destinatari sono il nostro hosting provider (responsabile del trattamento) e il nostro provider di posta elettronica. Non avviene alcun trasferimento verso paesi al di fuori dell'UE o del SEE.</p>
+
+    <h3>6. I vostri diritti</h3>
+    <ul>
+      <li>Accesso ai dati che conserviamo su di voi (art. 15 RGPD)</li>
+      <li>Rettifica dei dati inesatti (art. 16 RGPD)</li>
+      <li>Cancellazione (art. 17 RGPD) e limitazione del trattamento (art. 18 RGPD)</li>
+      <li>Portabilità dei dati (art. 20 RGPD)</li>
+      <li>Opposizione al trattamento basato sull'art. 6 par. 1 lett. f RGPD (art. 21 RGPD)</li>
+      <li>Revoca del consenso con effetto per il futuro (art. 7 par. 3 RGPD)</li>
+    </ul>
+    <p>Per esercitare i vostri diritti è sufficiente un messaggio informale a info@rackrail-solution.de.</p>
+
+    <h3>7. Diritto di reclamo</h3>
+    <p>Avete il diritto di proporre reclamo a un'autorità di controllo per la protezione dei dati (art. 77 RGPD). L'autorità competente per noi è il Garante per la protezione dei dati e la libertà d'informazione della Renania Settentrionale-Vestfalia (LDI NRW), Kavalleriestraße 2-4, 40213 Düsseldorf, Germania.</p>
+
+    <h3>8. Social network</h3>
+    <p>Il piè di pagina contiene link ai nostri profili su Instagram, Facebook, LinkedIn e TikTok. Si tratta di semplici link, non di plugin incorporati. Visitando questo sito non viene trasmesso alcun dato alle piattaforme; solo seguendo un link si applica l'informativa sulla privacy del rispettivo gestore.</p>
+
+    <h3>9. Sicurezza dei dati</h3>
+    <p>Il sito viene fornito esclusivamente in forma cifrata tramite HTTPS (TLS). Il server è configurato con policy di sicurezza (Content Security Policy, HSTS, protezione contro l'incorporamento in pagine di terzi) che impediscono il caricamento di contenuti di terzi.</p>
+
+    <h3>10. Modifiche</h3>
+    <p>Adeguiamo questa informativa quando cambiano la situazione giuridica o la nostra offerta. Fa fede la versione pubblicata qui.</p>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet"><path fill="currentColor" d="M8 100H92V94L60 86V32H75A6 6 0 0 0 81 26V10A10 10 0 0 0 71 0H29A10 10 0 0 0 19 10V26A6 6 0 0 0 25 32H40V86L8 94Z"/></svg><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet"><path fill="currentColor" d="M8 100H92V94L60 86V32H75A6 6 0 0 0 81 26V10A10 10 0 0 0 71 0H29A10 10 0 0 0 19 10V26A6 6 0 0 0 25 32H40V86L8 94Z"/></svg><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet"><path fill="currentColor" d="M8 100H92V94L60 86V32H75A6 6 0 0 0 81 26V10A10 10 0 0 0 71 0H29A10 10 0 0 0 19 10V26A6 6 0 0 0 25 32H40V86L8 94Z"/></svg><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet"><path fill="currentColor" d="M8 100H92V94L60 86V32H75A6 6 0 0 0 81 26V10A10 10 0 0 0 71 0H29A10 10 0 0 0 19 10V26A6 6 0 0 0 25 32H40V86L8 94Z"/></svg><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet"><path fill="currentColor" d="M8 100H92V94L60 86V32H75A6 6 0 0 0 81 26V10A10 10 0 0 0 71 0H29A10 10 0 0 0 19 10V26A6 6 0 0 0 25 32H40V86L8 94Z"/></svg></div>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#start" aria-label="RackRail Solution">
+          <img class="logo-full lf-light" src="../logo-full.png" alt="RackRail Solution" width="900" height="389" loading="lazy" decoding="async"><img class="logo-full lf-dark" src="../logo-full-light.png" alt="RackRail Solution" width="900" height="389" loading="lazy" decoding="async">
+        </a>
+        <p>Heinrichstraße 9-23, 51373 Leverkusen, Germania</p>
+      </div>
+      <div>
+        <h3>Sito</h3>
+        <ul>
+          <li><a href="#leistungen">Servizi</a></li>
+          <li><a href="#story">Come lavoriamo</a></li>
+          <li><a href="#branchen">Settori</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contatti</h3>
+        <ul>
+          <li><a href="mailto:info@rackrail-solution.de" dir="ltr">info@rackrail-solution.de</a></li>
+          <li><a href="#kontakt">Modulo di richiesta</a></li>
+        </ul>
+      </div>
+      <div class="social-col">
+        <h3>Seguiteci</h3>
+        <ul class="social">
+          <li><a href="https://www.instagram.com/rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="Instagram (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a></li>
+          <li><a href="https://www.facebook.com/rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="Facebook (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4V14h2.8v8h3.3z"/></svg><span>Facebook</span></a></li>
+          <li><a href="https://www.linkedin.com/company/rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.4 9.5H3.2V21h3.2V9.5zM4.8 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM21 14c0-3.4-1.8-4.8-4.2-4.8-1.9 0-2.8 1-3.3 1.8V9.5H10.3c.1.9 0 11.5 0 11.5h3.2v-6.4c0-.3 0-.7.1-.9.3-.7.8-1.4 1.8-1.4 1.3 0 1.8 1 1.8 2.4V21H21v-7z"/></svg><span>LinkedIn</span></a></li>
+          <li><a href="https://www.tiktok.com/@rackrailsolution" target="_blank" rel="noopener noreferrer me" aria-label="TikTok (si apre in una nuova finestra)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.3 1.6 3.7 3.8 3.9v3.1c-1.4.1-2.7-.3-3.8-1v6.2c0 3.1-2.5 5.6-5.6 5.6S5.3 18.3 5.3 15.2s2.5-5.6 5.6-5.6c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg><span>TikTok</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="year">2026</span> RackRail Solution · Leverkusen</div>
+      <ul>
+        <li><a href="#impressum">Note legali</a></li>
+        <li><a href="#datenschutz">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="call" href="mailto:info@rackrail-solution.de">E-mail</a>
+  <a class="ask" href="#kontakt">Richiesta</a>
+</div>
+<button class="totop" id="totop" type="button" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"RackRail Solution","legalName":"RRS Rack Rail Solutions GmbH","description":"Molatura e misurazione delle rotaie di scorrimento dei trasloelevatori nei magazzini verticali. Riprofilatura durante l'esercizio.","sameAs":["https://www.instagram.com/rackrailsolution","https://www.facebook.com/rackrailsolution","https://www.linkedin.com/company/rackrailsolution","https://www.tiktok.com/@rackrailsolution"],"email":"info@rackrail-solution.de","foundingDate":"2026","address":{"@type":"PostalAddress","streetAddress":"Heinrichstraße 9-23","postalCode":"51373","addressLocality":"Leverkusen","addressCountry":"DE"},"areaServed":["DE","AT","CH","BE","NL","FR","DK","SE"],"knowsAbout":["Molatura delle rotaie","Trasloelevatori","Magazzini verticali","Vie di corsa per gru"]}
+</script>
+
+<script src="../vendor/lenis.min.js" defer></script>
+<script src="../vendor/motion.min.js" defer></script>
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add("js");
+  var LANG=(document.querySelector('meta[name="rr-lang"]')||{}).content||"de";
+  var TT={
+  en:{imp:"Legal notice",ds:"Privacy",menuOpen:"Open menu",menuClose:"Close menu",copied:"Copied",marked:"Selected",copy:"Copy",blocked:"The request could not be sent.",fill:"Please fill in name, e-mail and a short description.",mail:"Please enter a valid e-mail address.",consent:"Please confirm the privacy policy.",sending:"Sending …",send:"Send request",ok:"Thank you, your request has been received. We will get back to you as quickly as possible.",fail:"Sending failed.",attach:" Please attach the selected files ({n}) to the e-mail.",mailto:"Your e-mail program opens with the prepared request, you only need to click Send.{a} If nothing opens: send the text to info@rackrail-solution.de.",subject:"Rail enquiry: ",w:"Head width 65 mm",h:"Height 153 mm",dot:"."},
+  de:{imp:"Impressum",ds:"Datenschutz",menuOpen:"Menü öffnen",menuClose:"Menü schließen",copied:"Kopiert",marked:"Markiert",copy:"Kopieren",blocked:"Die Anfrage konnte nicht gesendet werden.",fill:"Bitte Name, E-Mail und eine kurze Beschreibung ausfüllen.",mail:"Bitte eine gültige E-Mail-Adresse angeben.",consent:"Bitte bestätigen Sie die Datenschutzerklärung.",sending:"Wird gesendet …",send:"Anfrage senden",ok:"Danke, Ihre Anfrage ist eingegangen. Wir melden uns schnellstmöglich.",fail:"Versand fehlgeschlagen.",attach:" Bitte hängen Sie die gewählten Dateien ({n}) in der E-Mail an.",mailto:"Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage, Sie müssen nur noch auf Senden klicken.{a} Falls sich nichts öffnet: Text an info@rackrail-solution.de senden.",subject:"Anfrage Schienen: ",w:"Kopfbreite 65 mm",h:"Höhe 153 mm",dot:","},
+  ru:{imp:"Выходные данные",ds:"Конфиденциальность",menuOpen:"Открыть меню",menuClose:"Закрыть меню",copied:"Скопировано",marked:"Выделено",copy:"Копировать",blocked:"Запрос не удалось отправить.",fill:"Заполните имя, e-mail и краткое описание.",mail:"Укажите корректный адрес e-mail.",consent:"Подтвердите согласие с политикой конфиденциальности.",sending:"Отправка …",send:"Отправить запрос",ok:"Спасибо, ваш запрос получен. Мы ответим как можно скорее.",fail:"Отправка не удалась.",attach:" Пожалуйста, прикрепите выбранные файлы ({n}) к письму.",mailto:"Откроется ваша почтовая программа с готовым запросом, останется нажать «Отправить».{a} Если ничего не открылось: отправьте текст на info@rackrail-solution.de.",subject:"Запрос по рельсам: ",w:"Ширина головки 65 мм",h:"Высота 153 мм",dot:","},
+  ar:{imp:"بيانات الناشر",ds:"الخصوصية",menuOpen:"فتح القائمة",menuClose:"إغلاق القائمة",copied:"تم النسخ",marked:"تم التحديد",copy:"نسخ",blocked:"تعذر إرسال الطلب.",fill:"يرجى إدخال الاسم والبريد الإلكتروني ووصف قصير.",mail:"يرجى إدخال عنوان بريد إلكتروني صحيح.",consent:"يرجى تأكيد سياسة الخصوصية.",sending:"جارٍ الإرسال …",send:"إرسال الطلب",ok:"شكرًا، وصلنا طلبكم. سنرد في أقرب وقت ممكن.",fail:"فشل الإرسال.",attach:" يرجى إرفاق الملفات المحددة ({n}) بالبريد الإلكتروني.",mailto:"سيفتح برنامج البريد لديكم مع الطلب الجاهز، ويكفي الضغط على إرسال.{a} إذا لم يفتح شيء: أرسلوا النص إلى info@rackrail-solution.de.",subject:"طلب بخصوص السكك: ",w:"عرض الرأس 65 مم",h:"الارتفاع 153 مم",dot:"."},
+  it:{imp:"Note legali",ds:"Privacy",menuOpen:"Apri il menu",menuClose:"Chiudi il menu",copied:"Copiato",marked:"Selezionato",copy:"Copia",blocked:"La richiesta non è stata inviata.",fill:"Compilate nome, e-mail e una breve descrizione.",mail:"Inserite un indirizzo e-mail valido.",consent:"Confermate l'informativa sulla privacy.",sending:"Invio in corso …",send:"Invia richiesta",ok:"Grazie, la vostra richiesta è arrivata. Vi risponderemo al più presto.",fail:"Invio non riuscito.",attach:" Allegate i file selezionati ({n}) all'e-mail.",mailto:"Si apre il vostro programma di posta con la richiesta pronta, basta fare clic su Invia.{a} Se non si apre nulla: inviate il testo a info@rackrail-solution.de.",subject:"Richiesta rotaie: ",w:"Larghezza del fungo 65 mm",h:"Altezza 153 mm",dot:","},
+  es:{imp:"Aviso legal",ds:"Privacidad",menuOpen:"Abrir menú",menuClose:"Cerrar menú",copied:"Copiado",marked:"Seleccionado",copy:"Copiar",blocked:"No se ha podido enviar la consulta.",fill:"Rellene nombre, correo electrónico y una breve descripción.",mail:"Introduzca una dirección de correo electrónico válida.",consent:"Confirme la política de privacidad.",sending:"Enviando …",send:"Enviar consulta",ok:"Gracias, hemos recibido su consulta. Le responderemos lo antes posible.",fail:"Error al enviar.",attach:" Adjunte los archivos seleccionados ({n}) al correo.",mailto:"Se abre su programa de correo con la consulta preparada, solo tiene que pulsar Enviar.{a} Si no se abre nada: envíe el texto a info@rackrail-solution.de.",subject:"Consulta carriles: ",w:"Ancho de cabeza 65 mm",h:"Altura 153 mm",dot:","},
+  fr:{imp:"Mentions légales",ds:"Confidentialité",menuOpen:"Ouvrir le menu",menuClose:"Fermer le menu",copied:"Copié",marked:"Sélectionné",copy:"Copier",blocked:"La demande n'a pas pu être envoyée.",fill:"Veuillez renseigner le nom, l'e-mail et une courte description.",mail:"Veuillez saisir une adresse e-mail valide.",consent:"Veuillez confirmer la politique de confidentialité.",sending:"Envoi en cours …",send:"Envoyer la demande",ok:"Merci, votre demande est bien arrivée. Nous vous répondrons au plus vite.",fail:"Échec de l'envoi.",attach:" Veuillez joindre les fichiers sélectionnés ({n}) à l'e-mail.",mailto:"Votre messagerie s'ouvre avec la demande prête, il ne reste qu'à cliquer sur Envoyer.{a} Si rien ne s'ouvre : envoyez le texte à info@rackrail-solution.de.",subject:"Demande rails : ",w:"Largeur du champignon 65 mm",h:"Hauteur 153 mm",dot:","}};
+  var T=TT[LANG]||TT.de;window.RR_T=T;
+  var home=document.getElementById("view-home");
+  var views={impressum:document.getElementById("view-impressum"),datenschutz:document.getElementById("view-datenschutz")};
+  var navLinks=document.querySelectorAll("[data-nav]");
+  var hdr=document.querySelector("header.top");
+  function setHH(){document.documentElement.style.setProperty("--hh",hdr.offsetHeight+"px");}
+  setHH();window.addEventListener("resize",setHH);
+
+  var baseTitle=document.title;
+  function route(){
+    var h=(location.hash||"").replace("#","");
+    var legal=views[h];
+    Object.keys(views).forEach(function(k){views[k].hidden=(k!==h);});
+    home.hidden=!!legal;
+    var bar=document.getElementById("mbar");if(bar){bar.hidden=!!legal;}
+    if(legal){window.scrollTo(0,0);document.title=(h==="impressum"?T.imp:T.ds)+" · RackRail Solution";}
+    else{
+      document.title=baseTitle;
+      if(h&&h!=="start"){var el=document.getElementById(h);if(el){el.scrollIntoView();}}
+      navLinks.forEach(function(a){a.setAttribute("aria-current",a.getAttribute("href")==="#"+h?"true":"false");});
+    }
+  }
+  window.addEventListener("hashchange",route);
+  route();
+
+  /* Marquee verdoppeln für Endlosschleife */
+  var mq=document.getElementById("mq");if(mq){mq.innerHTML+=mq.innerHTML;}
+
+  /* Film mit Ton */
+  var ldd=document.getElementById("lang-dd");
+  if(ldd){document.addEventListener("click",function(e){if(ldd.open&&!ldd.contains(e.target)){ldd.open=false;}});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ldd.open){ldd.open=false;ldd.querySelector("summary").focus();}});}
+  var fsb=document.getElementById("film-sound"),fvv=document.getElementById("film-video");
+  function captionsOn(){try{var tr=fvv.textTracks;for(var i=0;i<tr.length;i++){tr[i].mode=(tr[i].language===LANG)?"showing":"disabled";}}catch(e){}}
+  if(fsb&&fvv){if(LANG!=="de"){fvv.addEventListener("loadedmetadata",captionsOn);captionsOn();}
+    fsb.addEventListener("click",function(){fvv.muted=false;fvv.loop=false;fvv.currentTime=0;fvv.controls=true;captionsOn();fvv.play().catch(function(){});fvv.closest(".film-box").classList.add("sound");});}
+  /* Reveal: Motion (Framer Motion, Vanilla-Build) mit IntersectionObserver-Fallback */
+  var rev=document.querySelectorAll(".reveal");
+  var reduceM=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+
+  (function(){var st=document.querySelector(".steps");if(!st)return;if(!("IntersectionObserver" in window)){st.classList.add("in");return;}new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){st.classList.add("in");o.disconnect();}});},{threshold:.3}).observe(st);})();
+  /* Holo-Explorer */
+  (function(){
+    var root=document.querySelector(".holo");if(!root)return;
+    var info=root.querySelector(".holo-info"),h3=info.querySelector("h3"),pEl=info.querySelector("p"),tag=info.querySelector(".holo-tag"),v1=info.querySelector(".v1"),v2=info.querySelector(".v2"),stage=root.querySelector(".holo-stage"),timer=0;
+    function type(el,text){if(reduceM){el.textContent=text;return;}clearInterval(timer);el.textContent="";var i=0;info.classList.add("is-typing");timer=setInterval(function(){i+=2;el.textContent=text.slice(0,i);if(i>=text.length){clearInterval(timer);el.textContent=text;info.classList.remove("is-typing");}},14);}
+    function show(btn){root.querySelectorAll(".hs").forEach(function(b){b.classList.toggle("is-on",b===btn);b.setAttribute("aria-pressed",b===btn?"true":"false");});
+      tag.textContent=btn.getAttribute("data-tag")||"";h3.textContent=btn.getAttribute("data-title")||"";type(pEl,btn.getAttribute("data-text")||"");
+      if(v1){v1.innerHTML=btn.getAttribute("data-v1")||"";v1.parentElement.hidden=!v1.innerHTML;}if(v2){v2.innerHTML=btn.getAttribute("data-v2")||"";v2.parentElement.hidden=!v2.innerHTML;}
+      if(!reduceM){root.classList.remove("flash");void root.offsetWidth;root.classList.add("flash");}}
+    root.querySelectorAll(".hs").forEach(function(b){b.addEventListener("click",function(){show(b);});b.addEventListener("focus",function(){show(b);});});
+    root.querySelectorAll(".holo-modes button").forEach(function(m){m.addEventListener("click",function(){
+      root.querySelectorAll(".holo-modes button").forEach(function(x){x.setAttribute("aria-pressed",x===m?"true":"false");});
+      var k=m.getAttribute("data-mode");root.querySelectorAll(".holo-view").forEach(function(v){var on=v.getAttribute("data-view")===k;v.classList.toggle("is-on",on);v.querySelectorAll(".hs").forEach(function(b){b.tabIndex=on?0:-1;});});
+      var first=root.querySelector('.holo-view[data-view="'+k+'"] .hs');if(first)show(first);});});
+    root.querySelectorAll(".holo-view:not(.is-on) .hs").forEach(function(b){b.tabIndex=-1;});
+    var first=root.querySelector(".holo-view.is-on .hs");if(first){h3.textContent=first.getAttribute("data-title");pEl.textContent=first.getAttribute("data-text");tag.textContent=first.getAttribute("data-tag");if(v1){v1.innerHTML=first.getAttribute("data-v1")||"";v1.parentElement.hidden=!v1.innerHTML;}if(v2){v2.innerHTML=first.getAttribute("data-v2")||"";v2.parentElement.hidden=!v2.innerHTML;}first.classList.add("is-on");first.setAttribute("aria-pressed","true");}
+    if(window.matchMedia&&window.matchMedia("(pointer:fine)").matches&&stage){stage.addEventListener("pointermove",function(e){var r=stage.getBoundingClientRect();stage.style.setProperty("--cx",((e.clientX-r.left)/r.width*100).toFixed(1)+"%");stage.style.setProperty("--cy",((e.clientY-r.top)/r.height*100).toFixed(1)+"%");},{passive:true});}
+  })();
+  /* Spezialeffekte: Funkenflug, Tilt, Magnet-Button */
+  (function(){
+    if(reduceM)return;
+    var cv=document.querySelector(".sparks"),hero=document.querySelector(".hero");
+    if(cv&&cv.getContext&&hero){
+      var ctx=cv.getContext("2d"),W=0,H=0,P=[],run=false,raf=0,small=window.matchMedia("(max-width:900px)").matches,N=small?40:130,dpr=Math.min(window.devicePixelRatio||1,2);
+      function size(){W=hero.clientWidth;H=hero.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+"px";cv.style.height=H+"px";ctx.setTransform(dpr,0,0,dpr,0,0);}
+      function spawn(p){var rtl=document.documentElement.dir==="rtl";p.x=(rtl?W*0.42:W*0.58)+(Math.random()-0.5)*W*0.12;p.y=H*0.80+Math.random()*H*0.12;var a=-Math.PI/2+(Math.random()-0.5)*2.2;var v=1.5+Math.random()*4;p.vx=Math.cos(a)*v*(rtl?-1:1);p.vy=Math.sin(a)*v;p.life=0;p.max=50+Math.random()*70;p.r=0.8+Math.random()*2.0;return p;}
+      for(var i=0;i<N;i++){var q=spawn({});q.life=Math.random()*q.max;P.push(q);}
+      function frame(){if(!run)return;ctx.clearRect(0,0,W,H);for(var i=0;i<P.length;i++){var p=P[i];p.life++;if(p.life>p.max||p.y>H||p.x<-20||p.x>W+20){spawn(p);continue;}p.vy+=0.045;p.vx*=0.995;p.x+=p.vx;p.y+=p.vy;var k=1-p.life/p.max;ctx.beginPath();ctx.arc(p.x,p.y,p.r*(0.6+k),0,6.283);ctx.fillStyle="rgba(255,"+(150+Math.floor(90*k))+","+(40+Math.floor(60*k))+","+(0.25+0.7*k).toFixed(2)+")";ctx.shadowBlur=10;ctx.shadowColor="rgba(246,162,74,.9)";ctx.fill();}raf=requestAnimationFrame(frame);}
+      function start(){if(run)return;run=true;size();frame();}function stop(){run=false;cancelAnimationFrame(raf);}
+      if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?start():stop();});},{threshold:0.05}).observe(hero);}else{start();}
+      window.addEventListener("resize",function(){if(run)size();},{passive:true});
+      document.addEventListener("visibilitychange",function(){if(document.hidden){stop();}else{start();}});
+    }
+    if(!(window.matchMedia&&window.matchMedia("(pointer:fine)").matches))return;
+    document.querySelectorAll(".tilt").forEach(function(el){
+      el.addEventListener("pointermove",function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty("--mx",(x*100).toFixed(1)+"%");el.style.setProperty("--my",(y*100).toFixed(1)+"%");el.style.transform="perspective(900px) rotateX("+((0.5-y)*5).toFixed(2)+"deg) rotateY("+((x-0.5)*6).toFixed(2)+"deg) translateY(-3px)";el.style.transition="transform .08s linear";});
+      el.addEventListener("pointerleave",function(){el.style.transition="transform .5s cubic-bezier(.2,.7,.2,1)";el.style.transform="";});
+    });
+    document.querySelectorAll(".btn.mag").forEach(function(b){
+      b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);b.style.setProperty("--mx",((e.clientX-r.left)/r.width*100).toFixed(1)+"%");b.style.setProperty("--my",((e.clientY-r.top)/r.height*100).toFixed(1)+"%");b.style.transform="translate("+(dx*0.18).toFixed(1)+"px,"+(dy*0.28).toFixed(1)+"px)";});
+      b.addEventListener("pointerleave",function(){b.style.transform="";});
+    });
+  })();
+  /* Kennzahlen zählen beim Erscheinen hoch */
+  (function(){
+    var kpis=document.querySelectorAll(".kpi b");
+    if(!kpis.length)return;
+    function run(el){
+      var raw=el.getAttribute("data-val")||el.textContent;el.setAttribute("data-val",raw);
+      var m=raw.match(/^(\D*)(\d+(?:[.,]\d+)?)(.*)$/);if(!m)return;
+      var pre=m[1],numStr=m[2],suf=m[3];var dec=(numStr.split(/[.,]/)[1]||"").length;var target=parseFloat(numStr.replace(",","."));
+      if(reduceM){el.textContent=raw;return;}
+      function fmt(v){var s=v.toFixed(dec);if(dec)s=s.replace(".",",");return pre+s+suf;}
+      var start=null,dur=1200;
+      function step(ts){if(start===null)start=ts;var p=Math.min((ts-start)/dur,1);var e=1-Math.pow(1-p,3);el.textContent=fmt(target*e);if(p<1)requestAnimationFrame(step);else el.textContent=raw;}
+      requestAnimationFrame(step);
+    }
+    if("IntersectionObserver" in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){run(en.target);io.unobserve(en.target);}});},{threshold:.4});
+      kpis.forEach(function(el){io.observe(el);});
+    }else{kpis.forEach(run);}
+  })();
+  /* Weiches Scrollen (Lenis), nur mit Maus/Trackpad, nicht bei reduzierter Bewegung */
+  function initLenis(){
+    if(!window.Lenis||reduceM||!(window.matchMedia&&window.matchMedia("(pointer:fine)").matches))return;
+    if(window.__lenisOn)return;window.__lenisOn=true;
+    try{
+      var lenis=new Lenis({lerp:.11,wheelMultiplier:1,smoothWheel:true,smoothTouch:false});
+      function _lraf(t){lenis.raf(t);requestAnimationFrame(_lraf);}requestAnimationFrame(_lraf);
+      document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute("href");if(id.length<2)return;var el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-72,duration:1.1});}});
+    }catch(e){}
+  }
+  if(window.Lenis){initLenis();}else{var _ls=document.querySelector('script[src*="lenis"]');if(_ls){_ls.addEventListener("load",initLenis);setTimeout(initLenis,1600);}}
+  function revealFallback(){
+    if("IntersectionObserver" in window){
+      var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");ro.unobserve(en.target);}});},{rootMargin:"0px 0px -8% 0px",threshold:.05});
+      rev.forEach(function(el){ro.observe(el);});
+    }else{rev.forEach(function(el){el.classList.add("in");});}
+  }
+  function motionLayer(){
+    var M=window.Motion;
+    if(!M||!M.animate||!M.inView||reduceM){revealFallback();return;}
+    document.documentElement.classList.add("motion");
+    var EASE=[.22,1,.36,1];
+    var groups=".bento,.cases,.ind,.proof,.sym,.steps,.faq,.stats .wrap,.points,.tiles,.folders";
+    rev.forEach(function(el){
+      var kids=el.matches(groups)&&el.children.length>1?Array.prototype.slice.call(el.children):null;
+      if(kids){kids.forEach(function(k){k.style.opacity="0";k.style.transform="translateY(16px)";});}
+      M.inView(el,function(){
+        if(el.classList.contains("in"))return;
+        el.classList.add("in");
+        if(kids){
+          M.animate(el,{opacity:[0,1]},{duration:.5,ease:EASE});
+          M.animate(kids,{opacity:[0,1],y:[18,0]},{duration:.8,ease:EASE,delay:M.stagger(.08)}).then(function(){kids.forEach(function(k){k.style.opacity="";k.style.transform="";});});
+        }else{
+          M.animate(el,{opacity:[0,1],y:[20,0]},{duration:.85,ease:EASE});
+        }
+      },{margin:"0px 0px -8% 0px",amount:.05});
+    });
+    /* Übergreifender Parallax: grosse Bilder wandern beim Scrollen sanft mit */
+    if(M.scroll){document.querySelectorAll("[data-parallax]").forEach(function(im){var box=im.parentElement;if(!box)return;try{M.scroll(M.animate(im,{y:["-9%","9%"]},{ease:"linear"}),{target:box,offset:["start end","end start"]});}catch(e){}});}
+    /* Hero zoomt beim Scrollen sanft heran */
+    var heroBg=document.querySelector(".hero-bg"),heroSec=document.querySelector(".hero");
+    if(heroBg&&heroSec&&M.scroll){try{M.scroll(M.animate(heroBg,{scale:[1,1.12]},{ease:"linear"}),{target:heroSec,offset:["start start","end start"]});}catch(e){}}
+    /* Lagerfoto wischt beim Erscheinen von unten auf */
+    var phEl=document.querySelector(".hrl .ph");
+    if(phEl){phEl.style.clipPath="inset(0 0 100% 0)";M.inView(phEl,function(){M.animate(phEl,{clipPath:["inset(0 0 100% 0)","inset(0 0 0% 0)"]},{duration:.95,ease:EASE}).then(function(){phEl.style.clipPath="";});},{margin:"0px 0px -12% 0px"});}
+    /* Hero-Headline: Buchstaben fliegen ein */
+    var h1=document.querySelector(".hero h1");
+    if(h1&&!h1.dataset.split){
+      h1.dataset.split="1";var label=h1.textContent.trim();h1.setAttribute("aria-label",label);
+      var parts=[];Array.prototype.forEach.call(h1.childNodes,function(n){parts.push(n);});
+      h1.textContent="";
+      function unit(txt,cls){var sp=document.createElement("span");sp.className="w"+(cls?" "+cls:"");sp.setAttribute("aria-hidden","true");sp.style.display="inline-block";sp.style.opacity="0";sp.style.transform="translateY(.5em) rotate(2deg)";sp.textContent=txt;return sp;}
+      parts.forEach(function(n){var txt=n.textContent;
+        if(n.nodeType===1){h1.appendChild(document.createTextNode(" "));h1.appendChild(unit(txt.trim(),"grad"));return;}
+        txt.split(/(\s+)/).forEach(function(w){if(!w)return;if(/^\s+$/.test(w)){h1.appendChild(document.createTextNode(" "));return;}h1.appendChild(unit(w));});});
+      M.animate(h1.querySelectorAll(".w"),{opacity:[0,1],y:[".5em",0],rotate:[2,0]},{duration:.7,ease:[.16,1,.3,1],delay:M.stagger(.07)});
+      var lede=document.querySelector(".hero .lede"),cta=document.querySelector(".hero .cta"),meta=document.querySelector(".hero .meta");
+      [lede,cta,meta].forEach(function(el,i){if(!el)return;el.style.animation="none";M.animate(el,{opacity:[0,1],y:[18,0]},{duration:.7,ease:[.16,1,.3,1],delay:.35+i*.1});});
+    }
+    /* Lesefortschritt im Header */
+    var pr=document.getElementById("progress");
+    if(pr&&M.scroll){M.scroll(M.animate(pr,{scaleX:[0,1]},{ease:"linear"}));}
+    /* Nicht sofort nötige Animationen erst in der Leerlaufphase anlegen (bessere Startzeit) */
+    function extras(){
+    /* Hero-Bühne dreht beim Scrollen leicht weg */
+    var vis=document.querySelector(".hero .visual");
+    if(vis&&M.scroll){M.scroll(M.animate(vis,{opacity:[1,1,.25],y:[0,0,-40]},{ease:"linear"}),{target:document.querySelector(".hero"),offset:["start start","end start"]});}
+    /* Überschriften Wort für Wort (Apple-Stil), nur bei Mausgeräten und breiten Screens */
+    if(window.matchMedia("(min-width:901px)").matches){
+      document.querySelectorAll("#view-home h2:not(.story h2):not(.kin)").forEach(function(h){
+        if(h.querySelector("*"))return; /* Überschriften mit Inline-Markup nicht aufteilen */
+        var words=h.textContent.trim().split(/\s+/);if(words.length<2||words.length>12)return;
+        var label=h.textContent.trim();h.setAttribute("aria-label",label);
+        h.textContent="";words.forEach(function(w,i){var sp=document.createElement("span");sp.className="w";sp.setAttribute("aria-hidden","true");sp.textContent=w+(i<words.length-1?" ":"");sp.style.opacity="0";sp.style.transform="translateY(.35em)";h.appendChild(sp);});
+        M.inView(h,function(){M.animate(h.querySelectorAll(".w"),{opacity:[0,1],y:[".35em",0]},{duration:.7,ease:EASE,delay:M.stagger(.05)}).then(function(){h.querySelectorAll(".w").forEach(function(w){w.style.opacity="";w.style.transform="";});});},{margin:"0px 0px -5% 0px"});
+      });
+    }
+    /* Film-Sektion: Wörter beim Scrollen enthüllen, Kreis öffnet sich (21st.dev Pin-Reveal, Vanilla) */
+    var fh=document.querySelector(".film-intro h2.kin"),fsec=document.querySelector(".film"),fbox=document.getElementById("film-box"),fvid=document.getElementById("film-video"),fpin=document.querySelector(".film-pin");
+    if(fh&&fbox&&M.scroll){
+      if(!fh.dataset.split){fh.dataset.split="1";var lbl=fh.textContent.trim();fh.setAttribute("aria-label",lbl);var ws=lbl.split(/\s+/);fh.textContent="";ws.forEach(function(w,i){var sp=document.createElement("span");sp.className="w";sp.setAttribute("aria-hidden","true");sp.textContent=w+(i<ws.length-1?" ":"");sp.style.opacity="0";fh.appendChild(sp);});}
+      var fw=fh.querySelectorAll(".w");
+      M.scroll(M.animate(fw,{opacity:[0,1],y:["30%","0%"],rotate:[8,0]},{ease:"linear",delay:M.stagger(0.4/fw.length)}),{target:document.querySelector(".film-intro"),offset:["start 85%","end 45%"]});
+      var tags=document.querySelectorAll(".film-tags span");
+      M.scroll(M.animate(tags,{opacity:[0,1],clipPath:["inset(0 100% 0 0)","inset(0 0% 0 0)"]},{ease:"linear",delay:M.stagger(0.25)}),{target:document.querySelector(".film-intro"),offset:["start 60%","end 30%"]});
+      var small=window.matchMedia("(max-width:900px)").matches?"circle(18% at 50% 50%)":"circle(10% at 50% 50%)";
+      M.scroll(M.animate(fbox,{clipPath:[small,"circle(75% at 50% 50%)"]},{ease:"linear"}),{target:fpin,offset:["start start","end end"]});
+      M.inView(fpin,function(){fbox.classList.add("open");if(fvid&&fvid.paused){fvid.play().catch(function(){});}return function(){fbox.classList.remove("open");if(fvid&&!fbox.classList.contains("sound"))fvid.pause();};},{amount:.2});
+    }
+    /* Hero-Form: wandert beim Scrollen mit und atmet leicht */
+    var shape=document.querySelector(".hero .shape"),heroEl=document.querySelector(".hero");
+    if(shape&&heroEl&&M.scroll&&window.matchMedia("(min-width:901px)").matches){
+      shape.addEventListener("animationend",function(){shape.style.animation="none";shape.style.clipPath="inset(0)";
+        M.scroll(M.animate(shape,{y:["-50%","-30%"],rotate:[0,-4]},{ease:"linear"}),{target:heroEl,offset:["start start","end start"]});},{once:true});
+    }
+    /* Statement: Miniaturen springen nacheinander auf */
+    var ths=document.querySelectorAll(".statement .th");
+    if(ths.length){ths.forEach(function(t){t.style.transform="scale(.4)";t.style.opacity="0";});
+      M.inView(".statement",function(){M.animate(ths,{opacity:[0,1],scale:[.4,1.08,1]},{duration:.7,ease:[.16,1,.3,1],delay:M.stagger(.18,{startDelay:.25})}).then(function(){ths.forEach(function(t){t.style.transform="";t.style.opacity="";});});},{amount:.4});
+    }
+    /* Formzeichen: füllen sich nacheinander */
+    document.querySelectorAll(".points,.sym").forEach(function(list){
+      var buls=list.querySelectorAll(".bul");if(!buls.length)return;buls.forEach(function(b){b.style.transform="scaleY(0)";b.style.transformOrigin="50% 100%";});
+      M.inView(list,function(){M.animate(buls,{scaleY:[0,1.3,1]},{duration:.5,ease:EASE,delay:M.stagger(.08,{startDelay:.3})}).then(function(){buls.forEach(function(b){b.style.transform="";});});},{amount:.2});
+    });
+    /* Wachsende Kacheln: öffnen sich von unten wie ein Verschluss */
+    var tiles=document.querySelectorAll(".tiles .photo");
+    if(tiles.length){tiles.forEach(function(t){t.style.clipPath="inset(100% 0 0 0)";});
+      M.inView(".tiles",function(){M.animate(tiles,{clipPath:["inset(100% 0 0 0)","inset(0% 0 0 0)"]},{duration:1,ease:[.2,.7,.2,1],delay:M.stagger(.22)}).then(function(){tiles.forEach(function(t){t.style.clipPath="";});});},{amount:.25});
+    }
+    /* Mappen: Reiter schieben sich von links ein, Foto öffnet sich */
+    document.querySelectorAll(".folder").forEach(function(f){
+      var tab=f.querySelector(".tab"),ph=f.querySelector(".photo"),tx=f.querySelector(".text");
+      if(tab){tab.style.transform="translateX(-40px)";tab.style.opacity="0";}
+      if(ph){ph.style.clipPath="inset(0 100% 0 0)";}
+      M.inView(f,function(){
+        if(tab)M.animate(tab,{x:[-40,0],opacity:[0,1]},{duration:.6,ease:EASE}).then(function(){tab.style.transform="";tab.style.opacity="";});
+        if(ph)M.animate(ph,{clipPath:["inset(0 100% 0 0)","inset(0 0% 0 0)"]},{duration:1.1,ease:[.2,.7,.2,1],delay:.15}).then(function(){ph.style.clipPath="";});
+        if(tx)M.animate(tx.children,{opacity:[0,1],y:[14,0]},{duration:.6,ease:EASE,delay:M.stagger(.08,{startDelay:.4})});
+      },{amount:.3});
+    });
+    /* Fotos bewegen sich im Rahmen mit dem Scroll (Tiefe) */
+    if(M.scroll&&window.matchMedia("(min-width:701px)").matches){
+      document.querySelectorAll(".features .photo img,.folder .photo img,.about .photo img").forEach(function(img){
+        img.style.willChange="transform";
+        M.scroll(M.animate(img,{y:["-7%","7%"],scale:[1.16,1.16]},{ease:"linear"}),{target:img.parentElement,offset:["start end","end start"]});
+      });
+    }
+    /* Fuß: die Profile wachsen nacheinander hoch */
+    var fm=document.querySelector(".foot-mark");
+    if(fm){var rails=fm.querySelectorAll("svg");rails.forEach(function(r){r.style.clipPath="inset(100% 0 0 0)";});
+      M.inView(fm,function(){M.animate(rails,{clipPath:["inset(100% 0 0 0)","inset(0% 0 0 0)"]},{duration:.9,ease:[.2,.7,.2,1],delay:M.stagger(.12)}).then(function(){rails.forEach(function(r){r.style.clipPath="";});});},{amount:.3});
+    }
+    /* Nachweis-Kacheln: Akzentkachel zuerst, dann der Rest in Welle */
+    /* Akkordeon: Antwort gleitet auf */
+    document.querySelectorAll(".faq details").forEach(function(d){
+      d.addEventListener("toggle",function(){if(d.open){var b=d.querySelector(".body");if(b)M.animate(b,{opacity:[0,1],y:[-8,0]},{duration:.35,ease:EASE});}});
+    });
+    /* Foto-Band: sanfter Scroll-Zoom */
+    var pbi=document.querySelector(".pb-img"),pbs=document.querySelector(".photo-break");
+    if(pbi&&pbs&&M.scroll){M.scroll(M.animate(pbi,{scale:[1.12,1]},{ease:"linear"}),{target:pbs,offset:["start end","end start"]});}
+    /* Geisterworte hinter den Abschnitten, kinetisch mit dem Scroll */
+    if(window.matchMedia("(min-width:701px)").matches&&M.scroll){
+      document.querySelectorAll("#view-home > section").forEach(function(sec,i){
+        var ey=sec.querySelector(".eyebrow");if(!ey||sec.classList.contains("hero")||sec.classList.contains("story"))return;
+        var g=document.createElement("span");g.className="ghost";g.setAttribute("aria-hidden","true");g.setAttribute("data-t",ey.textContent.replace(/\/\s*0\d/,"").trim());
+        sec.insertBefore(g,sec.firstChild);
+        var dir=i%2?1:-1;
+        M.scroll(M.animate(g,{x:[dir*-18+"vw",dir*18+"vw"]},{ease:"linear"}),{target:sec,offset:["start end","end start"]});
+      });
+    }
+    /* Druck-Feedback auf Buttons */
+    if(M.press){M.press(".btn,.cta a,.mbar a,.sym a,.faq summary",function(el){M.animate(el,{scale:.975},{type:"spring",stiffness:600,damping:30});return function(){M.animate(el,{scale:1},{type:"spring",stiffness:300,damping:18});};});}
+    /* Sanftes Anheben der Kacheln */
+    if(M.hover&&window.matchMedia("(hover:hover)").matches){M.hover(".tiles figure,.proof li:not(.head),.statement .th,.folder .text",function(el){M.animate(el,{y:-5},{type:"spring",stiffness:320,damping:22});return function(){M.animate(el,{y:0},{type:"spring",stiffness:260,damping:20});};});}
+    }
+    if("requestIdleCallback" in window){requestIdleCallback(extras,{timeout:1500});}else{setTimeout(extras,700);}
+  }
+  if(window.Motion){motionLayer();}
+  else{
+    var ms=document.querySelector('script[src*="motion"]');
+    if(ms){var fired=false;ms.addEventListener("load",function(){if(!fired){fired=true;motionLayer();}});ms.addEventListener("error",function(){if(!fired){fired=true;revealFallback();}});setTimeout(function(){if(!fired){fired=true;motionLayer();}},1500);}
+    else{revealFallback();}
+  }
+  setTimeout(function(){rev.forEach(function(el){if(!el.classList.contains("in")){el.classList.add("in");Array.prototype.forEach.call(el.children,function(k){k.style.opacity="";k.style.transform="";});}});},2600);
+  /* Sicherheitsnetz: nichts bleibt unsichtbar, falls eine Animation nie startet */
+  setTimeout(function(){document.querySelectorAll(".sec-head h2 .w, .hero h1 .w").forEach(function(w){if(getComputedStyle(w).opacity==="0"){w.style.opacity="";w.style.transform="";}});},6000);
+
+  /* Mobiles Menü */
+  var mb=document.getElementById("menu-btn"),nav=document.getElementById("main-nav");
+  mb.addEventListener("click",function(){var o=nav.classList.toggle("open");document.body.classList.toggle("menu-open",o);mb.setAttribute("aria-expanded",o?"true":"false");mb.setAttribute("aria-label",o?T.menuClose:T.menuOpen);setHH();});
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A"){nav.classList.remove("open");document.body.classList.remove("menu-open");mb.setAttribute("aria-expanded","false");setHH();}});
+
+  /* Aktiver Abschnitt */
+  if("IntersectionObserver" in window){
+    var ids=[];navLinks.forEach(function(a){ids.push(a.getAttribute("href").slice(1));});
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){navLinks.forEach(function(a){a.setAttribute("aria-current",a.getAttribute("href")==="#"+en.target.id?"true":"false");});}});},{rootMargin:"-40% 0px -55% 0px"});
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+
+  /* Zum Anfang, mobile Leiste */
+  var tt=document.getElementById("totop");
+  window.addEventListener("scroll",function(){tt.classList.toggle("show",window.scrollY>600);},{passive:true});
+  tt.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
+  var mbar=document.getElementById("mbar"),kont=document.getElementById("kontakt");
+  if("IntersectionObserver" in window){new IntersectionObserver(function(es){mbar.style.display=es[0].isIntersecting?"none":"";},{threshold:0.1}).observe(kont);}
+
+  document.getElementById("year").textContent=String(new Date().getFullYear());
+
+  /* Kopieren */
+  document.querySelectorAll(".copy").forEach(function(b){
+    b.addEventListener("click",function(){
+      var el=document.getElementById(b.getAttribute("data-copy"));
+      var txt=el.textContent.trim();
+      function done(ok){b.textContent=ok?T.copied:T.marked;setTimeout(function(){b.textContent=T.copy;},1600);}
+      function fallback(){try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}done(false);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){done(true);},fallback);}else{fallback();}
+    });
+  });
+
+  /* Formular */
+  var form=document.getElementById("anfrage"),msg=document.getElementById("f-msg");
+  function show(t,err){msg.textContent=t;msg.className="msg"+(err?" err":"");msg.hidden=false;}
+  function esc(s){return String(s||"").replace(/[\r\n]+/g," ").trim();}
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(document.getElementById("f-web").value){show(T.blocked,true);return;}
+    var name=esc(document.getElementById("f-name").value),mail=esc(document.getElementById("f-mail").value),
+        firma=esc(document.getElementById("f-firma").value),tel=esc(document.getElementById("f-tel").value),
+        typ=document.getElementById("f-typ").value,text=document.getElementById("f-text").value.trim(),
+        consent=document.getElementById("f-consent").checked;
+    if(!name||!mail||!text){show(T.fill,true);return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)){show(T.mail,true);return;}
+    if(!consent){show(T.consent,true);return;}
+    var files=document.getElementById("f-file").files;
+    var btn=document.getElementById("f-submit");
+    function mailtoFallback(){
+      var body="Name: "+name+"\nFirma: "+firma+"\nE-Mail: "+mail+"\nTelefon: "+tel+"\nAnlage: "+typ+"\n\n"+text;
+      var href="mailto:info@rackrail-solution.de?subject="+encodeURIComponent(T.subject+typ)+"&body="+encodeURIComponent(body);
+      var fileNote=files&&files.length?T.attach.replace("{n}",files.length):"";
+      show(T.mailto.replace("{a}",fileNote),false);
+      try{window.location.href=href;}catch(err){}
+    }
+    var onServer=/^https?:$/.test(location.protocol)&&!/claude\.ai|usercontent/.test(location.hostname);
+    if(!onServer||!window.fetch||!window.FormData){mailtoFallback();return;}
+    btn.disabled=true;btn.textContent=T.sending;
+    var fd=new FormData(form);
+    fetch(form.getAttribute("action"),{method:"POST",body:fd,credentials:"same-origin",headers:{"Accept":"application/json"}})
+      .then(function(r){return r.json().then(function(j){return {status:r.status,j:j};});})
+      .then(function(res){
+        btn.disabled=false;btn.textContent=T.send;
+        if(res.j&&res.j.ok){show(res.j.text||T.ok,false);form.reset();document.getElementById("f-t0").value=String(Math.floor(Date.now()/1000));}
+        else{show((res.j&&res.j.text)||T.fail,true);}
+      })
+      .catch(function(){btn.disabled=false;btn.textContent=T.send;mailtoFallback();});
+  });
+  document.getElementById("f-t0").value=String(Math.floor(Date.now()/1000));
+})();
+/* RackRail 3D: WebGL-Renderer für Schiene und Regalgasse, 2D-Overlay für Maße und Funken. Ohne Bibliothek. */
+(function(){
+  "use strict";
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NONE=-1e9;
+
+  /* ---------- Mat4 ---------- */
+  function m4(){return new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]);}
+  function mul(a,b){var o=new Float32Array(16);for(var i=0;i<4;i++)for(var j=0;j<4;j++){var s=0;for(var k=0;k<4;k++)s+=a[k*4+j]*b[i*4+k];o[i*4+j]=s;}return o;}
+  function persp(fov,asp,n,f){var t=1/Math.tan(fov/2),o=new Float32Array(16);o[0]=t/asp;o[5]=t;o[10]=(f+n)/(n-f);o[11]=-1;o[14]=2*f*n/(n-f);return o;}
+  function rotX(a){var c=Math.cos(a),s=Math.sin(a),o=m4();o[5]=c;o[6]=s;o[9]=-s;o[10]=c;return o;}
+  function rotY(a){var c=Math.cos(a),s=Math.sin(a),o=m4();o[0]=c;o[2]=-s;o[8]=s;o[10]=c;return o;}
+  function trans(x,y,z){var o=m4();o[12]=x;o[13]=y;o[14]=z;return o;}
+  function scl(x,y,z){var o=m4();o[0]=x;o[5]=y;o[10]=z;return o;}
+  function xform(m,x,y,z){var w=m[3]*x+m[7]*y+m[11]*z+m[15];return [(m[0]*x+m[4]*y+m[8]*z+m[12])/w,(m[1]*x+m[5]*y+m[9]*z+m[13])/w,(m[2]*x+m[6]*y+m[10]*z+m[14])/w];}
+
+  /* ---------- GL ---------- */
+  var VS="attribute vec3 aP;attribute vec3 aN;attribute vec4 aC;uniform mat4 uMVP,uM;varying vec3 vN,vP;varying vec4 vC;void main(){vec4 p=uM*vec4(aP,1.);vP=p.xyz;vN=mat3(uM)*aN;vC=aC;gl_Position=uMVP*vec4(aP,1.);}";
+  var FS="precision mediump float;varying vec3 vN,vP;varying vec4 vC;uniform vec3 uL,uCam,uBg;uniform float uFog;\n"+
+  "void main(){vec3 N=normalize(vN);vec3 V=normalize(uCam-vP);vec3 L=normalize(uL);float gloss=vC.a;\n"+
+  "float diff=max(dot(N,L),0.);vec3 L2=normalize(vec3(0.7,0.35,-0.6));float diff2=max(dot(N,L2),0.)*0.28;vec3 H=normalize(L+V);float spec=pow(max(dot(N,H),0.),mix(14.,160.,gloss));\n"+
+  "vec3 R=reflect(-V,N);float et=clamp(R.y*0.5+0.5,0.,1.);vec3 env=mix(vec3(0.06,0.07,0.09),vec3(0.82,0.85,0.9),smoothstep(0.25,0.95,et));\n"+
+  "env+=vec3(1.,.6,.3)*pow(max(dot(R,normalize(vec3(-0.6,0.5,0.4))),0.),8.)*0.3;\n"+
+  "float fres=pow(1.-max(dot(N,V),0.),3.);\n"+
+  "vec3 c=vC.rgb*(0.36+0.72*diff+diff2)+env*mix(0.16,0.6,gloss)*(0.45+0.55*fres)+vec3(spec)*mix(0.3,1.3,gloss)+vec3(0.75,0.85,1.)*fres*0.22;\n"+
+  "float d=length(uCam-vP);float fog=uFog>0.?clamp((d-uFog)/(uFog*1.6),0.,1.):0.;c=mix(c,uBg,fog);\n"+
+  "gl_FragColor=vec4(c,1.);}";
+  var VS2="attribute vec3 aP;attribute vec2 aUV;uniform mat4 uMVP;varying vec2 vUV;void main(){vUV=aUV;gl_Position=uMVP*vec4(aP,1.);}";
+  var FS2="precision mediump float;varying vec2 vUV;uniform float uA;void main(){float r=length(vUV);float a=smoothstep(1.,0.15,r)*uA;gl_FragColor=vec4(0.,0.,0.,a);}";
+
+  function GL(canvas){
+    var gl=canvas.getContext("webgl",{antialias:true,alpha:true,premultipliedAlpha:true});
+    if(!gl)return null;
+    function sh(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS)){return null;}return o;}
+    function prog(v,f){var p=gl.createProgram();var a=sh(gl.VERTEX_SHADER,v),b=sh(gl.FRAGMENT_SHADER,f);if(!a||!b)return null;gl.attachShader(p,a);gl.attachShader(p,b);gl.linkProgram(p);return gl.getProgramParameter(p,gl.LINK_STATUS)?p:null;}
+    var P=prog(VS,FS),P2=prog(VS2,FS2);if(!P||!P2)return null;
+    var g={gl:gl,P:P,P2:P2,c:canvas};
+    g.a={P:gl.getAttribLocation(P,"aP"),N:gl.getAttribLocation(P,"aN"),C:gl.getAttribLocation(P,"aC")};
+    g.u={MVP:gl.getUniformLocation(P,"uMVP"),M:gl.getUniformLocation(P,"uM"),L:gl.getUniformLocation(P,"uL"),Cam:gl.getUniformLocation(P,"uCam"),Bg:gl.getUniformLocation(P,"uBg"),Fog:gl.getUniformLocation(P,"uFog")};
+    g.a2={P:gl.getAttribLocation(P2,"aP"),UV:gl.getAttribLocation(P2,"aUV")};g.u2={MVP:gl.getUniformLocation(P2,"uMVP"),A:gl.getUniformLocation(P2,"uA")};
+    gl.enable(gl.DEPTH_TEST);gl.enable(gl.CULL_FACE);gl.cullFace(gl.BACK);
+    /* Schattenquad */
+    g.shadow={pos:gl.createBuffer(),uv:gl.createBuffer()};
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.shadow.pos);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,0,-1, 1,0,-1, -1,0,1, 1,0,1]),gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.shadow.uv);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+    return g;
+  }
+  function Mesh(g,dynamic){this.g=g;var gl=g.gl;this.bp=gl.createBuffer();this.bn=gl.createBuffer();this.bc=gl.createBuffer();this.bi=gl.createBuffer();this.n=0;this.dyn=dynamic;}
+  Mesh.prototype.set=function(pos,nrm,col,idx){var gl=this.g.gl,u=this.dyn?gl.DYNAMIC_DRAW:gl.STATIC_DRAW;
+    gl.bindBuffer(gl.ARRAY_BUFFER,this.bp);gl.bufferData(gl.ARRAY_BUFFER,pos,u);
+    gl.bindBuffer(gl.ARRAY_BUFFER,this.bn);gl.bufferData(gl.ARRAY_BUFFER,nrm,u);
+    if(col){gl.bindBuffer(gl.ARRAY_BUFFER,this.bc);gl.bufferData(gl.ARRAY_BUFFER,col,u);}
+    if(idx){gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,this.bi);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,idx,gl.STATIC_DRAW);this.n=idx.length;}
+  };
+  Mesh.prototype.draw=function(mvp,model){var g=this.g,gl=g.gl;
+    gl.bindBuffer(gl.ARRAY_BUFFER,this.bp);gl.enableVertexAttribArray(g.a.P);gl.vertexAttribPointer(g.a.P,3,gl.FLOAT,false,0,0);
+    gl.bindBuffer(gl.ARRAY_BUFFER,this.bn);gl.enableVertexAttribArray(g.a.N);gl.vertexAttribPointer(g.a.N,3,gl.FLOAT,false,0,0);
+    gl.bindBuffer(gl.ARRAY_BUFFER,this.bc);gl.enableVertexAttribArray(g.a.C);gl.vertexAttribPointer(g.a.C,4,gl.FLOAT,false,0,0);
+    gl.uniformMatrix4fv(g.u.MVP,false,mul(mvp,model));gl.uniformMatrix4fv(g.u.M,false,model);
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,this.bi);gl.drawElements(gl.TRIANGLES,this.n,gl.UNSIGNED_SHORT,0);
+  };
+  function drawShadow(g,vp,model,alpha){var gl=g.gl;gl.useProgram(g.P2);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.shadow.pos);gl.enableVertexAttribArray(g.a2.P);gl.vertexAttribPointer(g.a2.P,3,gl.FLOAT,false,0,0);
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.shadow.uv);gl.enableVertexAttribArray(g.a2.UV);gl.vertexAttribPointer(g.a2.UV,2,gl.FLOAT,false,0,0);
+    gl.uniformMatrix4fv(g.u2.MVP,false,mul(vp,model));gl.uniform1f(g.u2.A,alpha);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);gl.depthMask(true);gl.disable(gl.BLEND);gl.useProgram(g.P);}
+
+  /* ---------- Box-Geometrie (für Gasse und Schleifscheibe) ---------- */
+  function boxGeom(list){ /* list: [{x,y,z,w,h,d,c:[r,g,b],gl}] */
+    var pos=[],nrm=[],col=[],idx=[],base=0;
+    var F=[[0,0,1],[0,0,-1],[1,0,0],[-1,0,0],[0,1,0],[0,-1,0]];
+    list.forEach(function(b){
+      var hw=b.w/2,hh=b.h/2,hd=b.d/2;
+      F.forEach(function(n){
+        var u=n[1]?[1,0,0]:[0,1,0];var v=[n[1]*u[2]-n[2]*u[1],n[2]*u[0]-n[0]*u[2],n[0]*u[1]-n[1]*u[0]];
+        var corners=[[-1,-1],[1,-1],[1,1],[-1,1]];
+        corners.forEach(function(c){
+          var x=n[0]*hw+u[0]*hw*c[0]+v[0]*hw*c[1],y=n[1]*hh+u[1]*hh*c[0]+v[1]*hh*c[1],z=n[2]*hd+u[2]*hd*c[0]+v[2]*hd*c[1];
+          pos.push(b.x+x,b.y+y,b.z+z);nrm.push(n[0],n[1],n[2]);col.push(b.c[0],b.c[1],b.c[2],b.gl===undefined?0.3:b.gl);
+        });
+        /* Winding so dass Normale nach außen */
+        var cx=n[0]*hw,cy=n[1]*hh,cz=n[2]*hd;
+        var ax=pos[(base+1)*3]-pos[base*3],ay=pos[(base+1)*3+1]-pos[base*3+1],az=pos[(base+1)*3+2]-pos[base*3+2];
+        var bx=pos[(base+2)*3]-pos[base*3],by=pos[(base+2)*3+1]-pos[base*3+1],bz=pos[(base+2)*3+2]-pos[base*3+2];
+        var crx=ay*bz-az*by,cry=az*bx-ax*bz,crz=ax*by-ay*bx;
+        if(crx*n[0]+cry*n[1]+crz*n[2]>0){idx.push(base,base+1,base+2,base,base+2,base+3);}else{idx.push(base,base+2,base+1,base,base+3,base+2);}
+        base+=4;
+      });
+    });
+    return {pos:new Float32Array(pos),nrm:new Float32Array(nrm),col:new Float32Array(col),idx:new Uint16Array(idx)};
+  }
+
+  function cylGeom(r,hw,segs,c,gl,x,y,z){ /* Achse entlang x */
+    var pos=[],nrm=[],col=[],idx=[];
+    for(var i=0;i<=segs;i++){var a=i/segs*Math.PI*2,cy=Math.cos(a),sz=Math.sin(a);
+      pos.push(x-hw,y+r*cy,z+r*sz, x+hw,y+r*cy,z+r*sz);nrm.push(0,cy,sz,0,cy,sz);col.push(c[0],c[1],c[2],gl,c[0],c[1],c[2],gl);}
+    for(var i2=0;i2<segs;i2++){var b=i2*2;idx.push(b,b+2,b+1,b+1,b+2,b+3);}
+    var base=pos.length/3;
+    for(var side=-1;side<=1;side+=2){var cidx=pos.length/3;pos.push(x+side*hw,y,z);nrm.push(side,0,0);col.push(c[0]*1.05,c[1]*1.05,c[2]*1.05,gl);
+      for(var k=0;k<=segs;k++){var a2=k/segs*Math.PI*2;pos.push(x+side*hw,y+r*Math.cos(a2),z+r*Math.sin(a2));nrm.push(side,0,0);col.push(c[0]*1.05,c[1]*1.05,c[2]*1.05,gl);}
+      for(var k2=0;k2<segs;k2++){if(side>0)idx.push(cidx,cidx+1+k2,cidx+2+k2);else idx.push(cidx,cidx+2+k2,cidx+1+k2);}}
+    return {pos:new Float32Array(pos),nrm:new Float32Array(nrm),col:new Float32Array(col),idx:new Uint16Array(idx)};
+  }
+  function mergeGeom(list){var pos=[],nrm=[],col=[],idx=[],off=0;list.forEach(function(g){for(var i=0;i<g.pos.length;i++)pos.push(g.pos[i]);for(var j=0;j<g.nrm.length;j++)nrm.push(g.nrm[j]);for(var k=0;k<g.col.length;k++)col.push(g.col[k]);for(var m=0;m<g.idx.length;m++)idx.push(g.idx[m]+off);off+=g.pos.length/3;});return {pos:new Float32Array(pos),nrm:new Float32Array(nrm),col:new Float32Array(col),idx:new Uint16Array(idx)};}
+
+  /* ---------- Schienenprofil ---------- */
+  var half=[[0,76],[20,76],[27,75],[31.5,71],[33.5,64],[34,56],[32,46],[26,40.5],[14,37],[9,31],[8,-50],[12,-58],[30,-62],[58,-66],[64,-70],[64,-77],[0,-77]];
+  var prof=[];for(var i=0;i<half.length;i++)prof.push([half[i][0],half[i][1]]);for(var j=half.length-2;j>0;j--)prof.push([-half[j][0],half[j][1]]);
+  var P=prof.length;
+  /* Kanten-Normalen (2D, Profil ist im Uhrzeigersinn bei y nach oben) */
+  var eN=[];for(var e=0;e<P;e++){var a=prof[e],b=prof[(e+1)%P];var tx=b[0]-a[0],ty=b[1]-a[1],l=Math.hypot(tx,ty)||1;eN.push([-ty/l,tx/l]);}
+  /* Slots: glatt (1 Vertex) oder hart (2 Vertices) je Profilpunkt */
+  var slots=[],slotOf=[];/* slotOf[p]={before,after} */
+  for(var p=0;p<P;p++){var n0=eN[(p-1+P)%P],n1=eN[p];var ang=Math.acos(Math.max(-1,Math.min(1,n0[0]*n1[0]+n0[1]*n1[1])));
+    if(ang<0.9){slotOf.push({before:slots.length,after:slots.length});slots.push({p:p,n:[(n0[0]+n1[0])/2,(n0[1]+n1[1])/2],top:prof[p][1]>=70});}
+    else{slotOf.push({before:slots.length,after:slots.length+1});slots.push({p:p,n:n0,top:prof[p][1]>=70});slots.push({p:p,n:n1,top:prof[p][1]>=70});}}
+  var SL=slots.length;
+
+  function RailScene(canvas,overlay,o){
+    this.c=canvas;this.ov=overlay;this.o=o||{};this.g=GL(canvas);this.ctx=overlay?overlay.getContext("2d"):null;
+    this.len=this.o.len||400;this.seg=this.o.seg||48;this.rotY=this.o.rotY||-0.6;this.rotX=this.o.rotX||0.36;this.zoom=this.o.zoom||1;
+    this.wear=0;this.grind=NONE;this.polish=1;this.measure=0;this.sparks=[];this.mx=0;this.my=0;this.dpr=Math.min(window.devicePixelRatio||1,1.75);
+    var N=(this.seg+1)*SL;this.pos=new Float32Array(N*3);this.nrm=new Float32Array(N*3);this.col=new Float32Array(N*4);
+    var idx=[];for(var s=0;s<this.seg;s++)for(var pe=0;pe<P;pe++){var a=s*SL+slotOf[pe].after,b=s*SL+slotOf[(pe+1)%P].before,c=(s+1)*SL+slotOf[(pe+1)%P].before,d=(s+1)*SL+slotOf[pe].after;idx.push(a,b,c,a,c,d);}
+    /* Stirnflächen als Fächer vom Steg-Mittelpunkt (Profil ist sternförmig genug um (0,0)? Nein) -> einfache Triangulation über Ohrenschneiden */
+    this.capIdx=earcut(prof);
+    var capA=[],capB=[];this.capIdx.forEach(function(t){capA.push(t);});
+    this.capPos=new Float32Array(P*2*3);this.capNrm=new Float32Array(P*2*3);this.capCol=new Float32Array(P*2*4);
+    var ci=[];for(var t=0;t<this.capIdx.length;t+=3){ci.push(this.capIdx[t],this.capIdx[t+2],this.capIdx[t+1]);ci.push(P+this.capIdx[t],P+this.capIdx[t+1],P+this.capIdx[t+2]);}
+    if(this.g){this.mesh=new Mesh(this.g,true);this.idx=new Uint16Array(idx);this.cap=new Mesh(this.g,true);this.ci=new Uint16Array(ci);
+      var wheel=mergeGeom([cylGeom(31,4,40,[0.3,0.32,0.35],0.3,0,0,0),cylGeom(11,7,24,[0.72,0.74,0.78],0.85,0,0,0),boxGeom([{x:0,y:28,z:0,w:16,h:30,d:14,c:[0.85,0.42,0.14],gl:0.5},{x:0,y:48,z:0,w:60,h:14,d:40,c:[0.2,0.22,0.26],gl:0.4}])]);
+      this.wheel=new Mesh(this.g,false);this.wheel.set(wheel.pos,wheel.nrm,wheel.col,wheel.idx);}
+    this.resize();
+  }
+  function earcut(poly){ /* einfache Ohrenschneide-Triangulation für Polygon im Uhrzeigersinn */
+    var idx=[],v=[];for(var i=0;i<poly.length;i++)v.push(i);
+    function area(a,b,c){return (b[0]-a[0])*(c[1]-a[1])-(c[0]-a[0])*(b[1]-a[1]);}
+    function inside(p,a,b,c){return area(a,b,p)<=0&&area(b,c,p)<=0&&area(c,a,p)<=0;}
+    var guard=0;
+    while(v.length>3&&guard++<2000){var cut=false;
+      for(var k=0;k<v.length;k++){var ia=v[(k-1+v.length)%v.length],ib=v[k],ic=v[(k+1)%v.length];var a=poly[ia],b=poly[ib],c=poly[ic];
+        if(area(a,b,c)>=0)continue; /* reflex (CW) */
+        var ok=true;for(var m=0;m<v.length;m++){var q=v[m];if(q===ia||q===ib||q===ic)continue;if(inside(poly[q],a,b,c)){ok=false;break;}}
+        if(ok){idx.push(ia,ib,ic);v.splice(k,1);cut=true;break;}}
+      if(!cut)break;}
+    if(v.length===3)idx.push(v[0],v[1],v[2]);return idx;
+  }
+  RailScene.prototype.resize=function(){var r=this.c.getBoundingClientRect(),w=Math.max(1,r.width),h=Math.max(1,r.height);this.w=w;this.h=h;
+    this.c.width=Math.round(w*this.dpr);this.c.height=Math.round(h*this.dpr);if(this.ov){this.ov.width=this.c.width;this.ov.height=this.c.height;}};
+  RailScene.prototype.topY=function(x,z){ /* Verschleißhöhe am Kopf */
+    if(this.wear<=0)return 0;var none=this.grind<-1e8;var ahead=none?1:(z>this.grind?1:0);var soft=none?1:Math.min(1,Math.max(0,(z-this.grind)/40));var w=this.wear*ahead*soft;
+    return -w*(2.6+2.6*Math.sin(z*0.09+Math.sin(z*0.023)*2)+1.0*Math.sin(z*0.31)+0.6*Math.sin(z*0.71+x*0.2));};
+  RailScene.prototype.build=function(){
+    var seg=this.seg,len=this.len,pos=this.pos,nrm=this.nrm,col=this.col;
+    for(var s=0;s<=seg;s++){var z=-len/2+len*s/seg;
+      for(var k=0;k<SL;k++){var sl=slots[k],x=prof[sl.p][0],y=prof[sl.p][1];var i=(s*SL+k)*3,c4=(s*SL+k)*4;
+        var worn=0,dy=0;
+        if(sl.top&&this.wear>0){dy=this.topY(x,z);worn=(this.grind<-1e8||z>this.grind)?this.wear:0;if(Math.abs(x)>=27)x+=(x>0?1:-1)*(-dy)*0.5;}
+        pos[i]=x;pos[i+1]=y+dy;pos[i+2]=z;
+        var nx=sl.n[0],ny=sl.n[1],nz=0;
+        if(sl.top&&this.wear>0){var slope=(this.topY(x,z+2)-this.topY(x,z-2))/4;nz=-slope*ny;}
+        var nl=Math.hypot(nx,ny,nz)||1;nrm[i]=nx/nl;nrm[i+1]=ny/nl;nrm[i+2]=nz/nl;
+        /* Farbe: Stahl, Kopf heller/polierter; verschlissen rostig-matt; frisch geschliffen warm */
+        var base=sl.top?[0.68,0.7,0.74]:[0.5,0.52,0.56],gl=sl.top?0.55+0.45*this.polish:0.32;
+        if(worn>0){base=[0.48+0.06*worn,0.42,0.37-0.03*worn];gl=0.1;}
+        else if(sl.top&&this.wear>0&&this.grind>-1e8){base=[0.78,0.72,0.66];gl=0.9;}
+        col[c4]=base[0];col[c4+1]=base[1];col[c4+2]=base[2];col[c4+3]=gl;
+      }}
+    this.mesh.set(pos,nrm,col,this.idx);
+    /* Kappen */
+    for(var e=0;e<2;e++){var z2=e?len/2:-len/2;for(var p=0;p<P;p++){var o=(e*P+p)*3,o4=(e*P+p)*4;var xx=prof[p][0],yy=prof[p][1];var d=prof[p][1]>=70?this.topY(xx,z2):0;
+      this.capPos[o]=xx;this.capPos[o+1]=yy+d;this.capPos[o+2]=z2;this.capNrm[o]=0;this.capNrm[o+1]=0;this.capNrm[o+2]=e?1:-1;this.capCol[o4]=0.5;this.capCol[o4+1]=0.52;this.capCol[o4+2]=0.56;this.capCol[o4+3]=0.25;}}
+    this.cap.set(this.capPos,this.capNrm,this.capCol,this.ci);
+  };
+  RailScene.prototype.camera=function(){
+    var asp=this.w/this.h;var dist=(this.o.dist||520)/this.zoom;
+    var proj=persp(0.62,asp,10,4000);
+    var view=mul(trans(0,this.o.dy||-6,-dist),mul(rotX(this.rotX+this.my*0.08),rotY(this.rotY+this.mx*0.16)));
+    var vp=mul(proj,view);
+    /* Kameraposition in Welt: inverse der Rotation auf (0,0,dist) */
+    var cy=Math.cos(this.rotY+this.mx*0.16),sy=Math.sin(this.rotY+this.mx*0.16),cx=Math.cos(this.rotX+this.my*0.08),sx=Math.sin(this.rotX+this.my*0.08);
+    var cam=[dist*cx*sy,dist*sx,dist*cx*cy];
+    return {vp:vp,cam:cam,sy:sy};
+  };
+  RailScene.prototype.project=function(vp,x,y,z){var c=xform(vp,x,y,z);return [(c[0]*0.5+0.5)*this.c.width,(1-(c[1]*0.5+0.5))*this.c.height];};
+  RailScene.prototype.render=function(){
+    if(!this.g)return;var gl=this.g.gl,g=this.g;
+    var key=this.wear+"|"+this.grind+"|"+this.polish;if(key!==this._key){this.build();this._key=key;}
+    var C=this.camera();
+    gl.viewport(0,0,this.c.width,this.c.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.useProgram(g.P);gl.uniform3f(g.u.L,-0.45,0.85,0.55);gl.uniform3f(g.u.Cam,C.cam[0],C.cam[1],C.cam[2]);gl.uniform3f(g.u.Bg,0.04,0.05,0.07);gl.uniform1f(g.u.Fog,0);
+    var model=m4();
+    drawShadow(g,C.vp,mul(trans(0,-79,0),scl(120,1,this.len*0.62)),0.55);
+    this.mesh.draw(C.vp,model);this.cap.draw(C.vp,model);
+    /* Schleifscheibe */
+    var showWheel=this.grind>-this.len/2-5&&this.grind<this.len/2+5&&this.wear>0;
+    if(showWheel){var wm=mul(trans(0,76+31,this.grind),rotY(0));this.wheel.draw(C.vp,wm);}
+    /* Overlay */
+    if(this.ctx){var ctx=this.ctx,W=this.ov.width,H=this.ov.height,dpr=this.dpr;ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);
+      if(showWheel){var k=this.project(C.vp,0,76,this.grind);
+        if(!reduce)for(var e=0;e<7;e++)this.sparks.push({x:k[0],y:k[1],vx:(Math.random()*-6-1)*dpr*(C.sy>0?1:-1)+(Math.random()-0.5)*3*dpr,vy:(-Math.random()*5-1.5)*dpr,l:1,s:(Math.random()*1.6+0.6)*dpr});
+        var glow=ctx.createRadialGradient(k[0],k[1],0,k[0],k[1],46*dpr);glow.addColorStop(0,"rgba(255,210,140,.95)");glow.addColorStop(.4,"rgba(255,140,60,.5)");glow.addColorStop(1,"rgba(255,122,46,0)");ctx.fillStyle=glow;ctx.beginPath();ctx.arc(k[0],k[1],46*dpr,0,Math.PI*2);ctx.fill();}
+      if(this.sparks.length){ctx.globalCompositeOperation="lighter";
+        for(var si=this.sparks.length-1;si>=0;si--){var sp=this.sparks[si];sp.x+=sp.vx;sp.y+=sp.vy;sp.vy+=0.26*dpr;sp.l-=0.03;if(sp.l<=0){this.sparks.splice(si,1);continue;}
+          ctx.strokeStyle="rgba(255,"+Math.round(150+100*sp.l)+","+Math.round(50*sp.l)+","+sp.l+")";ctx.lineWidth=sp.s;ctx.beginPath();ctx.moveTo(sp.x,sp.y);ctx.lineTo(sp.x-sp.vx*2.4,sp.y-sp.vy*2.4);ctx.stroke();}
+        ctx.globalCompositeOperation="source-over";}
+      if(this.measure>0){var m=this.measure;ctx.globalAlpha=m;var zf=(C.sy>0?1:-1)*this.len/2,self=this;
+        function pr(x,y,z){return self.project(C.vp,x,y,z);}
+        var A=pr(-34,76,zf),B=pr(34,76,zf),Cc=pr(64,-77,zf),D=pr(64,76,zf);
+        ctx.strokeStyle="rgba(255,154,77,.95)";ctx.fillStyle="rgba(255,154,77,.95)";ctx.lineWidth=1.2*dpr;ctx.font="600 "+(12*dpr)+"px ui-monospace,Menlo,Consolas,monospace";ctx.textAlign="center";
+        var up=28*dpr;ctx.beginPath();ctx.moveTo(A[0],A[1]-6*dpr);ctx.lineTo(A[0],A[1]-up-6*dpr);ctx.moveTo(B[0],B[1]-6*dpr);ctx.lineTo(B[0],B[1]-up-6*dpr);ctx.moveTo(A[0],A[1]-up);ctx.lineTo(B[0],B[1]-up);ctx.stroke();
+        ctx.fillText(window.RR_T.w,(A[0]+B[0])/2,A[1]-up-10*dpr);
+        var rt=30*dpr;ctx.beginPath();ctx.moveTo(D[0]+6*dpr,D[1]);ctx.lineTo(D[0]+rt+6*dpr,D[1]);ctx.moveTo(Cc[0]+6*dpr,Cc[1]);ctx.lineTo(Cc[0]+rt+6*dpr,Cc[1]);ctx.moveTo(D[0]+rt,D[1]);ctx.lineTo(Cc[0]+rt,Cc[1]);ctx.stroke();
+        ctx.save();ctx.translate(D[0]+rt+12*dpr,(D[1]+Cc[1])/2);ctx.rotate(Math.PI/2);ctx.fillText(window.RR_T.h,0,0);ctx.restore();
+        var T1=pr(0,76.5,-this.len/2),T2=pr(0,76.5,this.len/2);ctx.setLineDash([4*dpr,4*dpr]);ctx.strokeStyle="rgba(255,255,255,.6)";ctx.beginPath();ctx.moveTo(T1[0],T1[1]);ctx.lineTo(T2[0],T2[1]);ctx.stroke();ctx.setLineDash([]);
+        ctx.globalAlpha=1;}
+    }
+  };
+
+  /* ---------- Regalgasse ---------- */
+  function AisleScene(canvas){
+    this.c=canvas;this.g=GL(canvas);this.dpr=Math.min(window.devicePixelRatio||1,1.5);this.t=0;if(!this.g)return;
+    var list=[];var steel=[0.2,0.22,0.26],beam=[0.62,0.3,0.1],pal=[0.3,0.28,0.26];
+    for(var side=-1;side<=1;side+=2){for(var z=0;z<16;z++){var zz=-z*120;
+      list.push({x:side*95,y:150,z:zz,w:8,h:300,d:8,c:steel,gl:0.3});list.push({x:side*165,y:150,z:zz,w:8,h:300,d:8,c:steel,gl:0.3});
+      for(var lv=0;lv<5;lv++){var y=30+lv*60;list.push({x:side*130,y:y,z:zz-60,w:78,h:5,d:118,c:beam,gl:0.35});
+        if((z*7+lv*3+(side>0?1:0))%4!==0)list.push({x:side*130,y:y+24,z:zz-60,w:66,h:42,d:90,c:pal,gl:0.1});}}}
+    /* Schiene am Boden und oben */
+    list.push({x:0,y:4,z:-900,w:12,h:8,d:1900,c:[0.6,0.62,0.66],gl:0.85});
+    list.push({x:0,y:304,z:-900,w:10,h:6,d:1900,c:[0.5,0.52,0.56],gl:0.6});
+    /* Boden */
+    list.push({x:0,y:-2,z:-900,w:360,h:4,d:1900,c:[0.09,0.1,0.12],gl:0.5});
+    var geo=boxGeom(list);this.rack=new Mesh(this.g,false);this.rack.set(geo.pos,geo.nrm,geo.col,geo.idx);
+    var crane=boxGeom([{x:0,y:10,z:0,w:60,h:16,d:110,c:[0.9,0.45,0.15],gl:0.5},{x:0,y:158,z:0,w:22,h:290,d:30,c:[0.78,0.8,0.84],gl:0.6},{x:0,y:40,z:0,w:50,h:36,d:70,c:[0.2,0.22,0.26],gl:0.4},{x:0,y:130,z:0,w:70,h:60,d:60,c:[0.9,0.45,0.15],gl:0.5}]);
+    this.crane=new Mesh(this.g,false);this.crane.set(crane.pos,crane.nrm,crane.col,crane.idx);
+    this.resize();
+  }
+  AisleScene.prototype.resize=RailScene.prototype.resize;
+  AisleScene.prototype.render=function(ts){
+    if(!this.g)return;var gl=this.g.gl,g=this.g;var asp=this.w/this.h;
+    var t=ts/1000;var cz=120+Math.sin(t*0.12)*20,cx=Math.sin(t*0.17)*14;
+    var proj=persp(0.75,asp,10,5000);
+    var view=mul(rotX(0.12+Math.sin(t*0.1)*0.02),mul(rotY(Math.sin(t*0.13)*0.05),trans(-cx,-150,-cz)));
+    var vp=mul(proj,view);
+    gl.viewport(0,0,this.c.width,this.c.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.useProgram(g.P);gl.uniform3f(g.u.L,-0.3,0.9,0.3);gl.uniform3f(g.u.Cam,cx,150,cz);gl.uniform3f(g.u.Bg,0.14,0.29,0.49);gl.uniform1f(g.u.Fog,520);
+    this.rack.draw(vp,m4());
+    var zc=-700+Math.sin(t*0.35)*520;var lift=130+Math.sin(t*0.5+1)*90;
+    this.crane.draw(vp,trans(0,0,zc));
+    /* Hubwagen separat: einfache Verschiebung des Lastaufnahmemittels */
+    drawShadow(g,vp,mul(trans(0,0.5,zc),scl(70,1,90)),0.5);
+    var cab=boxGeom([{x:0,y:0,z:0,w:70,h:40,d:60,c:[0.95,0.5,0.18],gl:0.5}]);
+    if(!this.cabm){this.cabm=new Mesh(this.g,false);this.cabm.set(cab.pos,cab.nrm,cab.col,cab.idx);}
+    this.cabm.draw(vp,trans(0,lift,zc));
+  };
+
+  /* Sichtbarkeit per IntersectionObserver statt getBoundingClientRect pro Frame (kein Layout-Thrashing) */
+  var VIS=("WeakMap" in window)?new WeakMap():null,VIO=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(en){VIS.set(en.target,en.isIntersecting);});},{rootMargin:"60px 0px"}):null;
+  function visible(el){if(!VIS||!VIO){var r=el.getBoundingClientRect();return r.bottom>0&&r.top<window.innerHeight;}if(!VIS.has(el)){VIS.set(el,true);VIO.observe(el);}return VIS.get(el)!==false;}
+
+  /* ---------- Hero ---------- */
+  var hc=document.getElementById("hero3d"),ho=document.getElementById("hero3d-ov");
+  function initHero(){
+    var hero=new RailScene(hc,ho,{rotY:-0.62,rotX:0.4,zoom:1,len:360,dist:650,dy:0});
+    if(hero.g){
+      var hs=hc.closest(".visual")||hc;
+      window.addEventListener("mousemove",function(e){var r=hs.getBoundingClientRect();hero.mx=((e.clientX-r.left)/r.width-0.5);hero.my=((e.clientY-r.top)/r.height-0.5);},{passive:true});
+      var last=0;
+      function hloop(ts){if(!reduce){hero.rotY=-0.62+Math.sin(ts/4200)*0.18;hero.rotX=0.38+Math.sin(ts/5600)*0.05;}
+        if(visible(hc)&&(ts-last>33)){hero.render();last=ts;}if(!reduce)requestAnimationFrame(hloop);}
+      window.addEventListener("resize",function(){hero.resize();hero.render();});
+      hero.render();if(!reduce)requestAnimationFrame(hloop);
+    }else{hc.parentElement.classList.add("nogl");}
+  }
+  /* Hero-Szene nach dem ersten Paint anlegen, damit der Start nicht blockiert */
+  if(hc){requestAnimationFrame(function(){setTimeout(initHero,0);});}
+
+  /* Szenen erst anlegen, wenn sie in die Nähe des Viewports kommen (weniger Arbeit beim Start) */
+  function lazy(el,fn){if(!el){return;}if(!("IntersectionObserver" in window)){fn();return;}var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();fn();}},{rootMargin:"500px 0px"});io.observe(el);}
+
+  /* ---------- Story ---------- */
+  var sc=document.getElementById("story3d"),so=document.getElementById("story3d-ov"),story=document.getElementById("story");
+  if(sc&&story){lazy(story,function(){
+    var S=new RailScene(sc,so,{rotY:-0.95,rotX:0.3,zoom:1,len:520,seg:60,dist:1000,dy:-6});
+    if(S.g){
+      var steps=story.querySelectorAll(".st"),hud=document.getElementById("story-hud"),hudv=document.getElementById("hud-val"),hudl=document.getElementById("hud-lab"),bar=document.getElementById("story-bar");
+      var labels=[];steps.forEach(function(s){labels.push(s.getAttribute("data-hud")||"");});
+      function clamp(v,a,b){return v<a?a:v>b?b:v;}function ease(t){return t<.5?2*t*t:-1+(4-2*t)*t;}
+      function update(){
+        var r=story.getBoundingClientRect(),vh=window.innerHeight;var p=clamp((-r.top)/(r.height-vh),0,1);
+        var n=steps.length,seg=1/n,idx=Math.min(n-1,Math.floor(p/seg)),local=(p-idx*seg)/seg;
+        S.wear=1;S.measure=0;S.polish=0.3;S.rotX=0.3;
+        if(idx===0){S.grind=NONE;S.rotY=-0.95+0.25*ease(local);}
+        else if(idx===1){S.grind=-S.len/2+S.len*ease(local)*1.05;S.rotY=-0.7+0.1*local;}
+        else if(idx===2){S.grind=S.len;S.wear=0;S.polish=0.3+0.7*local;S.measure=ease(local);S.rotY=-0.6+0.35*ease(local);}
+        else{S.grind=S.len;S.wear=0;S.polish=1;S.measure=1-ease(local)*0.7;S.rotY=-0.25-0.55*ease(local);S.rotX=0.3+0.22*ease(local);}
+        steps.forEach(function(s,i){var o=i===idx?(local<0.15?local/0.15:local>0.85?(1-local)/0.15:1):0;if(n-1===i&&i===idx&&local>0.85)o=1;
+          s.style.opacity=o;s.style.transform="translateY("+((1-o)*14)+"px)";s.style.visibility=o<0.02?"hidden":"visible";});
+        if(hud){var v;if(idx===0)v=(0.42+0.1*Math.sin(local*6)).toFixed(2);else if(idx===1)v=(0.42-0.40*ease(local)).toFixed(2);else v="0.02";
+          hudv.textContent=v.replace(".",window.RR_T.dot)+" mm";hudl.textContent=labels[idx]||"";hud.style.opacity=1;}
+        if(bar)bar.style.transform="scaleX("+p+")";
+        S.render();
+      }
+      var ticking=false;function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(function(){update();ticking=false;});}}
+      window.addEventListener("scroll",onScroll,{passive:true});window.addEventListener("resize",function(){S.resize();update();});
+      if(reduce){S.wear=0;S.polish=1;S.measure=1;S.render();steps.forEach(function(s){s.style.opacity=1;s.style.visibility="visible";});}
+      else{update();(function sloop(){if(S.sparks.length&&visible(sc))S.render();requestAnimationFrame(sloop);})();}
+    }else{story.classList.add("nogl");}
+  });}
+
+  /* ---------- Gasse ---------- */
+  var ac=document.getElementById("aisle3d");
+  lazy(ac,function(){
+    if(!reduce){var A=new AisleScene(ac);if(A.g){window.addEventListener("resize",function(){A.resize();});var lastA=0;(function aloop(ts){if(visible(ac)&&ts-lastA>33){A.render(ts||0);lastA=ts;}requestAnimationFrame(aloop);})(0);}}
+    else{var A2=new AisleScene(ac);if(A2.g)A2.render(1000);}
+  });
+
+  /* ---------- Vorher/Nachher ---------- */
+  var ca=document.getElementById("cmp-after"),cb=document.getElementById("cmp-before-c"),cst=document.getElementById("cmp-stage");
+  if(ca&&cb&&cst){lazy(cst,function(){
+    var opts={rotY:-0.95,rotX:0.5,zoom:1,len:300,seg:56,dist:430,dy:-10};
+    var After=new RailScene(ca,null,opts),Before=new RailScene(cb,null,opts);
+    if(After.g&&Before.g){
+      Before.wear=1.9;Before.grind=NONE;Before.polish=0.05;After.wear=0;After.polish=1;
+      var bw=document.getElementById("cmp-before"),hd=document.getElementById("cmp-handle"),rg=document.getElementById("cmp-range");
+      function setSplit(v){v=Math.max(0,Math.min(100,v));bw.style.width=v+"%";bw.style.setProperty("--w",v/100||0.0001);hd.style.left=v+"%";if(rg.value!=v)rg.value=v;}
+      function sizeAll(){After.resize();Before.resize();cb.style.width=cst.clientWidth+"px";cb.style.height=cst.clientHeight+"px";After.render();Before.render();}
+      /* das Before-Canvas muss die volle Bühnenbreite haben, der Container schneidet */
+      cb.style.width="100%";
+      var lastC=0;function renderBoth(ts){if(visible(cst)&&ts-lastC>33){if(!reduce){After.rotY=Before.rotY=-0.95+Math.sin(ts/5000)*0.1;}After.render();Before.render();lastC=ts;}if(!reduce)requestAnimationFrame(renderBoth);}
+      rg.addEventListener("input",function(){setSplit(+rg.value);});
+      var drag=false;function pos(e){var r=cst.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;setSplit(x/r.width*100);}
+      cst.addEventListener("pointerdown",function(e){drag=true;cst.setPointerCapture(e.pointerId);pos(e);});
+      cst.addEventListener("pointermove",function(e){if(drag)pos(e);});
+      cst.addEventListener("pointerup",function(){drag=false;});cst.addEventListener("pointercancel",function(){drag=false;});
+      window.addEventListener("resize",sizeAll);
+      /* Größe des Before-Canvas an Bühne koppeln */
+      var ro2=new (window.ResizeObserver||function(){this.observe=function(){};})(function(){cb.style.width=cst.clientWidth+"px";cb.style.height=cst.clientHeight+"px";Before.resize();Before.render();});
+      ro2.observe(cst);
+      cb.style.width=cst.clientWidth+"px";cb.style.height=cst.clientHeight+"px";
+      After.resize();Before.resize();setSplit(50);After.render();Before.render();
+      if(!reduce)requestAnimationFrame(renderBoth);
+    }else{document.getElementById("compare").style.display="none";}
+  });}
+
+  /* ---------- Kleine Bewegungen ---------- */
+  /* Hero-Visual: leichter Zoom beim Scrollen */
+  var hv=document.querySelector(".hero .visual");
+  if(hv&&!reduce){window.addEventListener("scroll",function(){var y=window.scrollY;if(y>1400)return;var k=Math.min(1,y/900);hv.style.transform="scale("+(1+k*0.08)+") translateY("+(k*-18)+"px)";},{passive:true});}
+  /* Bildpause: leichte Parallaxe */
+  var pb=document.querySelector(".pb-img");
+  if(pb&&!reduce){window.addEventListener("scroll",function(){if(document.documentElement.classList.contains("motion"))return;var r=pb.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight)return;var p=(r.top+r.height/2-window.innerHeight/2)/window.innerHeight;pb.style.transform="scale(1.12) translateY("+(p*-6)+"%)";},{passive:true});}
+  /* Zahlen hochzählen */
+  var nums=document.querySelectorAll("[data-count]");
+  if(nums.length&&"IntersectionObserver"in window&&!reduce){
+    var cio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;cio.unobserve(en.target);var el=en.target,target=parseFloat(el.getAttribute("data-count")),dec=(el.getAttribute("data-dec")|0),suf=el.getAttribute("data-suffix")||"",t0=null;
+      function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);var e=1-Math.pow(1-p,3);var v=(target*e).toFixed(dec);el.textContent=v.replace(".",window.RR_T.dot)+suf;if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);});},{threshold:.6});
+    nums.forEach(function(n){cio.observe(n);});
+  }
+  /* Kacheln kippen zur Maus */
+  if(window.matchMedia&&window.matchMedia("(hover:hover) and (pointer:fine)").matches&&!reduce){
+    document.querySelectorAll(".tile,.case,.sym a,.proof > div").forEach(function(el){
+      el.addEventListener("mousemove",function(e){var r=el.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;
+        el.style.transform="perspective(900px) rotateX("+(-y*5)+"deg) rotateY("+(x*6)+"deg) translateY(-2px)";el.style.setProperty("--gx",(x*100+50)+"%");el.style.setProperty("--gy",(y*100+50)+"%");});
+      el.addEventListener("mouseleave",function(){el.style.transform="";});
+    });
+  }
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "In quanto tempo potete essere sul posto?", "acceptedAnswer": {"@type": "Answer", "text": "Di norma entro 14 giorni. Lavoriamo anche nei weekend e durante le pause di produzione, così il vostro impianto resta fermo il meno possibile."}}, {"@type": "Question", "name": "Il magazzino deve fermarsi per i lavori?", "acceptedAnswer": {"@type": "Answer", "text": "No. Moliamo corsia per corsia. La corsia chiusa è di norma di nuovo libera dopo un turno, mentre il resto del magazzino continua a funzionare."}}, {"@type": "Question", "name": "Quanto dura la molatura di una corsia?", "acceptedAnswer": {"@type": "Answer", "text": "Sono possibili fino a 120 m al giorno, a seconda di stato, accessi e profilo. Dopo l'analisi dell'impianto vi diamo un programma preciso."}}, {"@type": "Question", "name": "Come capisco che la rotaia va molata?", "acceptedAnswer": {"@type": "Answer", "text": "Al più tardi quando si sostituiscono le ruote e quando la superficie di contatto si estende su tutta la larghezza del fungo. Altri segnali sono il rumore di marcia crescente, le vibrazioni ai giunti e le ondulazioni visibili sulla superficie di rotolamento."}}, {"@type": "Question", "name": "Saldate anche i giunti?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Giunti abbassati e rotture della rotaia vengono saldati nell'ambito dell'intervento, a seconda del profilo con MIG/MAG, TIG o elettrodo, e poi molati a filo del profilo."}}]}</script>
+</body>
+</html>

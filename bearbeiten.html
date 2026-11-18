@@ -75,7 +75,7 @@ aside input:focus,aside textarea:focus{outline:2px solid var(--accent2);outline-
       <h1>Website selbst bearbeiten</h1>
       <p>Texte direkt in der Seite ändern, Bilder tauschen, speichern. Ohne Programm, ohne Server, ohne Programmierkenntnisse.</p>
       <ol>
-        <li>Auf <b>Datei öffnen</b> klicken und <b>index.html</b> aus diesem Ordner wählen (für Englisch: <b>en/index.html</b>, Russisch <b>ru/</b>, Arabisch <b>ar/</b>).</li>
+        <li>Auf <b>Datei öffnen</b> klicken und <b>index.html</b> aus diesem Ordner wählen (für Englisch: <b>en/index.html</b>, Russisch <b>ru/</b>, Arabisch <b>ar/</b>, Italienisch <b>it/</b>, Spanisch <b>es/</b>, Französisch <b>fr/</b>).</li>
         <li>In der Vorschau auf einen Text klicken und tippen. Auf ein Bild klicken, um es zu ersetzen.</li>
         <li>Auf <b>Speichern</b> klicken. Die neue Datei ersetzt die alte.</li>
       </ol>
@@ -101,7 +101,7 @@ aside input:focus,aside textarea:focus{outline:2px solid var(--accent2);outline-
   <div class="tip"><b>Bilder:</b> In der Vorschau auf ein Bild klicken, neues Bild wählen. Es wird automatisch verkleinert und direkt in die Seite eingebettet. Fotos aus dem Handy gehen direkt.</div>
   <div class="tip"><b>Orange markierte Platzhalter</b> (USt-IdNr., Hoster) einfach überschreiben.</div>
   <div class="tip"><b>Speichern:</b> Wenn der Browser es erlaubt, wird die Datei direkt überschrieben. Sonst landet eine neue <b>index.html</b> im Download-Ordner: diese Datei in den Website-Ordner kopieren und die alte ersetzen.</div>
-  <div class="tip"><b>Jede Sprache einzeln:</b> Deutsch ist index.html im Hauptordner, Englisch in en/, Russisch in ru/, Arabisch in ar/.</div>
+  <div class="tip"><b>Jede Sprache einzeln:</b> Deutsch ist index.html im Hauptordner, Englisch in en/, Russisch in ru/, Arabisch in ar/, Italienisch in it/, Spanisch in es/, Französisch in fr/.</div>
 </aside>
 
 <div id="toast" role="status"></div>
@@ -151,7 +151,7 @@ aside input:focus,aside textarea:focus{outline:2px solid var(--accent2);outline-
     var k=0; doc.querySelectorAll("img").forEach(function(im){ im.setAttribute("data-rrimg",String(++k)); });
     renderPreview();
     fillPanel();
-    var where={de:"index.html (Deutsch)",en:"en/index.html (Englisch)",ru:"ru/index.html (Russisch)",ar:"ar/index.html (Arabisch)"}[state.lang]||state.name;
+    var where={de:"index.html (Deutsch)",en:"en/index.html (Englisch)",ru:"ru/index.html (Russisch)",ar:"ar/index.html (Arabisch)",it:"it/index.html (Italienisch)",es:"es/index.html (Spanisch)",fr:"fr/index.html (Französisch)"}[state.lang]||state.name;
     fileinfo.innerHTML="<b>"+where+"</b><br>"+n+" Textfelder, "+k+" Bilder"+(handle?"<br>Direktes Speichern möglich.":"<br>Speichern legt eine neue Datei im Download-Ordner ab.");
     say("Geöffnet: "+where,"ok");
     bSave.disabled=true; bReset.disabled=false; mTitle.disabled=false; mDesc.disabled=false;
@@ -286,7 +286,7 @@ aside input:focus,aside textarea:focus{outline:2px solid var(--accent2);outline-
     hot.innerHTML="";
     var views=d.querySelectorAll(".holo-view");
     if(!views.length){ hot.innerHTML='<div class="tip">In dieser Seite gibt es keinen Explorer.</div>'; return; }
-    var names={schleifen:"Schleifen",schweissen:"Schweißen",vermessen:"Vermessen"};
+    var names={schleifen:"Schleifen",vermessen:"Vermessen"};
     views.forEach(function(v){
       var box=document.createElement("details"); box.className="hot"; if(v.classList.contains("is-on")) box.open=true;
       var sum=document.createElement("summary"); sum.textContent="Ansicht: "+(names[v.getAttribute("data-view")]||v.getAttribute("data-view")); box.appendChild(sum);
@@ -334,7 +334,7 @@ aside input:focus,aside textarea:focus{outline:2px solid var(--accent2);outline-
     }
     var blob=new Blob([html],{type:"text/html;charset=utf-8"}); var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=state.name||"index.html"; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},2000);
     state.changes=0; state.dirty=false; bSave.disabled=true;
-    var where={de:"im Hauptordner",en:"im Ordner en",ru:"im Ordner ru",ar:"im Ordner ar"}[state.lang]||"";
+    var where={de:"im Hauptordner",en:"im Ordner en",ru:"im Ordner ru",ar:"im Ordner ar",it:"im Ordner it",es:"im Ordner es",fr:"im Ordner fr"}[state.lang]||"";
     say("Heruntergeladen: "+(state.name||"index.html"),"ok");
     flash("Datei liegt im Download-Ordner. Damit die alte index.html "+where+" ersetzen.");
   }
