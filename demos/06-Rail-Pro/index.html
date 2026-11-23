@@ -966,7 +966,7 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 @media (max-width:860px){.reel{grid-template-columns:1fr}.reel-stage{width:min(100%,340px);justify-self:center}}
 /* Vorher / Nachher */
 .vn-sec{background:var(--ground);padding-block:clamp(56px,8vw,110px)}
-.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;max-width:820px}
+.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
 .vn figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--deep)}
 .vn img{display:block;width:100%;height:100%;object-fit:cover}
 .vn figcaption{position:absolute;left:12px;top:12px;background:rgba(10,26,34,.85);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:3px}
@@ -1000,7 +1000,34 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 footer{background:var(--deep);border-top:3px solid var(--hot)}
 .mbar .ask{background:var(--hot);color:#0d1a22}.mbar .call{background:var(--deep);color:#fff}
 .totop{background:var(--deep);color:var(--hot)}
-.ghost{opacity:.035}
+.ghost{display:none}
+/* Abschnitte durchnummeriert */
+#view-home{counter-reset:sec}
+.sec-head{counter-increment:sec}
+.sec-head .eyebrow::before{content:counter(sec,decimal-leading-zero)!important;width:auto!important;height:auto!important;background:var(--hot)!important;color:#0d1a22;padding:4px 7px;border-radius:2px;letter-spacing:.06em;font-size:.72rem;line-height:1}
+.sec-head h2{max-width:18ch}
+.svc .sec-head,.process .sec-head,.map-sec .sec-head{margin-bottom:clamp(26px,3vw,40px)!important}
+.svc-core .pills{margin-top:18px}
+/* Leistungen: drei Karten */
+.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr!important}}
+.svc-card{padding:28px 26px}
+.svc-card h3{font-size:1.25rem}
+/* Vorher/Nachher und Schwerpunkt als Zweispalter */
+.vn-sec .wrap,.industries .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:center}
+.vn-sec .sec-head,.industries .sec-head{margin-bottom:0!important}
+.vn{max-width:none}
+.industries .hrl{display:block;margin:0}
+.industries .hrl .ph{position:relative;aspect-ratio:4/3;overflow:visible}
+.industries .hrl .ph::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:3px solid var(--hot);border-radius:4px;z-index:0}
+.industries .hrl .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.industries .hrl-more{grid-column:1/-1;margin:0;padding-top:20px;border-top:1px solid var(--ground-3);color:var(--ink-2)}
+@media (max-width:860px){.vn-sec .wrap,.industries .wrap{grid-template-columns:1fr}.industries .hrl .ph::before{inset:10px -8px -10px 8px}}
+/* Ablauf mit Verbindungslinie */
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;inset-inline-start:-5px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--hot)}
+/* FAQ kompakt neben der Überschrift */
+.faq summary{font-size:1.08rem;padding-block:22px}
 @media (prefers-reduced-motion:reduce){.hero-vid,.hero-vid:hover{transform:none}.hero-vid .tag i{animation:none}}
 </style>
 </head>
@@ -1057,13 +1084,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   </div>
 </section>
 <div class="kpi" aria-label="Kennzahlen"><div class="wrap"><ul><li><b>120 m</b><span>Schleifleistung pro Tag</span></li><li><b>0,1 mm</b><span>Messbar beim Vermessen</span></li><li><b>12 Länder</b><span>Einsätze weltweit</span></li><li><b>7 Tage</b><span>Einsatz auch am Wochenende</span></li></ul></div></div>
-<div class="ticker" aria-hidden="true"><ul><li>Schienen schleifen</li><li>Hochregallager</li><li>Regalbediengeräte</li><li>Bis 120 m pro Tag</li><li>Reprofilieren</li><li>Im laufenden Betrieb</li><li>Teilautomatische Schleifmaschine</li><li>12 Länder</li><li>Schienen schleifen</li><li>Hochregallager</li><li>Regalbediengeräte</li><li>Bis 120 m pro Tag</li><li>Reprofilieren</li><li>Im laufenden Betrieb</li><li>Teilautomatische Schleifmaschine</li><li>12 Länder</li></ul></div>
 
 
 <section class="pfacts" aria-labelledby="facts-h">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Gut zu wissen</span><h2 id="facts-h">Sechs Fakten, die im Lager zählen.</h2></div>
-    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Schleifleistung pro Tag</h3><p>Je nach Zustand, Zugang und Profil. Nach der Systemanalyse nennen wir einen festen Zeitplan.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0,4 bis 0,8 mm</b><h3>Abtrag je Schleifvorgang</h3><p>Reprofilieren ist der Regelfall. Riffel, Überwalzungen und abgesackte Stöße verschwinden.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="1.5"/></svg></span><b>0,1 mm</b><h3>Messbar beim Vermessen</h3><p>Selbst 1 mm Abweichung auf 80 m Gassenlänge wird sichtbar.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 Tage</b><h3>Bis wir vor Ort sind</h3><p>In der Regel. Wir arbeiten auch am Wochenende und in Produktionspausen.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 bis A150</b><h3>Alle gängigen Profile</h3><p>Obere und untere Schiene, unabhängig vom Hersteller des Regalbediengeräts.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 Schicht</b><h3>Dann ist die Gasse wieder frei</h3><p>Wir schleifen Gasse für Gasse, der Rest des Lagers läuft weiter. Funken werden gekühlt, der Abrieb gebunden.</p></li></ul>
+    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Schleifleistung pro Tag</h3><p>Je nach Zustand, Zugang und Profil der Schiene.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0,4 bis 0,8 mm</b><h3>Abtrag je Schleifvorgang</h3><p>Kontrolliert und gleichmäßig über die ganze Länge.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 Tage</b><h3>Bis wir vor Ort sind</h3><p>In der Regel, gerechnet ab Ihrer Anfrage.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><b>7 Tage</b><h3>Auch am Wochenende</h3><p>Wir arbeiten dann, wenn Ihr Lager Zeit hat, auch in Produktionspausen.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 bis A150</b><h3>Alle gängigen Profile</h3><p>Obere und untere Schiene, unabhängig vom Hersteller.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 Schicht</b><h3>Dann ist die Gasse wieder frei</h3><p>Funken werden gekühlt, der Abrieb gebunden. Die Ware bleibt im Regal.</p></li></ul>
   </div>
 </section>
 
@@ -1078,12 +1104,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Leistungen</span><h2 id="l-h">Schleifen ist unser Kern.</h2><p class="lead" style="margin-top:18px">Die Lauffläche entscheidet über Laufruhe, Verschleiß und Verfügbarkeit. Wir bringen sie zurück in Form.</p></div>
     <div class="svc-core reveal">
-      <div><span class="badge">Kernleistung</span><div class="num">01</div><h3>Schienen schleifen</h3><p>Schleifen ist Sanieren. Reprofilieren ist der Regelfall: Riffel, Überwalzungen und gesetzte Stöße werden abgetragen, bevor sie zu Lärm, Vibrationen und Stillstand führen. Teilautomatische Schleifmaschine aus eigener Konstruktion, Abtrag 0,4 bis 0,8 mm je Schleifvorgang, bis 120 m pro Tag.</p>
-        <ul class="pills"><li><span class="dot"></span>Riffel &amp; Überwalzungen</li><li><span class="dot"></span>Gesetzte Stöße</li><li><span class="dot"></span>Teilautomatische Schleifmaschine</li><li><span class="dot"></span>0,4 bis 0,8 mm je Schleifvorgang</li><li><span class="dot"></span>Bis 120 m pro Tag</li></ul>
+      <div><span class="badge">Kernleistung</span><div class="num">01</div><h3>Schienen schleifen</h3><p>Schleifen ist Sanieren. Reprofilieren ist der Regelfall: Riffel, Überwalzungen und gesetzte Stöße werden abgetragen, bevor sie zu Lärm, Vibrationen und Stillstand führen.</p>
+        <ul class="pills"><li><span class="dot"></span>Teilautomatische Schleifmaschine</li></ul>
       </div>
       <figure class="shot"><img src="img/svc-schleifen.webp" srcset="img/svc-schleifen-s.webp 560w, img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Schleifen einer Stahlschiene mit Funkenflug" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Spezifische Systemanalyse</h3><p>Vor dem Einsatz schauen wir auf Ihr System: Regalbediengerät, Laufräder, Schienenprofil, Stöße und die Kontaktfläche über die Kopfbreite. So wird klar, was geschliffen werden muss und was nicht.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Vermessen</h3><p>Höhenlage und Richtung der Schiene über die gesamte Gasse. Messbar auf 0,1 mm, auch eine Abweichung von 1 mm auf 80 m wird sichtbar.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Bauüberwachung</h3><p>Bestandsanalyse, Begleitung vor Ort und Abnahme bei Neubau und Umbau, inklusive Baustellenkoordination.</p></div><div class="svc-card reveal"><div class="num">05</div><h3>Wissensvermittlung</h3><p>Praxisnahe Schulungen zum Schleifen und Instandhalten von Schienensystemen, Beratung für Hochregallager, Produktion und Krananlagen.</p></div></div>
+    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Vermessen</h3><p>Höhenlage und Richtung der Schiene über die gesamte Gasse. Messbar auf 0,1 mm, auch eine Abweichung von 1 mm auf 80 m wird sichtbar.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Bauüberwachung</h3><p>Bestandsanalyse, Begleitung vor Ort und Abnahme bei Neubau und Umbau, inklusive Baustellenkoordination.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Wissensvermittlung</h3><p>Praxisnahe Schulungen zum Schleifen und Instandhalten von Schienensystemen, Beratung für Hochregallager, Produktion und Krananlagen.</p></div></div>
     <a class="dl" href="downloads/RackRail-Solution-Leistungsuebersicht.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Leistungsübersicht als PDF<small>1 Seite, 106 KB</small></span></a>
   </div>
 </section>
@@ -1098,9 +1124,8 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 
 <section class="vn-sec" aria-labelledby="vn-h">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Vorher / Nachher</span><h2 id="vn-h">Der Unterschied liegt auf der Lauffläche.</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">Vorher / Nachher</span><h2 id="vn-h">Der Unterschied liegt auf der Lauffläche.</h2><p class="lead">Beispielaufnahmen aus zwei Einsätzen.</p></div>
     <div class="vn"><figure><img src="img/vorher.webp" width="600" height="800" alt="Schiene vor dem Schleifen" loading="lazy" decoding="async"><figcaption>Vorher</figcaption></figure><figure class="after"><img src="img/nachher.webp" width="600" height="800" alt="Blanke Lauffläche nach dem Schleifen" loading="lazy" decoding="async"><figcaption>Nachher</figcaption></figure></div>
-    <p class="vn-note">Beispielaufnahmen aus zwei Einsätzen.</p>
   </div>
 </section>
 <section class="industries" id="branchen" aria-labelledby="b-h">
@@ -1108,7 +1133,7 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
     <div class="sec-head reveal"><span class="eyebrow">Einsatzbereich</span><h2 id="b-h">Zu Hause im Hochregallager.</h2><p class="lead" style="margin-top:18px">Unsere Spezialität sind die Fahrschienen von Regalbediengeräten im Hochregallager. Lange Gassen, hohe Lasten, kein Platz für Stillstand.</p></div>
     <div class="hrl reveal">
       <div class="ph"><img src="img/branche-hochregal.webp" srcset="img/branche-hochregal-s.webp 440w, img/branche-hochregal.webp 800w" sizes="(max-width:860px) 92vw, 48vw" width="800" height="1067" alt="Fahrschiene eines Regalbediengeräts in der Gasse eines Hochregallagers" loading="lazy" decoding="async" data-parallax></div>
-      <div class="hrl-points"><div class="p"><b>Regalbediengeräte</b><span>Fahrschienen von Regalbediengeräten, oberer und unterer Strang.</span></div><div class="p"><b>Alle Profile</b><span>Schienenprofile A65 bis A150, unabhängig vom Hersteller.</span></div><div class="p"><b>Im laufenden Betrieb</b><span>Gassenweise, während der Rest des Lagers weiterläuft.</span></div></div>
+      
     </div>
     <p class="hrl-more reveal">Darüber hinaus bearbeiten wir auch Fahrschienen in Produktion, Krananlagen und im Anlagenbau.</p>
   </div>
@@ -1138,10 +1163,9 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 <section class="faq-sec" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="reveal"><span class="eyebrow sec-eyebrow">Häufige Fragen</span><h2 id="faq-h">Was Kunden vor dem ersten Einsatz wissen wollen.</h2><p class="lead" style="margin-top:18px">Kurz beantwortet. Alles Weitere klären wir im Gespräch.</p></div>
-    <div class="faq reveal"><details name="faq"><summary>Wie schnell können Sie vor Ort sein?<span class="pm" aria-hidden="true"></span></summary><div class="body">In der Regel innerhalb von 14 Tagen. Wir arbeiten auch an Wochenenden und in Betriebspausen, damit Ihre Anlage so kurz wie möglich steht.</div></details><details name="faq"><summary>Muss das Lager für die Arbeiten stillstehen?<span class="pm" aria-hidden="true"></span></summary><div class="body">Nein. Wir schleifen gassenweise. Die gesperrte Gasse ist meist nach einer Schicht wieder frei, der Rest des Lagers läuft weiter.</div></details><details name="faq"><summary>Wie lange dauert das Schleifen einer Gasse?<span class="pm" aria-hidden="true"></span></summary><div class="body">Bis zu 120 m pro Tag sind möglich, je nach Zustand, Zugang und Profil. Nach der Systemanalyse nennen wir Ihnen einen festen Zeitplan.</div></details><details name="faq"><summary>Woran erkenne ich, dass die Schiene geschliffen werden muss?<span class="pm" aria-hidden="true"></span></summary><div class="body">Spätestens beim Laufradwechsel und wenn die Kontaktfläche über die gesamte Kopfbreite geht. Weitere Zeichen sind lauter werdende Fahrgeräusche, Vibrationen durch Stöße und sichtbare Riffel auf der Lauffläche.</div></details><details name="faq"><summary>Schweißen Sie auch Schienenstöße?<span class="pm" aria-hidden="true"></span></summary><div class="body">Ja. Gesetzte Stöße und Schienenbrüche schweißen wir im Zuge des Einsatzes, je nach Profil mit MIG/MAG, WIG oder E-Hand, und schleifen sie anschließend bündig auf Profil.</div></details></div>
+    <div class="faq reveal"><details name="faq"><summary>Woran erkenne ich, dass die Schiene geschliffen werden muss?<span class="pm" aria-hidden="true"></span></summary><div class="body">Spätestens beim Laufradwechsel und wenn die Kontaktfläche über die gesamte Kopfbreite geht. Weitere Zeichen sind lauter werdende Fahrgeräusche, Vibrationen durch Stöße und sichtbare Riffel auf der Lauffläche.</div></details><details name="faq"><summary>Schweißen Sie auch Schienenstöße?<span class="pm" aria-hidden="true"></span></summary><div class="body">Ja. Gesetzte Stöße und Schienenbrüche schweißen wir im Zuge des Einsatzes, je nach Profil mit MIG/MAG, WIG oder E-Hand, und schleifen sie anschließend bündig auf Profil.</div></details></div>
   </div>
 </section>
-<section class="band-img" aria-label="Schleifen"><img src="img/akzent-schleifen.webp" srcset="img/akzent-schleifen-s.webp 810w, img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Winkelschleifer mit Funkenflug beim Bearbeiten von Stahl" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Schleifen ist Präzisionsarbeit.</h2><p>Die Lauffläche entscheidet über Laufruhe, Verschleiß und die Lebensdauer der Schiene.</p></div></section>
 <section class="contact-sec" id="kontakt" aria-labelledby="k-h">
   <div class="wrap">
     <div class="intro reveal"><span class="eyebrow">Kontakt</span><h2 id="k-h">Reden wir über Ihre Schiene.</h2><p class="lead" style="margin-top:18px">Schildern Sie kurz Anlage und Problem. Wir melden uns in der Regel am selben Werktag.</p></div>
@@ -2103,6 +2127,6 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 })();
 </script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie schnell können Sie vor Ort sein?", "acceptedAnswer": {"@type": "Answer", "text": "In der Regel innerhalb von 14 Tagen. Wir arbeiten auch an Wochenenden und in Betriebspausen, damit Ihre Anlage so kurz wie möglich steht."}}, {"@type": "Question", "name": "Muss das Lager für die Arbeiten stillstehen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Wir schleifen gassenweise. Die gesperrte Gasse ist meist nach einer Schicht wieder frei, der Rest des Lagers läuft weiter."}}, {"@type": "Question", "name": "Wie lange dauert das Schleifen einer Gasse?", "acceptedAnswer": {"@type": "Answer", "text": "Bis zu 120 m pro Tag sind möglich, je nach Zustand, Zugang und Profil. Nach der Systemanalyse nennen wir Ihnen einen festen Zeitplan."}}, {"@type": "Question", "name": "Woran erkenne ich, dass die Schiene geschliffen werden muss?", "acceptedAnswer": {"@type": "Answer", "text": "Spätestens beim Laufradwechsel und wenn die Kontaktfläche über die gesamte Kopfbreite geht. Weitere Zeichen sind lauter werdende Fahrgeräusche, Vibrationen durch Stöße und sichtbare Riffel auf der Lauffläche."}}, {"@type": "Question", "name": "Schweißen Sie auch Schienenstöße?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gesetzte Stöße und Schienenbrüche schweißen wir im Zuge des Einsatzes, je nach Profil mit MIG/MAG, WIG oder E-Hand, und schleifen sie anschließend bündig auf Profil."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Woran erkenne ich, dass die Schiene geschliffen werden muss?", "acceptedAnswer": {"@type": "Answer", "text": "Spätestens beim Laufradwechsel und wenn die Kontaktfläche über die gesamte Kopfbreite geht. Weitere Zeichen sind lauter werdende Fahrgeräusche, Vibrationen durch Stöße und sichtbare Riffel auf der Lauffläche."}}, {"@type": "Question", "name": "Schweißen Sie auch Schienenstöße?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gesetzte Stöße und Schienenbrüche schweißen wir im Zuge des Einsatzes, je nach Profil mit MIG/MAG, WIG oder E-Hand, und schleifen sie anschließend bündig auf Profil."}}]}</script>
 </body>
 </html>

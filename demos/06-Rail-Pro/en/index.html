@@ -967,7 +967,7 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 @media (max-width:860px){.reel{grid-template-columns:1fr}.reel-stage{width:min(100%,340px);justify-self:center}}
 /* Vorher / Nachher */
 .vn-sec{background:var(--ground);padding-block:clamp(56px,8vw,110px)}
-.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;max-width:820px}
+.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
 .vn figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--deep)}
 .vn img{display:block;width:100%;height:100%;object-fit:cover}
 .vn figcaption{position:absolute;left:12px;top:12px;background:rgba(10,26,34,.85);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:3px}
@@ -1001,7 +1001,34 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 footer{background:var(--deep);border-top:3px solid var(--hot)}
 .mbar .ask{background:var(--hot);color:#0d1a22}.mbar .call{background:var(--deep);color:#fff}
 .totop{background:var(--deep);color:var(--hot)}
-.ghost{opacity:.035}
+.ghost{display:none}
+/* Abschnitte durchnummeriert */
+#view-home{counter-reset:sec}
+.sec-head{counter-increment:sec}
+.sec-head .eyebrow::before{content:counter(sec,decimal-leading-zero)!important;width:auto!important;height:auto!important;background:var(--hot)!important;color:#0d1a22;padding:4px 7px;border-radius:2px;letter-spacing:.06em;font-size:.72rem;line-height:1}
+.sec-head h2{max-width:18ch}
+.svc .sec-head,.process .sec-head,.map-sec .sec-head{margin-bottom:clamp(26px,3vw,40px)!important}
+.svc-core .pills{margin-top:18px}
+/* Leistungen: drei Karten */
+.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr!important}}
+.svc-card{padding:28px 26px}
+.svc-card h3{font-size:1.25rem}
+/* Vorher/Nachher und Schwerpunkt als Zweispalter */
+.vn-sec .wrap,.industries .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:center}
+.vn-sec .sec-head,.industries .sec-head{margin-bottom:0!important}
+.vn{max-width:none}
+.industries .hrl{display:block;margin:0}
+.industries .hrl .ph{position:relative;aspect-ratio:4/3;overflow:visible}
+.industries .hrl .ph::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:3px solid var(--hot);border-radius:4px;z-index:0}
+.industries .hrl .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.industries .hrl-more{grid-column:1/-1;margin:0;padding-top:20px;border-top:1px solid var(--ground-3);color:var(--ink-2)}
+@media (max-width:860px){.vn-sec .wrap,.industries .wrap{grid-template-columns:1fr}.industries .hrl .ph::before{inset:10px -8px -10px 8px}}
+/* Ablauf mit Verbindungslinie */
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;inset-inline-start:-5px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--hot)}
+/* FAQ kompakt neben der Überschrift */
+.faq summary{font-size:1.08rem;padding-block:22px}
 @media (prefers-reduced-motion:reduce){.hero-vid,.hero-vid:hover{transform:none}.hero-vid .tag i{animation:none}}
 </style>
 </head>
@@ -1058,13 +1085,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   </div>
 </section>
 <div class="kpi" aria-label="Key figures"><div class="wrap"><ul><li><b>120 m</b><span>Grinding output per day</span></li><li><b>0.1 mm</b><span>Measurable when surveying</span></li><li><b>12 countries</b><span>Projects worldwide</span></li><li><b>7 days</b><span>Work at weekends too</span></li></ul></div></div>
-<div class="ticker" aria-hidden="true"><ul><li>Rail grinding</li><li>High-bay warehouses</li><li>Stacker cranes</li><li>Up to 120 m per day</li><li>Reprofiling</li><li>During live operation</li><li>Semi-automatic grinding machine</li><li>12 countries</li><li>Rail grinding</li><li>High-bay warehouses</li><li>Stacker cranes</li><li>Up to 120 m per day</li><li>Reprofiling</li><li>During live operation</li><li>Semi-automatic grinding machine</li><li>12 countries</li></ul></div>
 
 
 <section class="pfacts" aria-labelledby="facts-h">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Good to know</span><h2 id="facts-h">Six facts that count in the warehouse.</h2></div>
-    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Grinding output per day</h3><p>Depending on condition, access and profile. After the system analysis we give you a fixed schedule.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0.4 to 0.8 mm</b><h3>Removal per pass</h3><p>Reprofiling is the standard case. Corrugation, roll-over and settled joints disappear.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="1.5"/></svg></span><b>0.1 mm</b><h3>Measurable when surveying</h3><p>Even a 1 mm deviation over an 80 m aisle becomes visible.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 days</b><h3>Until we are on site</h3><p>As a rule. We also work at weekends and during production breaks.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 to A150</b><h3>All common profiles</h3><p>Upper and lower rail, regardless of the stacker crane manufacturer.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 shift</b><h3>Then the aisle is free again</h3><p>We grind aisle by aisle while the rest of the warehouse keeps running. Sparks are cooled, the abrasion is bound.</p></li></ul>
+    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Grinding output per day</h3><p>Depending on the rail's condition, access and profile.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0.4 to 0.8 mm</b><h3>Removal per pass</h3><p>Controlled and even along the whole length.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 days</b><h3>Until we are on site</h3><p>As a rule, counted from your enquiry.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><b>7 days</b><h3>Weekends included</h3><p>We work when your warehouse has time, during production breaks too.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 to A150</b><h3>All common profiles</h3><p>Upper and lower rail, regardless of manufacturer.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 shift</b><h3>Then the aisle is free again</h3><p>Sparks are cooled, the abrasion is bound. The goods stay on the rack.</p></li></ul>
   </div>
 </section>
 
@@ -1079,12 +1105,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Services</span><h2 id="l-h">Grinding is our core.</h2><p class="lead" style="margin-top:18px">The running surface decides smoothness, wear and availability. We bring it back into shape.</p></div>
     <div class="svc-core reveal">
-      <div><span class="badge">Core service</span><div class="num">01</div><h3>Rail grinding</h3><p>Grinding is reconditioning. Reprofiling is the standard case: corrugation, roll-over and settled joints are removed before they cause noise, vibration and downtime. Semi-automatic grinding machine of our own design, 0.4 to 0.8 mm removal per pass, up to 120 m per day.</p>
-        <ul class="pills"><li><span class="dot"></span>Corrugation &amp; roll-over</li><li><span class="dot"></span>Settled joints</li><li><span class="dot"></span>Semi-automatic grinding machine</li><li><span class="dot"></span>0.4 to 0.8 mm per pass</li><li><span class="dot"></span>Up to 120 m per day</li></ul>
+      <div><span class="badge">Core service</span><div class="num">01</div><h3>Rail grinding</h3><p>Grinding is reconditioning. Reprofiling is the standard case: corrugation, roll-over and settled joints are removed before they cause noise, vibration and downtime.</p>
+        <ul class="pills"><li><span class="dot"></span>Semi-automatic grinding machine</li></ul>
       </div>
       <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 560w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Grinding a steel rail with flying sparks" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>System-specific analysis</h3><p>Before the job we look at your system: stacker crane, wheels, rail profile, joints and the contact surface across the head width. That makes clear what needs grinding and what does not.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Surveying</h3><p>Height and alignment of the rail along the whole aisle. Measurable to 0.1 mm, even a 1 mm deviation over 80 m becomes visible.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Site supervision</h3><p>Condition analysis, on-site support and acceptance for new builds and conversions, including site coordination.</p></div><div class="svc-card reveal"><div class="num">05</div><h3>Training</h3><p>Hands-on training in grinding and maintaining rail systems, consulting for high-bay warehouses, production and crane systems.</p></div></div>
+    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Surveying</h3><p>Height and alignment of the rail along the whole aisle. Measurable to 0.1 mm, even a 1 mm deviation over 80 m becomes visible.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Site supervision</h3><p>Condition analysis, on-site support and acceptance for new builds and conversions, including site coordination.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Training</h3><p>Hands-on training in grinding and maintaining rail systems, consulting for high-bay warehouses, production and crane systems.</p></div></div>
     <a class="dl" href="../downloads/RackRail-Solution-Services.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Services overview as PDF<small>1 page, 100 KB</small></span></a>
   </div>
 </section>
@@ -1099,9 +1125,8 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 
 <section class="vn-sec" aria-labelledby="vn-h">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Before / after</span><h2 id="vn-h">The difference is on the running surface.</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">Before / after</span><h2 id="vn-h">The difference is on the running surface.</h2><p class="lead">Example footage from two jobs.</p></div>
     <div class="vn"><figure><img src="../img/vorher.webp" width="600" height="800" alt="Rail before grinding" loading="lazy" decoding="async"><figcaption>Before</figcaption></figure><figure class="after"><img src="../img/nachher.webp" width="600" height="800" alt="Bright running surface after grinding" loading="lazy" decoding="async"><figcaption>After</figcaption></figure></div>
-    <p class="vn-note">Example footage from two jobs.</p>
   </div>
 </section>
 <section class="industries" id="branchen" aria-labelledby="b-h">
@@ -1109,7 +1134,7 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
     <div class="sec-head reveal"><span class="eyebrow">Focus</span><h2 id="b-h">At home in the high-bay warehouse.</h2><p class="lead" style="margin-top:18px">Our specialty is the running rails of stacker cranes in high-bay warehouses. Long aisles, heavy loads, no room for downtime.</p></div>
     <div class="hrl reveal">
       <div class="ph"><img src="../img/branche-hochregal.webp" srcset="../img/branche-hochregal-s.webp 440w, ../img/branche-hochregal.webp 800w" sizes="(max-width:860px) 92vw, 48vw" width="800" height="1067" alt="Running rail of a stacker crane in a high-bay warehouse aisle" loading="lazy" decoding="async" data-parallax></div>
-      <div class="hrl-points"><div class="p"><b>Stacker cranes</b><span>Running rails of stacker cranes, upper and lower rail.</span></div><div class="p"><b>All profiles</b><span>Rail profiles A65 to A150, regardless of manufacturer.</span></div><div class="p"><b>During live operation</b><span>Aisle by aisle, while the rest of the warehouse keeps running.</span></div></div>
+      
     </div>
     <p class="hrl-more reveal">Beyond that, we also work on running rails in production, crane systems and plant engineering.</p>
   </div>
@@ -1139,10 +1164,9 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 <section class="faq-sec" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="reveal"><span class="eyebrow sec-eyebrow">FAQ</span><h2 id="faq-h">What customers ask before the first job.</h2><p class="lead" style="margin-top:18px">Answered briefly. Everything else we settle in a call.</p></div>
-    <div class="faq reveal"><details name="faq"><summary>How fast can you be on site?<span class="pm" aria-hidden="true"></span></summary><div class="body">Usually within 14 days. We also work on weekends and during production breaks so your plant is down as briefly as possible.</div></details><details name="faq"><summary>Does the warehouse have to stop for the work?<span class="pm" aria-hidden="true"></span></summary><div class="body">No. We grind aisle by aisle. The closed aisle is usually free again after one shift while the rest of the warehouse keeps running.</div></details><details name="faq"><summary>How long does grinding one aisle take?<span class="pm" aria-hidden="true"></span></summary><div class="body">Up to 120 m per day is possible, depending on condition, access and profile. After the system analysis we give you a fixed schedule.</div></details><details name="faq"><summary>How do I know the rail needs grinding?<span class="pm" aria-hidden="true"></span></summary><div class="body">At the latest when wheels are replaced and when the contact surface extends across the full head width. Other signs are increasing running noise, vibration from joints and visible corrugation on the running surface.</div></details><details name="faq"><summary>Do you also weld rail joints?<span class="pm" aria-hidden="true"></span></summary><div class="body">Yes. Settled joints and rail breaks are welded as part of the job, depending on the profile with MIG/MAG, TIG or manual arc, and then ground flush to profile.</div></details></div>
+    <div class="faq reveal"><details name="faq"><summary>How do I know the rail needs grinding?<span class="pm" aria-hidden="true"></span></summary><div class="body">At the latest when wheels are replaced and when the contact surface extends across the full head width. Other signs are increasing running noise, vibration from joints and visible corrugation on the running surface.</div></details><details name="faq"><summary>Do you also weld rail joints?<span class="pm" aria-hidden="true"></span></summary><div class="body">Yes. Settled joints and rail breaks are welded as part of the job, depending on the profile with MIG/MAG, TIG or manual arc, and then ground flush to profile.</div></details></div>
   </div>
 </section>
-<section class="band-img" aria-label="Grinding"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 810w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Angle grinder throwing sparks while working steel" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Grinding is precision work.</h2><p>The running surface decides smoothness, wear and the rail's service life.</p></div></section>
 <section class="contact-sec" id="kontakt" aria-labelledby="k-h">
   <div class="wrap">
     <div class="intro reveal"><span class="eyebrow">Contact</span><h2 id="k-h">Let's talk about your rail.</h2><p class="lead" style="margin-top:18px">Briefly describe the system and the problem. We usually get back to you the same working day.</p></div>
@@ -2102,6 +2126,6 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   li.forEach(function(x){io.observe(x);});
 })();
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast can you be on site?", "acceptedAnswer": {"@type": "Answer", "text": "Usually within 14 days. We also work on weekends and during production breaks so your plant is down as briefly as possible."}}, {"@type": "Question", "name": "Does the warehouse have to stop for the work?", "acceptedAnswer": {"@type": "Answer", "text": "No. We grind aisle by aisle. The closed aisle is usually free again after one shift while the rest of the warehouse keeps running."}}, {"@type": "Question", "name": "How long does grinding one aisle take?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 120 m per day is possible, depending on condition, access and profile. After the system analysis we give you a fixed schedule."}}, {"@type": "Question", "name": "How do I know the rail needs grinding?", "acceptedAnswer": {"@type": "Answer", "text": "At the latest when wheels are replaced and when the contact surface extends across the full head width. Other signs are increasing running noise, vibration from joints and visible corrugation on the running surface."}}, {"@type": "Question", "name": "Do you also weld rail joints?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Settled joints and rail breaks are welded as part of the job, depending on the profile with MIG/MAG, TIG or manual arc, and then ground flush to profile."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I know the rail needs grinding?", "acceptedAnswer": {"@type": "Answer", "text": "At the latest when wheels are replaced and when the contact surface extends across the full head width. Other signs are increasing running noise, vibration from joints and visible corrugation on the running surface."}}, {"@type": "Question", "name": "Do you also weld rail joints?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Settled joints and rail breaks are welded as part of the job, depending on the profile with MIG/MAG, TIG or manual arc, and then ground flush to profile."}}]}</script>
 </body>
 </html>

@@ -967,7 +967,7 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 @media (max-width:860px){.reel{grid-template-columns:1fr}.reel-stage{width:min(100%,340px);justify-self:center}}
 /* Vorher / Nachher */
 .vn-sec{background:var(--ground);padding-block:clamp(56px,8vw,110px)}
-.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;max-width:820px}
+.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
 .vn figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--deep)}
 .vn img{display:block;width:100%;height:100%;object-fit:cover}
 .vn figcaption{position:absolute;left:12px;top:12px;background:rgba(10,26,34,.85);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:3px}
@@ -1001,7 +1001,34 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 footer{background:var(--deep);border-top:3px solid var(--hot)}
 .mbar .ask{background:var(--hot);color:#0d1a22}.mbar .call{background:var(--deep);color:#fff}
 .totop{background:var(--deep);color:var(--hot)}
-.ghost{opacity:.035}
+.ghost{display:none}
+/* Abschnitte durchnummeriert */
+#view-home{counter-reset:sec}
+.sec-head{counter-increment:sec}
+.sec-head .eyebrow::before{content:counter(sec,decimal-leading-zero)!important;width:auto!important;height:auto!important;background:var(--hot)!important;color:#0d1a22;padding:4px 7px;border-radius:2px;letter-spacing:.06em;font-size:.72rem;line-height:1}
+.sec-head h2{max-width:18ch}
+.svc .sec-head,.process .sec-head,.map-sec .sec-head{margin-bottom:clamp(26px,3vw,40px)!important}
+.svc-core .pills{margin-top:18px}
+/* Leistungen: drei Karten */
+.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr!important}}
+.svc-card{padding:28px 26px}
+.svc-card h3{font-size:1.25rem}
+/* Vorher/Nachher und Schwerpunkt als Zweispalter */
+.vn-sec .wrap,.industries .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:center}
+.vn-sec .sec-head,.industries .sec-head{margin-bottom:0!important}
+.vn{max-width:none}
+.industries .hrl{display:block;margin:0}
+.industries .hrl .ph{position:relative;aspect-ratio:4/3;overflow:visible}
+.industries .hrl .ph::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:3px solid var(--hot);border-radius:4px;z-index:0}
+.industries .hrl .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.industries .hrl-more{grid-column:1/-1;margin:0;padding-top:20px;border-top:1px solid var(--ground-3);color:var(--ink-2)}
+@media (max-width:860px){.vn-sec .wrap,.industries .wrap{grid-template-columns:1fr}.industries .hrl .ph::before{inset:10px -8px -10px 8px}}
+/* Ablauf mit Verbindungslinie */
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;inset-inline-start:-5px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--hot)}
+/* FAQ kompakt neben der Überschrift */
+.faq summary{font-size:1.08rem;padding-block:22px}
 @media (prefers-reduced-motion:reduce){.hero-vid,.hero-vid:hover{transform:none}.hero-vid .tag i{animation:none}}
 </style>
 </head>
@@ -1058,13 +1085,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   </div>
 </section>
 <div class="kpi" aria-label="Chiffres clés"><div class="wrap"><ul><li><b>120 m</b><span>Capacité de meulage par jour</span></li><li><b>0,1 mm</b><span>Mesurable lors de la mesure</span></li><li><b>12 pays</b><span>Projets dans le monde</span></li><li><b>7 jours</b><span>Travail aussi le week-end</span></li></ul></div></div>
-<div class="ticker" aria-hidden="true"><ul><li>Meulage de rails</li><li>Entrepôts grande hauteur</li><li>Transstockeurs</li><li>Jusqu'à 120 m par jour</li><li>Reprofilage</li><li>En cours d'exploitation</li><li>Meuleuse semi-automatique</li><li>12 pays</li><li>Meulage de rails</li><li>Entrepôts grande hauteur</li><li>Transstockeurs</li><li>Jusqu'à 120 m par jour</li><li>Reprofilage</li><li>En cours d'exploitation</li><li>Meuleuse semi-automatique</li><li>12 pays</li></ul></div>
 
 
 <section class="pfacts" aria-labelledby="facts-h">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Bon à savoir</span><h2 id="facts-h">Six faits qui comptent en entrepôt.</h2></div>
-    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Capacité de meulage par jour</h3><p>Selon l'état, les accès et le profil. Après l'analyse de l'installation, nous donnons un planning ferme.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0,4 à 0,8 mm</b><h3>Enlèvement par passe</h3><p>Le reprofilage est la règle. Usure ondulatoire, bavures et joints affaissés disparaissent.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="1.5"/></svg></span><b>0,1 mm</b><h3>Mesurable lors de la mesure</h3><p>Même 1 mm d'écart sur 80 m d'allée devient visible.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 jours</b><h3>Avant d'être sur site</h3><p>En règle générale. Nous travaillons aussi le week-end et pendant les arrêts de production.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 à A150</b><h3>Tous les profils courants</h3><p>Rail supérieur et inférieur, quel que soit le fabricant du transstockeur.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 équipe</b><h3>Et l'allée est de nouveau libre</h3><p>Nous meulons allée par allée, le reste de l'entrepôt continue de tourner. Les étincelles sont refroidies, les poussières liées.</p></li></ul>
+    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Capacité de meulage par jour</h3><p>Selon l'état du rail, les accès et le profil.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0,4 à 0,8 mm</b><h3>Enlèvement par passe</h3><p>Maîtrisé et régulier sur toute la longueur.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 jours</b><h3>Avant d'être sur site</h3><p>En règle générale, à compter de votre demande.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><b>7 jours</b><h3>Week-end compris</h3><p>Nous travaillons quand votre entrepôt a le temps, y compris pendant les arrêts de production.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 à A150</b><h3>Tous les profils courants</h3><p>Rail supérieur et inférieur, quel que soit le fabricant.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 équipe</b><h3>Et l'allée est de nouveau libre</h3><p>Les étincelles sont refroidies, les poussières liées. Les marchandises restent en rayon.</p></li></ul>
   </div>
 </section>
 
@@ -1079,12 +1105,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Prestations</span><h2 id="l-h">Le meulage est notre cœur de métier.</h2><p class="lead" style="margin-top:18px">La table de roulement décide de la douceur de roulement, de l'usure et de la disponibilité. Nous la remettons en forme.</p></div>
     <div class="svc-core reveal">
-      <div><span class="badge">Prestation principale</span><div class="num">01</div><h3>Meulage de rails</h3><p>Meuler, c'est remettre en état. Le reprofilage est le cas standard&nbsp;: usure ondulatoire, bavures et joints affaissés sont éliminés avant qu'ils ne provoquent bruit, vibrations et arrêts. Meuleuse semi-automatique de notre conception, enlèvement de 0,4 à 0,8 mm par passe, jusqu'à 120 m par jour.</p>
-        <ul class="pills"><li><span class="dot"></span>Usure ondulatoire et bavures</li><li><span class="dot"></span>Joints affaissés</li><li><span class="dot"></span>Meuleuse semi-automatique</li><li><span class="dot"></span>0,4 à 0,8 mm par passe</li><li><span class="dot"></span>Jusqu'à 120 m par jour</li></ul>
+      <div><span class="badge">Prestation principale</span><div class="num">01</div><h3>Meulage de rails</h3><p>Meuler, c'est remettre en état. Le reprofilage est le cas standard&nbsp;: usure ondulatoire, bavures et joints affaissés sont éliminés avant qu'ils ne provoquent bruit, vibrations et arrêts.</p>
+        <ul class="pills"><li><span class="dot"></span>Meuleuse semi-automatique</li></ul>
       </div>
       <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 560w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Meulage d'un rail en acier avec projection d'étincelles" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Analyse spécifique de l'installation</h3><p>Avant l'intervention, nous examinons votre installation&nbsp;: transstockeur, galets, profil de rail, joints et surface de contact sur toute la largeur du champignon. On sait ainsi ce qui doit être meulé et ce qui ne l'est pas.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Mesure</h3><p>Hauteur et alignement du rail sur toute l'allée. Mesurable à 0,1 mm&nbsp;: même un écart de 1 mm sur 80 m devient visible.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Suivi de chantier</h3><p>Analyse de l'état, assistance sur site et réception pour les installations neuves et les transformations, coordination de chantier comprise.</p></div><div class="svc-card reveal"><div class="num">05</div><h3>Formation</h3><p>Formation pratique au meulage et à l'entretien des systèmes de rails, conseil pour entrepôts grande hauteur, production et installations de levage.</p></div></div>
+    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Mesure</h3><p>Hauteur et alignement du rail sur toute l'allée. Mesurable à 0,1 mm&nbsp;: même un écart de 1 mm sur 80 m devient visible.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Suivi de chantier</h3><p>Analyse de l'état, assistance sur site et réception pour les installations neuves et les transformations, coordination de chantier comprise.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Formation</h3><p>Formation pratique au meulage et à l'entretien des systèmes de rails, conseil pour entrepôts grande hauteur, production et installations de levage.</p></div></div>
     <a class="dl" href="../downloads/RackRail-Solution-Prestations.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Aperçu des prestations en PDF<small>1 page, 105 Ko</small></span></a>
   </div>
 </section>
@@ -1099,9 +1125,8 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 
 <section class="vn-sec" aria-labelledby="vn-h">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Avant / après</span><h2 id="vn-h">La différence se voit sur la table de roulement.</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">Avant / après</span><h2 id="vn-h">La différence se voit sur la table de roulement.</h2><p class="lead">Images d'exemple de deux interventions.</p></div>
     <div class="vn"><figure><img src="../img/vorher.webp" width="600" height="800" alt="Rail avant meulage" loading="lazy" decoding="async"><figcaption>Avant</figcaption></figure><figure class="after"><img src="../img/nachher.webp" width="600" height="800" alt="Table de roulement brillante après meulage" loading="lazy" decoding="async"><figcaption>Après</figcaption></figure></div>
-    <p class="vn-note">Images d'exemple de deux interventions.</p>
   </div>
 </section>
 <section class="industries" id="branchen" aria-labelledby="b-h">
@@ -1109,7 +1134,7 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
     <div class="sec-head reveal"><span class="eyebrow">Spécialité</span><h2 id="b-h">Chez nous dans l'entrepôt grande hauteur.</h2><p class="lead" style="margin-top:18px">Notre spécialité&nbsp;: les rails de roulement des transstockeurs dans les entrepôts grande hauteur. Allées longues, charges lourdes, aucune place pour les arrêts.</p></div>
     <div class="hrl reveal">
       <div class="ph"><img src="../img/branche-hochregal.webp" srcset="../img/branche-hochregal-s.webp 440w, ../img/branche-hochregal.webp 800w" sizes="(max-width:860px) 92vw, 48vw" width="800" height="1067" alt="Rail de roulement d'un transstockeur dans une allée d'entrepôt grande hauteur" loading="lazy" decoding="async" data-parallax></div>
-      <div class="hrl-points"><div class="p"><b>Transstockeurs</b><span>Rails de roulement des transstockeurs, rail supérieur et inférieur.</span></div><div class="p"><b>Tous les profils</b><span>Profils de rail A65 à A150, quel que soit le fabricant.</span></div><div class="p"><b>En cours d'exploitation</b><span>Allée par allée, pendant que le reste de l'entrepôt continue de tourner.</span></div></div>
+      
     </div>
     <p class="hrl-more reveal">Au-delà, nous intervenons aussi sur les rails de roulement en production, sur les installations de levage et en ingénierie industrielle.</p>
   </div>
@@ -1139,10 +1164,9 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 <section class="faq-sec" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="reveal"><span class="eyebrow sec-eyebrow">FAQ</span><h2 id="faq-h">Ce que demandent les clients avant la première intervention.</h2><p class="lead" style="margin-top:18px">En bref. Le reste se règle de vive voix.</p></div>
-    <div class="faq reveal"><details name="faq"><summary>Sous quel délai pouvez-vous intervenir&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">En général sous 14 jours. Nous travaillons aussi le week-end et pendant les arrêts de production, pour que votre installation soit immobilisée le moins longtemps possible.</div></details><details name="faq"><summary>L'entrepôt doit-il s'arrêter pendant les travaux&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">Non. Nous meulons allée par allée. L'allée fermée est en général de nouveau libre après une équipe, pendant que le reste de l'entrepôt continue de tourner.</div></details><details name="faq"><summary>Combien de temps dure le meulage d'une allée&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">Jusqu'à 120 m par jour sont possibles, selon l'état, les accès et le profil. Après l'analyse de l'installation, nous vous donnons un planning ferme.</div></details><details name="faq"><summary>Comment savoir si le rail doit être meulé&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">Au plus tard lors du remplacement des galets et lorsque la surface de contact s'étend sur toute la largeur du champignon. Autres signes&nbsp;: bruit de roulement croissant, vibrations aux joints et usure ondulatoire visible sur la table de roulement.</div></details><details name="faq"><summary>Soudez-vous aussi les joints de rail&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">Oui. Les joints affaissés et les ruptures de rail sont soudés dans le cadre de l'intervention, selon le profil en MIG/MAG, TIG ou à l'électrode enrobée, puis meulés au profil.</div></details></div>
+    <div class="faq reveal"><details name="faq"><summary>Comment savoir si le rail doit être meulé&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">Au plus tard lors du remplacement des galets et lorsque la surface de contact s'étend sur toute la largeur du champignon. Autres signes&nbsp;: bruit de roulement croissant, vibrations aux joints et usure ondulatoire visible sur la table de roulement.</div></details><details name="faq"><summary>Soudez-vous aussi les joints de rail&nbsp;?<span class="pm" aria-hidden="true"></span></summary><div class="body">Oui. Les joints affaissés et les ruptures de rail sont soudés dans le cadre de l'intervention, selon le profil en MIG/MAG, TIG ou à l'électrode enrobée, puis meulés au profil.</div></details></div>
   </div>
 </section>
-<section class="band-img" aria-label="Meulage"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 810w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Meuleuse d'angle projetant des étincelles sur de l'acier" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Le meulage est un travail de précision.</h2><p>La table de roulement décide de la douceur de roulement, de l'usure et de la durée de vie du rail.</p></div></section>
 <section class="contact-sec" id="kontakt" aria-labelledby="k-h">
   <div class="wrap">
     <div class="intro reveal"><span class="eyebrow">Contact</span><h2 id="k-h">Parlons de votre rail.</h2><p class="lead" style="margin-top:18px">Décrivez brièvement l'installation et le problème. Nous répondons en général le jour ouvré même.</p></div>
@@ -2102,6 +2126,6 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   li.forEach(function(x){io.observe(x);});
 })();
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Sous quel délai pouvez-vous intervenir ?", "acceptedAnswer": {"@type": "Answer", "text": "En général sous 14 jours. Nous travaillons aussi le week-end et pendant les arrêts de production, pour que votre installation soit immobilisée le moins longtemps possible."}}, {"@type": "Question", "name": "L'entrepôt doit-il s'arrêter pendant les travaux ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Nous meulons allée par allée. L'allée fermée est en général de nouveau libre après une équipe, pendant que le reste de l'entrepôt continue de tourner."}}, {"@type": "Question", "name": "Combien de temps dure le meulage d'une allée ?", "acceptedAnswer": {"@type": "Answer", "text": "Jusqu'à 120 m par jour sont possibles, selon l'état, les accès et le profil. Après l'analyse de l'installation, nous vous donnons un planning ferme."}}, {"@type": "Question", "name": "Comment savoir si le rail doit être meulé ?", "acceptedAnswer": {"@type": "Answer", "text": "Au plus tard lors du remplacement des galets et lorsque la surface de contact s'étend sur toute la largeur du champignon. Autres signes : bruit de roulement croissant, vibrations aux joints et usure ondulatoire visible sur la table de roulement."}}, {"@type": "Question", "name": "Soudez-vous aussi les joints de rail ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les joints affaissés et les ruptures de rail sont soudés dans le cadre de l'intervention, selon le profil en MIG/MAG, TIG ou à l'électrode enrobée, puis meulés au profil."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment savoir si le rail doit être meulé ?", "acceptedAnswer": {"@type": "Answer", "text": "Au plus tard lors du remplacement des galets et lorsque la surface de contact s'étend sur toute la largeur du champignon. Autres signes : bruit de roulement croissant, vibrations aux joints et usure ondulatoire visible sur la table de roulement."}}, {"@type": "Question", "name": "Soudez-vous aussi les joints de rail ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les joints affaissés et les ruptures de rail sont soudés dans le cadre de l'intervention, selon le profil en MIG/MAG, TIG ou à l'électrode enrobée, puis meulés au profil."}}]}</script>
 </body>
 </html>

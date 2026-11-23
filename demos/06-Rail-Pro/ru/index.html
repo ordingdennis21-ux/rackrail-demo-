@@ -967,7 +967,7 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 @media (max-width:860px){.reel{grid-template-columns:1fr}.reel-stage{width:min(100%,340px);justify-self:center}}
 /* Vorher / Nachher */
 .vn-sec{background:var(--ground);padding-block:clamp(56px,8vw,110px)}
-.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;max-width:820px}
+.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
 .vn figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--deep)}
 .vn img{display:block;width:100%;height:100%;object-fit:cover}
 .vn figcaption{position:absolute;left:12px;top:12px;background:rgba(10,26,34,.85);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:3px}
@@ -1001,7 +1001,34 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 footer{background:var(--deep);border-top:3px solid var(--hot)}
 .mbar .ask{background:var(--hot);color:#0d1a22}.mbar .call{background:var(--deep);color:#fff}
 .totop{background:var(--deep);color:var(--hot)}
-.ghost{opacity:.035}
+.ghost{display:none}
+/* Abschnitte durchnummeriert */
+#view-home{counter-reset:sec}
+.sec-head{counter-increment:sec}
+.sec-head .eyebrow::before{content:counter(sec,decimal-leading-zero)!important;width:auto!important;height:auto!important;background:var(--hot)!important;color:#0d1a22;padding:4px 7px;border-radius:2px;letter-spacing:.06em;font-size:.72rem;line-height:1}
+.sec-head h2{max-width:18ch}
+.svc .sec-head,.process .sec-head,.map-sec .sec-head{margin-bottom:clamp(26px,3vw,40px)!important}
+.svc-core .pills{margin-top:18px}
+/* Leistungen: drei Karten */
+.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr!important}}
+.svc-card{padding:28px 26px}
+.svc-card h3{font-size:1.25rem}
+/* Vorher/Nachher und Schwerpunkt als Zweispalter */
+.vn-sec .wrap,.industries .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:center}
+.vn-sec .sec-head,.industries .sec-head{margin-bottom:0!important}
+.vn{max-width:none}
+.industries .hrl{display:block;margin:0}
+.industries .hrl .ph{position:relative;aspect-ratio:4/3;overflow:visible}
+.industries .hrl .ph::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:3px solid var(--hot);border-radius:4px;z-index:0}
+.industries .hrl .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.industries .hrl-more{grid-column:1/-1;margin:0;padding-top:20px;border-top:1px solid var(--ground-3);color:var(--ink-2)}
+@media (max-width:860px){.vn-sec .wrap,.industries .wrap{grid-template-columns:1fr}.industries .hrl .ph::before{inset:10px -8px -10px 8px}}
+/* Ablauf mit Verbindungslinie */
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;inset-inline-start:-5px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--hot)}
+/* FAQ kompakt neben der Überschrift */
+.faq summary{font-size:1.08rem;padding-block:22px}
 @media (prefers-reduced-motion:reduce){.hero-vid,.hero-vid:hover{transform:none}.hero-vid .tag i{animation:none}}
 </style>
 </head>
@@ -1058,13 +1085,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   </div>
 </section>
 <div class="kpi" aria-label="Показатели"><div class="wrap"><ul><li><b>120 м</b><span>Шлифовка в день</span></li><li><b>0,1 мм</b><span>Точность измерения</span></li><li><b>12 стран</b><span>Проекты по всему миру</span></li><li><b>7 дней</b><span>Работа и в выходные</span></li></ul></div></div>
-<div class="ticker" aria-hidden="true"><ul><li>Шлифовка рельсов</li><li>Высотные склады</li><li>Краны-штабелёры</li><li>До 120 м в день</li><li>Репрофилирование</li><li>Без остановки склада</li><li>Полуавтоматическая шлифмашина</li><li>12 стран</li><li>Шлифовка рельсов</li><li>Высотные склады</li><li>Краны-штабелёры</li><li>До 120 м в день</li><li>Репрофилирование</li><li>Без остановки склада</li><li>Полуавтоматическая шлифмашина</li><li>12 стран</li></ul></div>
 
 
 <section class="pfacts" aria-labelledby="facts-h">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Полезно знать</span><h2 id="facts-h">Шесть фактов, важных для склада.</h2></div>
-    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 м</b><h3>Шлифовки в день</h3><p>В зависимости от состояния, доступа и профиля. После анализа системы называем точный график.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0,4 до 0,8 мм</b><h3>Съём за один проход</h3><p>Репрофилирование как правило. Волнообразный износ, наплывы и просевшие стыки исчезают.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="1.5"/></svg></span><b>0,1 мм</b><h3>Точность измерения</h3><p>Даже отклонение 1 мм на 80 м прохода становится заметным.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 дней</b><h3>До выезда на объект</h3><p>Как правило. Работаем также в выходные и в производственные паузы.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 до A150</b><h3>Все распространённые профили</h3><p>Верхний и нижний рельс, независимо от производителя крана-штабелёра.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 смена</b><h3>И проход снова свободен</h3><p>Шлифуем проход за проходом, остальной склад работает. Искры охлаждаются, пыль связывается.</p></li></ul>
+    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 м</b><h3>Шлифовки в день</h3><p>В зависимости от состояния рельса, доступа и профиля.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>0,4 до 0,8 мм</b><h3>Съём за один проход</h3><p>Контролируемо и равномерно по всей длине.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 дней</b><h3>До выезда на объект</h3><p>Как правило, считая от вашего запроса.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><b>7 дней</b><h3>И в выходные тоже</h3><p>Работаем тогда, когда у склада есть время, в том числе в производственные паузы.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>A65 до A150</b><h3>Все распространённые профили</h3><p>Верхний и нижний рельс, независимо от производителя.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 смена</b><h3>И проход снова свободен</h3><p>Искры охлаждаются, пыль связывается. Товар остаётся на стеллаже.</p></li></ul>
   </div>
 </section>
 
@@ -1079,12 +1105,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Услуги</span><h2 id="l-h">Шлифовка, наше главное.</h2><p class="lead" style="margin-top:18px">Рабочая поверхность определяет плавность хода, износ и доступность. Мы возвращаем её в форму.</p></div>
     <div class="svc-core reveal">
-      <div><span class="badge">Ключевая услуга</span><div class="num">01</div><h3>Шлифовка рельсов</h3><p>Шлифовка и есть восстановление. Репрофилирование, это обычный случай: волнообразность, наплывы и просевшие стыки снимаются, прежде чем они приведут к шуму, вибрации и простою. Полуавтоматическая шлифмашина собственной конструкции, съём 0,4 до 0,8 мм за проход, до 120 м в день.</p>
-        <ul class="pills"><li><span class="dot"></span>Волнообразность и наплывы</li><li><span class="dot"></span>Просевшие стыки</li><li><span class="dot"></span>Полуавтоматическая шлифмашина</li><li><span class="dot"></span>0,4 до 0,8 мм за проход</li><li><span class="dot"></span>До 120 м в день</li></ul>
+      <div><span class="badge">Ключевая услуга</span><div class="num">01</div><h3>Шлифовка рельсов</h3><p>Шлифовка и есть восстановление. Репрофилирование, это обычный случай: волнообразность, наплывы и просевшие стыки снимаются, прежде чем они приведут к шуму, вибрации и простою.</p>
+        <ul class="pills"><li><span class="dot"></span>Полуавтоматическая шлифмашина</li></ul>
       </div>
       <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 560w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Шлифовка стальной рельсы с искрами" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Специфический анализ системы</h3><p>Перед выездом мы смотрим на вашу систему: кран-штабелёр, ходовые колёса, профиль рельса, стыки и контактную поверхность по ширине головки. Так становится ясно, что нужно шлифовать, а что нет.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Измерение</h3><p>Высотное положение и направление рельса по всему проходу. Измеряется с точностью до 0,1 мм, видно даже отклонение 1 мм на 80 м.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Строительный надзор</h3><p>Анализ состояния, сопровождение на месте и приёмка при новом строительстве и реконструкции, включая координацию работ на площадке.</p></div><div class="svc-card reveal"><div class="num">05</div><h3>Обучение</h3><p>Практические курсы по шлифовке и обслуживанию рельсовых систем, консультации для высотных складов, производства и крановых установок.</p></div></div>
+    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Измерение</h3><p>Высотное положение и направление рельса по всему проходу. Измеряется с точностью до 0,1 мм, видно даже отклонение 1 мм на 80 м.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Строительный надзор</h3><p>Анализ состояния, сопровождение на месте и приёмка при новом строительстве и реконструкции, включая координацию работ на площадке.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Обучение</h3><p>Практические курсы по шлифовке и обслуживанию рельсовых систем, консультации для высотных складов, производства и крановых установок.</p></div></div>
     <a class="dl" href="../downloads/RackRail-Solution-Uslugi.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Обзор услуг в PDF<small>1 страница, 117 КБ</small></span></a>
   </div>
 </section>
@@ -1099,9 +1125,8 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 
 <section class="vn-sec" aria-labelledby="vn-h">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">До / после</span><h2 id="vn-h">Разница видна на поверхности качения.</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">До / после</span><h2 id="vn-h">Разница видна на поверхности качения.</h2><p class="lead">Примеры с двух объектов.</p></div>
     <div class="vn"><figure><img src="../img/vorher.webp" width="600" height="800" alt="Рельс до шлифовки" loading="lazy" decoding="async"><figcaption>До</figcaption></figure><figure class="after"><img src="../img/nachher.webp" width="600" height="800" alt="Блестящая поверхность качения после шлифовки" loading="lazy" decoding="async"><figcaption>После</figcaption></figure></div>
-    <p class="vn-note">Примеры с двух объектов.</p>
   </div>
 </section>
 <section class="industries" id="branchen" aria-labelledby="b-h">
@@ -1109,7 +1134,7 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
     <div class="sec-head reveal"><span class="eyebrow">Специализация</span><h2 id="b-h">Дома на высотном складе.</h2><p class="lead" style="margin-top:18px">Наша специализация, ходовые рельсы кранов-штабелёров на высотных складах. Длинные проходы, высокие нагрузки, нет места простою.</p></div>
     <div class="hrl reveal">
       <div class="ph"><img src="../img/branche-hochregal.webp" srcset="../img/branche-hochregal-s.webp 440w, ../img/branche-hochregal.webp 800w" sizes="(max-width:860px) 92vw, 48vw" width="800" height="1067" alt="Ходовой рельс крана-штабелёра в проходе высотного склада" loading="lazy" decoding="async" data-parallax></div>
-      <div class="hrl-points"><div class="p"><b>Краны-штабелёры</b><span>Ходовые рельсы кранов-штабелёров, верхняя и нижняя нитка.</span></div><div class="p"><b>Все профили</b><span>Профили рельсов A65 до A150, независимо от производителя.</span></div><div class="p"><b>Без остановки склада</b><span>Проход за проходом, пока остальной склад работает.</span></div></div>
+      
     </div>
     <p class="hrl-more reveal">Кроме того, мы обрабатываем ходовые рельсы в производстве, на кранах и в проектировании установок.</p>
   </div>
@@ -1139,10 +1164,9 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 <section class="faq-sec" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="reveal"><span class="eyebrow sec-eyebrow">Частые вопросы</span><h2 id="faq-h">Что спрашивают заказчики перед первым выездом.</h2><p class="lead" style="margin-top:18px">Коротко отвечаем. Остальное обсудим лично.</p></div>
-    <div class="faq reveal"><details name="faq"><summary>Как быстро вы можете приехать?<span class="pm" aria-hidden="true"></span></summary><div class="body">Как правило, в течение 14 дней. Мы работаем также по выходным и в технологические паузы, чтобы простой был минимальным.</div></details><details name="faq"><summary>Нужно ли останавливать склад?<span class="pm" aria-hidden="true"></span></summary><div class="body">Нет. Мы шлифуем проход за проходом. Закрытый проход обычно освобождается уже после одной смены, остальной склад работает.</div></details><details name="faq"><summary>Сколько занимает шлифовка одного прохода?<span class="pm" aria-hidden="true"></span></summary><div class="body">Возможно до 120 м в день, в зависимости от состояния, доступа и профиля. После анализа системы называем точный график.</div></details><details name="faq"><summary>Как понять, что рельс пора шлифовать?<span class="pm" aria-hidden="true"></span></summary><div class="body">Не позднее замены ходовых колёс и когда контактная поверхность занимает всю ширину головки. Другие признаки: растущий шум хода, вибрация от стыков и видимая волнообразность на поверхности катания.</div></details><details name="faq"><summary>Вы также свариваете стыки рельсов?<span class="pm" aria-hidden="true"></span></summary><div class="body">Да. Просевшие стыки и изломы рельсов свариваем в ходе работ, в зависимости от профиля MIG/MAG, TIG или ручной дугой, затем шлифуем заподлицо по профилю.</div></details></div>
+    <div class="faq reveal"><details name="faq"><summary>Как понять, что рельс пора шлифовать?<span class="pm" aria-hidden="true"></span></summary><div class="body">Не позднее замены ходовых колёс и когда контактная поверхность занимает всю ширину головки. Другие признаки: растущий шум хода, вибрация от стыков и видимая волнообразность на поверхности катания.</div></details><details name="faq"><summary>Вы также свариваете стыки рельсов?<span class="pm" aria-hidden="true"></span></summary><div class="body">Да. Просевшие стыки и изломы рельсов свариваем в ходе работ, в зависимости от профиля MIG/MAG, TIG или ручной дугой, затем шлифуем заподлицо по профилю.</div></details></div>
   </div>
 </section>
-<section class="band-img" aria-label="Шлифовка"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 810w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Углошлифовальная машина с искрами при обработке стали" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Шлифовка, это точная работа.</h2><p>Поверхность катания определяет плавность хода, износ и срок службы рельса.</p></div></section>
 <section class="contact-sec" id="kontakt" aria-labelledby="k-h">
   <div class="wrap">
     <div class="intro reveal"><span class="eyebrow">Контакт</span><h2 id="k-h">Поговорим о вашем рельсе.</h2><p class="lead" style="margin-top:18px">Коротко опишите установку и проблему. Обычно мы отвечаем в тот же рабочий день.</p></div>
@@ -2102,6 +2126,6 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   li.forEach(function(x){io.observe(x);});
 })();
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как быстро вы можете приехать?", "acceptedAnswer": {"@type": "Answer", "text": "Как правило, в течение 14 дней. Мы работаем также по выходным и в технологические паузы, чтобы простой был минимальным."}}, {"@type": "Question", "name": "Нужно ли останавливать склад?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Мы шлифуем проход за проходом. Закрытый проход обычно освобождается уже после одной смены, остальной склад работает."}}, {"@type": "Question", "name": "Сколько занимает шлифовка одного прохода?", "acceptedAnswer": {"@type": "Answer", "text": "Возможно до 120 м в день, в зависимости от состояния, доступа и профиля. После анализа системы называем точный график."}}, {"@type": "Question", "name": "Как понять, что рельс пора шлифовать?", "acceptedAnswer": {"@type": "Answer", "text": "Не позднее замены ходовых колёс и когда контактная поверхность занимает всю ширину головки. Другие признаки: растущий шум хода, вибрация от стыков и видимая волнообразность на поверхности катания."}}, {"@type": "Question", "name": "Вы также свариваете стыки рельсов?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Просевшие стыки и изломы рельсов свариваем в ходе работ, в зависимости от профиля MIG/MAG, TIG или ручной дугой, затем шлифуем заподлицо по профилю."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как понять, что рельс пора шлифовать?", "acceptedAnswer": {"@type": "Answer", "text": "Не позднее замены ходовых колёс и когда контактная поверхность занимает всю ширину головки. Другие признаки: растущий шум хода, вибрация от стыков и видимая волнообразность на поверхности катания."}}, {"@type": "Question", "name": "Вы также свариваете стыки рельсов?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Просевшие стыки и изломы рельсов свариваем в ходе работ, в зависимости от профиля MIG/MAG, TIG или ручной дугой, затем шлифуем заподлицо по профилю."}}]}</script>
 </body>
 </html>

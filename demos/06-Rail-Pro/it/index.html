@@ -967,7 +967,7 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 @media (max-width:860px){.reel{grid-template-columns:1fr}.reel-stage{width:min(100%,340px);justify-self:center}}
 /* Vorher / Nachher */
 .vn-sec{background:var(--ground);padding-block:clamp(56px,8vw,110px)}
-.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;max-width:820px}
+.vn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
 .vn figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--deep)}
 .vn img{display:block;width:100%;height:100%;object-fit:cover}
 .vn figcaption{position:absolute;left:12px;top:12px;background:rgba(10,26,34,.85);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:3px}
@@ -1001,7 +1001,34 @@ nav.main a:hover,nav.main a[aria-current="true"]{color:#fff;background:transpare
 footer{background:var(--deep);border-top:3px solid var(--hot)}
 .mbar .ask{background:var(--hot);color:#0d1a22}.mbar .call{background:var(--deep);color:#fff}
 .totop{background:var(--deep);color:var(--hot)}
-.ghost{opacity:.035}
+.ghost{display:none}
+/* Abschnitte durchnummeriert */
+#view-home{counter-reset:sec}
+.sec-head{counter-increment:sec}
+.sec-head .eyebrow::before{content:counter(sec,decimal-leading-zero)!important;width:auto!important;height:auto!important;background:var(--hot)!important;color:#0d1a22;padding:4px 7px;border-radius:2px;letter-spacing:.06em;font-size:.72rem;line-height:1}
+.sec-head h2{max-width:18ch}
+.svc .sec-head,.process .sec-head,.map-sec .sec-head{margin-bottom:clamp(26px,3vw,40px)!important}
+.svc-core .pills{margin-top:18px}
+/* Leistungen: drei Karten */
+.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr!important}}
+.svc-card{padding:28px 26px}
+.svc-card h3{font-size:1.25rem}
+/* Vorher/Nachher und Schwerpunkt als Zweispalter */
+.vn-sec .wrap,.industries .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:center}
+.vn-sec .sec-head,.industries .sec-head{margin-bottom:0!important}
+.vn{max-width:none}
+.industries .hrl{display:block;margin:0}
+.industries .hrl .ph{position:relative;aspect-ratio:4/3;overflow:visible}
+.industries .hrl .ph::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:3px solid var(--hot);border-radius:4px;z-index:0}
+.industries .hrl .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.industries .hrl-more{grid-column:1/-1;margin:0;padding-top:20px;border-top:1px solid var(--ground-3);color:var(--ink-2)}
+@media (max-width:860px){.vn-sec .wrap,.industries .wrap{grid-template-columns:1fr}.industries .hrl .ph::before{inset:10px -8px -10px 8px}}
+/* Ablauf mit Verbindungslinie */
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;inset-inline-start:-5px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--hot)}
+/* FAQ kompakt neben der Überschrift */
+.faq summary{font-size:1.08rem;padding-block:22px}
 @media (prefers-reduced-motion:reduce){.hero-vid,.hero-vid:hover{transform:none}.hero-vid .tag i{animation:none}}
 </style>
 </head>
@@ -1058,13 +1085,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   </div>
 </section>
 <div class="kpi" aria-label="Dati chiave"><div class="wrap"><ul><li><b>120 m</b><span>Resa di molatura al giorno</span></li><li><b>0,1 mm</b><span>Misurabile nella misurazione</span></li><li><b>12 paesi</b><span>Progetti nel mondo</span></li><li><b>7 giorni</b><span>Lavoriamo anche nel weekend</span></li></ul></div></div>
-<div class="ticker" aria-hidden="true"><ul><li>Molatura delle rotaie</li><li>Magazzini verticali</li><li>Trasloelevatori</li><li>Fino a 120 m al giorno</li><li>Riprofilatura</li><li>Durante l'esercizio</li><li>Molatrice semiautomatica</li><li>12 paesi</li><li>Molatura delle rotaie</li><li>Magazzini verticali</li><li>Trasloelevatori</li><li>Fino a 120 m al giorno</li><li>Riprofilatura</li><li>Durante l'esercizio</li><li>Molatrice semiautomatica</li><li>12 paesi</li></ul></div>
 
 
 <section class="pfacts" aria-labelledby="facts-h">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Buono a sapersi</span><h2 id="facts-h">Sei fatti che contano in magazzino.</h2></div>
-    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Resa di molatura al giorno</h3><p>A seconda di stato, accessi e profilo. Dopo l'analisi dell'impianto indichiamo un programma preciso.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>Da 0,4 a 0,8 mm</b><h3>Asportazione per passata</h3><p>La riprofilatura è la regola. Ondulazioni, bave e giunti abbassati scompaiono.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="1.5"/></svg></span><b>0,1 mm</b><h3>Misurabile nella misurazione</h3><p>Anche 1 mm di scostamento su 80 m di corsia diventa visibile.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 giorni</b><h3>Per essere sul posto</h3><p>Di norma. Lavoriamo anche nei weekend e durante le pause di produzione.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>Da A65 ad A150</b><h3>Tutti i profili comuni</h3><p>Rotaia superiore e inferiore, indipendentemente dal costruttore del trasloelevatore.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 turno</b><h3>E la corsia è di nuovo libera</h3><p>Moliamo corsia per corsia, il resto del magazzino continua a funzionare. Le scintille vengono raffreddate, la polvere legata.</p></li></ul>
+    <ul class="pf-grid"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l7-4 7 4v8M9 17v-5h6v5"/></svg></span><b>120 m</b><h3>Resa di molatura al giorno</h3><p>A seconda di stato, accessi e profilo della rotaia.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 15v5M15.5 17.5h5"/></svg></span><b>Da 0,4 a 0,8 mm</b><h3>Asportazione per passata</h3><p>Controllata e uniforme su tutta la lunghezza.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>14 giorni</b><h3>Per essere sul posto</h3><p>Di norma, a partire dalla vostra richiesta.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><b>7 giorni</b><h3>Anche nel weekend</h3><p>Lavoriamo quando il vostro magazzino ha tempo, anche nelle pause di produzione.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 20v-2l1-8H8V6h8v4h-2l1 8v2"/></svg></span><b>Da A65 ad A150</b><h3>Tutti i profili comuni</h3><p>Rotaia superiore e inferiore, indipendentemente dal costruttore.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><b>1 turno</b><h3>E la corsia è di nuovo libera</h3><p>Le scintille vengono raffreddate, la polvere legata. La merce resta sullo scaffale.</p></li></ul>
   </div>
 </section>
 
@@ -1079,12 +1105,12 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Servizi</span><h2 id="l-h">La molatura è il nostro cuore.</h2><p class="lead" style="margin-top:18px">La superficie di rotolamento decide scorrevolezza, usura e disponibilità. Noi la riportiamo in forma.</p></div>
     <div class="svc-core reveal">
-      <div><span class="badge">Servizio principale</span><div class="num">01</div><h3>Molatura delle rotaie</h3><p>Molare significa risanare. La riprofilatura è la regola: ondulazioni, bave laterali e giunti abbassati vengono rimossi prima che causino rumore, vibrazioni e fermi. Molatrice semiautomatica di nostra progettazione, asportazione da 0,4 a 0,8 mm per passata, fino a 120 m al giorno.</p>
-        <ul class="pills"><li><span class="dot"></span>Ondulazioni e bave</li><li><span class="dot"></span>Giunti abbassati</li><li><span class="dot"></span>Molatrice semiautomatica</li><li><span class="dot"></span>Da 0,4 a 0,8 mm per passata</li><li><span class="dot"></span>Fino a 120 m al giorno</li></ul>
+      <div><span class="badge">Servizio principale</span><div class="num">01</div><h3>Molatura delle rotaie</h3><p>Molare significa risanare. La riprofilatura è la regola: ondulazioni, bave laterali e giunti abbassati vengono rimossi prima che causino rumore, vibrazioni e fermi.</p>
+        <ul class="pills"><li><span class="dot"></span>Molatrice semiautomatica</li></ul>
       </div>
       <figure class="shot"><img src="../img/svc-schleifen.webp" srcset="../img/svc-schleifen-s.webp 560w, ../img/svc-schleifen.webp 1000w" sizes="(max-width:860px) 92vw, 40vw" width="1000" height="563" alt="Molatura di una rotaia d'acciaio con scintille" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Analisi specifica dell'impianto</h3><p>Prima dell'intervento esaminiamo il vostro impianto: trasloelevatore, ruote, profilo della rotaia, giunti e superficie di contatto sull'intera larghezza del fungo. Così è chiaro cosa va molato e cosa no.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Misurazione</h3><p>Altezza e allineamento della rotaia lungo tutta la corsia. Misurabile a 0,1 mm: anche uno scostamento di 1 mm su 80 m diventa visibile.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Supervisione di cantiere</h3><p>Analisi dello stato, assistenza in loco e collaudo per nuove costruzioni e ristrutturazioni, coordinamento di cantiere compreso.</p></div><div class="svc-card reveal"><div class="num">05</div><h3>Formazione</h3><p>Formazione pratica sulla molatura e sulla manutenzione dei sistemi a rotaia, consulenza per magazzini verticali, produzione e impianti a gru.</p></div></div>
+    <div class="svc-grid"><div class="svc-card reveal"><div class="num">02</div><h3>Misurazione</h3><p>Altezza e allineamento della rotaia lungo tutta la corsia. Misurabile a 0,1 mm: anche uno scostamento di 1 mm su 80 m diventa visibile.</p></div><div class="svc-card reveal"><div class="num">03</div><h3>Supervisione di cantiere</h3><p>Analisi dello stato, assistenza in loco e collaudo per nuove costruzioni e ristrutturazioni, coordinamento di cantiere compreso.</p></div><div class="svc-card reveal"><div class="num">04</div><h3>Formazione</h3><p>Formazione pratica sulla molatura e sulla manutenzione dei sistemi a rotaia, consulenza per magazzini verticali, produzione e impianti a gru.</p></div></div>
     <a class="dl" href="../downloads/RackRail-Solution-Servizi.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Panoramica dei servizi in PDF<small>1 pagina, 101 KB</small></span></a>
   </div>
 </section>
@@ -1099,9 +1125,8 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 
 <section class="vn-sec" aria-labelledby="vn-h">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Prima / dopo</span><h2 id="vn-h">La differenza è sulla superficie di rotolamento.</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">Prima / dopo</span><h2 id="vn-h">La differenza è sulla superficie di rotolamento.</h2><p class="lead">Riprese di esempio da due interventi.</p></div>
     <div class="vn"><figure><img src="../img/vorher.webp" width="600" height="800" alt="Rotaia prima della molatura" loading="lazy" decoding="async"><figcaption>Prima</figcaption></figure><figure class="after"><img src="../img/nachher.webp" width="600" height="800" alt="Superficie di rotolamento lucida dopo la molatura" loading="lazy" decoding="async"><figcaption>Dopo</figcaption></figure></div>
-    <p class="vn-note">Riprese di esempio da due interventi.</p>
   </div>
 </section>
 <section class="industries" id="branchen" aria-labelledby="b-h">
@@ -1109,7 +1134,7 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
     <div class="sec-head reveal"><span class="eyebrow">Focus</span><h2 id="b-h">Di casa nel magazzino verticale.</h2><p class="lead" style="margin-top:18px">La nostra specialità sono le rotaie di scorrimento dei trasloelevatori nei magazzini verticali. Corsie lunghe, carichi pesanti, nessun margine per i fermi.</p></div>
     <div class="hrl reveal">
       <div class="ph"><img src="../img/branche-hochregal.webp" srcset="../img/branche-hochregal-s.webp 440w, ../img/branche-hochregal.webp 800w" sizes="(max-width:860px) 92vw, 48vw" width="800" height="1067" alt="Rotaia di scorrimento di un trasloelevatore in una corsia di magazzino verticale" loading="lazy" decoding="async" data-parallax></div>
-      <div class="hrl-points"><div class="p"><b>Trasloelevatori</b><span>Rotaie di scorrimento dei trasloelevatori, rotaia superiore e inferiore.</span></div><div class="p"><b>Tutti i profili</b><span>Profili di rotaia da A65 ad A150, indipendentemente dal costruttore.</span></div><div class="p"><b>Durante l'esercizio</b><span>Corsia per corsia, mentre il resto del magazzino continua a funzionare.</span></div></div>
+      
     </div>
     <p class="hrl-more reveal">Inoltre interveniamo anche sulle rotaie di scorrimento in produzione, impianti a gru e impiantistica.</p>
   </div>
@@ -1139,10 +1164,9 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 <section class="faq-sec" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="reveal"><span class="eyebrow sec-eyebrow">FAQ</span><h2 id="faq-h">Cosa chiedono i clienti prima del primo intervento.</h2><p class="lead" style="margin-top:18px">Risposte in breve. Tutto il resto lo chiariamo a voce.</p></div>
-    <div class="faq reveal"><details name="faq"><summary>In quanto tempo potete essere sul posto?<span class="pm" aria-hidden="true"></span></summary><div class="body">Di norma entro 14 giorni. Lavoriamo anche nei weekend e durante le pause di produzione, così il vostro impianto resta fermo il meno possibile.</div></details><details name="faq"><summary>Il magazzino deve fermarsi per i lavori?<span class="pm" aria-hidden="true"></span></summary><div class="body">No. Moliamo corsia per corsia. La corsia chiusa è di norma di nuovo libera dopo un turno, mentre il resto del magazzino continua a funzionare.</div></details><details name="faq"><summary>Quanto dura la molatura di una corsia?<span class="pm" aria-hidden="true"></span></summary><div class="body">Sono possibili fino a 120 m al giorno, a seconda di stato, accessi e profilo. Dopo l'analisi dell'impianto vi diamo un programma preciso.</div></details><details name="faq"><summary>Come capisco che la rotaia va molata?<span class="pm" aria-hidden="true"></span></summary><div class="body">Al più tardi quando si sostituiscono le ruote e quando la superficie di contatto si estende su tutta la larghezza del fungo. Altri segnali sono il rumore di marcia crescente, le vibrazioni ai giunti e le ondulazioni visibili sulla superficie di rotolamento.</div></details><details name="faq"><summary>Saldate anche i giunti?<span class="pm" aria-hidden="true"></span></summary><div class="body">Sì. Giunti abbassati e rotture della rotaia vengono saldati nell'ambito dell'intervento, a seconda del profilo con MIG/MAG, TIG o elettrodo, e poi molati a filo del profilo.</div></details></div>
+    <div class="faq reveal"><details name="faq"><summary>Come capisco che la rotaia va molata?<span class="pm" aria-hidden="true"></span></summary><div class="body">Al più tardi quando si sostituiscono le ruote e quando la superficie di contatto si estende su tutta la larghezza del fungo. Altri segnali sono il rumore di marcia crescente, le vibrazioni ai giunti e le ondulazioni visibili sulla superficie di rotolamento.</div></details><details name="faq"><summary>Saldate anche i giunti?<span class="pm" aria-hidden="true"></span></summary><div class="body">Sì. Giunti abbassati e rotture della rotaia vengono saldati nell'ambito dell'intervento, a seconda del profilo con MIG/MAG, TIG o elettrodo, e poi molati a filo del profilo.</div></details></div>
   </div>
 </section>
-<section class="band-img" aria-label="Molatura"><img src="../img/akzent-schleifen.webp" srcset="../img/akzent-schleifen-s.webp 810w, ../img/akzent-schleifen.webp 1200w" sizes="100vw" width="1200" height="800" alt="Smerigliatrice angolare che sprigiona scintille lavorando l'acciaio" loading="lazy" decoding="async" data-parallax><div class="wrap"><h2>Molare è lavoro di precisione.</h2><p>La superficie di rotolamento decide scorrevolezza, usura e durata della rotaia.</p></div></section>
 <section class="contact-sec" id="kontakt" aria-labelledby="k-h">
   <div class="wrap">
     <div class="intro reveal"><span class="eyebrow">Contatti</span><h2 id="k-h">Parliamo della vostra rotaia.</h2><p class="lead" style="margin-top:18px">Descrivete brevemente l'impianto e il problema. Di norma rispondiamo lo stesso giorno lavorativo.</p></div>
@@ -2102,6 +2126,6 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   li.forEach(function(x){io.observe(x);});
 })();
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "In quanto tempo potete essere sul posto?", "acceptedAnswer": {"@type": "Answer", "text": "Di norma entro 14 giorni. Lavoriamo anche nei weekend e durante le pause di produzione, così il vostro impianto resta fermo il meno possibile."}}, {"@type": "Question", "name": "Il magazzino deve fermarsi per i lavori?", "acceptedAnswer": {"@type": "Answer", "text": "No. Moliamo corsia per corsia. La corsia chiusa è di norma di nuovo libera dopo un turno, mentre il resto del magazzino continua a funzionare."}}, {"@type": "Question", "name": "Quanto dura la molatura di una corsia?", "acceptedAnswer": {"@type": "Answer", "text": "Sono possibili fino a 120 m al giorno, a seconda di stato, accessi e profilo. Dopo l'analisi dell'impianto vi diamo un programma preciso."}}, {"@type": "Question", "name": "Come capisco che la rotaia va molata?", "acceptedAnswer": {"@type": "Answer", "text": "Al più tardi quando si sostituiscono le ruote e quando la superficie di contatto si estende su tutta la larghezza del fungo. Altri segnali sono il rumore di marcia crescente, le vibrazioni ai giunti e le ondulazioni visibili sulla superficie di rotolamento."}}, {"@type": "Question", "name": "Saldate anche i giunti?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Giunti abbassati e rotture della rotaia vengono saldati nell'ambito dell'intervento, a seconda del profilo con MIG/MAG, TIG o elettrodo, e poi molati a filo del profilo."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Come capisco che la rotaia va molata?", "acceptedAnswer": {"@type": "Answer", "text": "Al più tardi quando si sostituiscono le ruote e quando la superficie di contatto si estende su tutta la larghezza del fungo. Altri segnali sono il rumore di marcia crescente, le vibrazioni ai giunti e le ondulazioni visibili sulla superficie di rotolamento."}}, {"@type": "Question", "name": "Saldate anche i giunti?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Giunti abbassati e rotture della rotaia vengono saldati nell'ambito dell'intervento, a seconda del profilo con MIG/MAG, TIG o elettrodo, e poi molati a filo del profilo."}}]}</script>
 </body>
 </html>
