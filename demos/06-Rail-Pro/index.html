@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-IBoCVNW10Q6NmCBEz989p0bT4XCOfUMccIgW9r7smEg=' 'sha256-o1e+QmnZg2Lobj83buxmHproWnyhn6PQBnBWHdjquIw='; img-src 'self' data:; font-src 'self'; manifest-src 'self'; media-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-9q36pmjAuQjE7wWjneWIcr/aKU50kmRlhN+CvD31K4k=' 'sha256-o1e+QmnZg2Lobj83buxmHproWnyhn6PQBnBWHdjquIw='; img-src 'self' data:; font-src 'self'; manifest-src 'self'; media-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'none'; object-src 'none'; upgrade-insecure-requests">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a1a22">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -1001,6 +1001,26 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
 .mbar .ask{background:var(--hot);color:#0d1a22}.mbar .call{background:var(--deep);color:#fff}
 .totop{background:var(--deep);color:var(--hot)}
 .ghost{display:none}
+/* Schiene als roter Faden am Seitenrand (nur große Bildschirme) */
+.rail-line{display:none}
+@media (min-width:1280px){
+ .rail-line{display:block;position:fixed;z-index:40;inset-inline-start:18px;top:96px;bottom:40px;width:6px;border-radius:3px;background:linear-gradient(90deg,#5b3a22,#8a5a34 45%,#4a2f1c);box-shadow:0 0 0 1px rgba(13,26,34,.25);pointer-events:none}
+ .rail-line b{position:absolute;inset:0 0 auto 0;height:var(--p,0%);border-radius:3px;background:linear-gradient(90deg,#aab6bf,#f4f8fa 45%,#93a1ab)}
+ .rail-line i{position:absolute;left:50%;top:var(--p,0%);width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(255,179,0,.25),0 0 18px 4px rgba(255,179,0,.8)}
+ .rail-line i::before,.rail-line i::after{content:"";position:absolute;left:50%;top:50%;width:2px;height:12px;background:var(--hot);border-radius:1px;transform-origin:50% 0;animation:spk .7s linear infinite}
+ .rail-line i::before{transform:rotate(55deg)}.rail-line i::after{transform:rotate(-55deg);animation-delay:.35s}
+ header.top .progress{display:none}
+}
+@keyframes spk{0%{opacity:1;height:4px}100%{opacity:0;height:20px}}
+@media (prefers-reduced-motion:reduce){.rail-line i::before,.rail-line i::after{animation:none;opacity:0}}
+/* Weltkarte: Linien ab Leverkusen */
+.map-arcs{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.map-arcs path{fill:none;stroke:var(--hot);stroke-width:.3;stroke-linecap:round;opacity:.9;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.3,.6,.2,1)}
+.map-arcs.in path{stroke-dashoffset:0}
+.map-list li{border-radius:3px;border-color:rgba(255,179,0,.35);background:rgba(255,255,255,.04)}
+.map-sec::before{background:radial-gradient(50% 60% at 70% 40%,rgba(255,179,0,.08),transparent 70%)}
+.map-stage img{filter:none}
+@media (prefers-reduced-motion:reduce){.map-arcs path{transition:none;stroke-dashoffset:0}}
 /* Abschnitte durchnummeriert */
 #view-home{counter-reset:sec}
 .sec-head{counter-increment:sec}
@@ -2094,6 +2114,19 @@ footer{background:var(--deep);border-top:3px solid var(--hot)}
   if(v){var red=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
     if(red){v.removeAttribute("autoplay");v.pause();}
     else if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});},{threshold:.15}).observe(v);}}
+  /* Schiene am Seitenrand: schleift sich beim Scrollen blank */
+  (function(){var r=document.createElement("div");r.className="rail-line";r.setAttribute("aria-hidden","true");r.innerHTML="<b></b><i></i>";document.body.appendChild(r);
+    var tick=false;function upd(){tick=false;var h=document.documentElement.scrollHeight-window.innerHeight;r.style.setProperty("--p",(h>0?Math.min(100,window.scrollY/h*100):0)+"%");}
+    window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});upd();})();
+  /* Weltkarte: Bögen von Leverkusen zu den Einsatzländern */
+  (function(){var st=document.querySelector(".map-stage");if(!st)return;var home=st.querySelector(".pin.home");if(!home)return;
+    function xy(el){return [parseFloat(el.style.getPropertyValue("--x")),parseFloat(el.style.getPropertyValue("--y"))];}
+    var h=xy(home),ns="http://www.w3.org/2000/svg",svg=document.createElementNS(ns,"svg");svg.setAttribute("class","map-arcs");svg.setAttribute("viewBox","0 0 100 100");svg.setAttribute("preserveAspectRatio","none");svg.setAttribute("aria-hidden","true");
+    st.querySelectorAll(".pin:not(.home)").forEach(function(pn,k){var q=xy(pn),dx=q[0]-h[0],dy=q[1]-h[1],d=Math.sqrt(dx*dx+dy*dy);if(d<4)return;
+      var mx=(h[0]+q[0])/2,my=(h[1]+q[1])/2-d*.28,pa=document.createElementNS(ns,"path");pa.setAttribute("d","M"+h[0]+" "+h[1]+" Q"+mx+" "+my+" "+q[0]+" "+q[1]);pa.setAttribute("pathLength","1");pa.style.transitionDelay=(k*.12)+"s";svg.appendChild(pa);});
+    st.insertBefore(svg,st.querySelector(".pin"));
+    if(!("IntersectionObserver" in window)){svg.classList.add("in");return;}
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){svg.classList.add("in");o.disconnect();}});},{threshold:.4}).observe(st);})();
   /* Einsatz-Film */
   (function(){
     var st=document.querySelector(".reel-stage");if(!st)return;
