@@ -2,7 +2,7 @@ RACKRAIL SOLUTION, WEBSITE-DEMOS
 ================================
 
 INHALT DIESES ORDNERS
-  START.html             Übersicht aller fünf Varianten mit Vorschaubildern. Hier anfangen (Doppelklick).
+  START.html             Übersicht aller sechs Varianten mit Vorschaubildern. Hier anfangen (Doppelklick).
   01-Holo-Industrial     Hauptfassung (interaktiver Explorer, Funkenflug, Weltkarte)
   02-Clear-Minimal       Apple-Stil, hell und ruhig
   03-Dark-Bento          dunkel, Glas-Kacheln, Leuchtkanten
