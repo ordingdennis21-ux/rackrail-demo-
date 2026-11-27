@@ -1,11 +1,12 @@
-/* Wechselt die Startüberschrift bei jedem erneuten Besuch durch mehrere Varianten. */
+/* Zeigt bei jedem Laden eine andere Startüberschrift, nie zweimal dieselbe hintereinander. */
 (function(){
   var h=document.getElementById('hero-h'); if(!h) return;
   var raw=h.getAttribute('data-rotate'); if(!raw) return;
-  var ph=raw.split('|'); if(ph.length<2) return;
-  var n=0;
-  try{ var k='rrHero', v=parseInt(localStorage.getItem(k)||'0',10); if(isNaN(v))v=0;
-       n=v%ph.length; localStorage.setItem(k, String((v+1)%ph.length)); }
-  catch(e){ n=0; }
+  var ph=raw.split('|'); var N=ph.length; if(N<2) return;
+  var last=-1;
+  try{ last=parseInt(localStorage.getItem('rrHero'),10); if(isNaN(last))last=-1; }catch(e){}
+  var n=Math.floor(Math.random()*N);
+  if(n===last) n=(n+1)%N;
+  try{ localStorage.setItem('rrHero', String(n)); }catch(e){}
   h.textContent=ph[n];
 })();
