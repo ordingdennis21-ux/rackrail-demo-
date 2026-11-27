@@ -849,6 +849,18 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
 @media (max-width:900px){.holo{grid-template-columns:1fr}.holo-stage{aspect-ratio:4/3}.hs{width:40px;height:40px;margin:-20px 0 0 -20px}.hs .lbl{display:none}.hud .read{display:none}.holo-info p{min-height:0}.holo-info h3{min-height:0}}
 @media (prefers-reduced-motion:reduce){.hs .ring,.hud .scan,.holo-view.is-on,.holo.flash .holo-stage,.holo-info .hint::before{animation:none}}
 </style>
+<style>
+.schaden-sec{padding-block:clamp(40px,6vw,80px)}
+.schaden-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(24px,4vw,40px)}
+.schaden-grid figure{margin:0}
+.schaden-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block}
+.schaden-grid figcaption{margin-top:12px;font-weight:700}
+.schaden-grid .cap-sub{display:block;font-weight:400;color:var(--ink-2);margin-top:4px;font-size:.95rem;line-height:1.35}
+.film-sec{padding-block:clamp(40px,6vw,80px);background:var(--ground-2)}
+.film-stage{margin:clamp(24px,4vw,40px) 0 0;max-width:980px;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(8,18,32,.14)}
+.film-stage video{display:block;width:100%;height:auto;background:#0b1220}
+@media(max-width:760px){.schaden-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -892,7 +904,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
   </div>
   <div class="wrap">
     <div class="hero-copy">
-      <h1 id="hero-h">Schienen laufen wieder rund.</h1>
+      <h1 id="hero-h">Schienen wieder voll funktionsfähig.</h1>
       <p class="lede">RackRail Solution schleift und vermisst die Fahrschienen von Regalbediengeräten im Hochregallager. Schleifen heißt Sanieren: Die Lauffläche wird reprofiliert, im laufenden Betrieb, in dem Zeitfenster, das Ihr Lager hergibt.</p>
       <div class="cta">
         <a class="btn acc mag" href="#kontakt">Anfrage stellen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -943,6 +955,24 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
       <div class="hrl-points"><div class="p"><b>Regalbediengeräte</b><span>Fahrschienen von Regalbediengeräten, oberer und unterer Strang.</span></div><div class="p"><b>Alle Profile</b><span>Schienenprofile A65 bis A150, unabhängig vom Hersteller.</span></div></div>
     </div>
     <p class="hrl-more reveal">Darüber hinaus bearbeiten wir auch Fahrschienen in Produktion, Krananlagen und im Anlagenbau.</p>
+  </div>
+</section>
+
+<section class="schaden-sec" aria-labelledby="schaden-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Warum schleifen</span><h2 id="schaden-h">Das richtet eine unebene Fahrschiene an.</h2><p class="lead" style="margin-top:18px">Riffel, Ausbrüche und versetzte Stöße kosten Laufruhe, Lebensdauer und am Ende Verfügbarkeit. Wir bringen die Lauffläche zurück auf Profil, bevor aus dem Schaden ein Stillstand wird.</p></div>
+    <div class="schaden-grid reveal">
+      <figure><img src="img/schaden-stoss.webp" srcset="img/schaden-stoss-s.webp 440w, img/schaden-stoss.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Versetzter Schienenstoß mit Ausbrüchen an der Lauffläche" loading="lazy" decoding="async"><figcaption>Versetzter Schienenstoß<span class="cap-sub">Schläge und Vibrationen bei jeder Überfahrt.</span></figcaption></figure>
+      <figure><img src="img/schaden-lauffl.webp" srcset="img/schaden-lauffl-s.webp 440w, img/schaden-lauffl.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Ausgebrochene und verschlissene Lauffläche einer Fahrschiene" loading="lazy" decoding="async"><figcaption>Verschlissene Lauffläche<span class="cap-sub">Die Kontaktfläche verliert ihre Form, der Lauf wird unruhig.</span></figcaption></figure>
+      <figure><img src="img/schaden-laufrad.webp" srcset="img/schaden-laufrad-s.webp 440w, img/schaden-laufrad.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Ausgeschlagenes Laufrad eines Regalbediengeräts mit Flachstellen" loading="lazy" decoding="async"><figcaption>Ausgeschlagenes Laufrad<span class="cap-sub">Eine schlechte Schiene zerstört die Laufräder des Regalbediengeräts.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="film-sec" aria-labelledby="film-h">
+  <div class="wrap">
+    <div class="vid-head reveal"><span class="eyebrow">Film</span><h2 id="film-h">Ein Einsatz an der Hubschiene.</h2><p class="lead">Von der aufgenommenen Schiene bis zur fertig geschliffenen Lauffläche, im laufenden Hochregallager.</p></div>
+    <figure class="film-stage reveal"><video controls muted playsinline loop preload="none" poster="video/mark-einsatzfilm.webp" width="1280" height="720" aria-label="Film: Einsatz an der Hubschiene im Hochregallager"><source src="video/mark-einsatzfilm.mp4" type="video/mp4"></video></figure>
   </div>
 </section>
 
