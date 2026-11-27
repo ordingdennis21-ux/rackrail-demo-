@@ -1,10 +1,11 @@
-/* Wechselt die Startüberschrift bei jedem erneuten Besuch zwischen zwei Varianten. */
+/* Wechselt die Startüberschrift bei jedem erneuten Besuch durch mehrere Varianten. */
 (function(){
   var h=document.getElementById('hero-h'); if(!h) return;
-  var a=h.getAttribute('data-first'), b=h.getAttribute('data-alt');
-  if(!a||!b) return;
-  var ph=[a,b], n=0;
-  try{ var k='rrHero'; n=(localStorage.getItem(k)==='1')?1:0; localStorage.setItem(k, n?'0':'1'); }
+  var raw=h.getAttribute('data-rotate'); if(!raw) return;
+  var ph=raw.split('|'); if(ph.length<2) return;
+  var n=0;
+  try{ var k='rrHero', v=parseInt(localStorage.getItem(k)||'0',10); if(isNaN(v))v=0;
+       n=v%ph.length; localStorage.setItem(k, String((v+1)%ph.length)); }
   catch(e){ n=0; }
   h.textContent=ph[n];
 })();
