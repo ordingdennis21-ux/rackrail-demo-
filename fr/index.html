@@ -850,6 +850,18 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
 @media (max-width:900px){.holo{grid-template-columns:1fr}.holo-stage{aspect-ratio:4/3}.hs{width:40px;height:40px;margin:-20px 0 0 -20px}.hs .lbl{display:none}.hud .read{display:none}.holo-info p{min-height:0}.holo-info h3{min-height:0}}
 @media (prefers-reduced-motion:reduce){.hs .ring,.hud .scan,.holo-view.is-on,.holo.flash .holo-stage,.holo-info .hint::before{animation:none}}
 </style>
+<style>
+.schaden-sec{padding-block:clamp(40px,6vw,80px)}
+.schaden-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(24px,4vw,40px)}
+.schaden-grid figure{margin:0}
+.schaden-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block}
+.schaden-grid figcaption{margin-top:12px;font-weight:700}
+.schaden-grid .cap-sub{display:block;font-weight:400;color:var(--ink-2);margin-top:4px;font-size:.95rem;line-height:1.35}
+.film-sec{padding-block:clamp(40px,6vw,80px);background:var(--ground-2)}
+.film-stage{margin:clamp(24px,4vw,40px) 0 0;max-width:980px;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(8,18,32,.14)}
+.film-stage video{display:block;width:100%;height:auto;background:#0b1220}
+@media(max-width:760px){.schaden-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Aller au contenu</a>
@@ -893,7 +905,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
   </div>
   <div class="wrap">
     <div class="hero-copy">
-      <h1 id="hero-h">Des rails qui roulent à nouveau rond.</h1>
+      <h1 id="hero-h">Des rails de nouveau pleinement fonctionnels.</h1>
       <p class="lede">RackRail Solution meule et mesure les rails de roulement des transstockeurs dans les entrepôts grande hauteur. Meuler, c'est remettre en état&nbsp;: la table de roulement est reprofilée en cours d'exploitation, dans le créneau que votre entrepôt autorise.</p>
       <div class="cta">
         <a class="btn acc mag" href="#kontakt">Faire une demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -944,6 +956,24 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
       <div class="hrl-points"><div class="p"><b>Transstockeurs</b><span>Rails de roulement des transstockeurs, rail supérieur et inférieur.</span></div><div class="p"><b>Tous les profils</b><span>Profils de rail A65 à A150, quel que soit le fabricant.</span></div></div>
     </div>
     <p class="hrl-more reveal">Au-delà, nous intervenons aussi sur les rails de roulement en production, sur les installations de levage et en ingénierie industrielle.</p>
+  </div>
+</section>
+
+<section class="schaden-sec" aria-labelledby="schaden-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Pourquoi meuler</span><h2 id="schaden-h">Ce que provoque un rail de roulement irrégulier.</h2><p class="lead" style="margin-top:18px">Usure ondulatoire, écaillages et joints décalés coûtent en douceur de roulement, en durée de vie et, au final, en disponibilité. Nous ramenons la surface de roulement au profil avant que le dommage ne devienne un arrêt.</p></div>
+    <div class="schaden-grid reveal">
+      <figure><img src="../img/schaden-stoss.webp" srcset="../img/schaden-stoss-s.webp 440w, ../img/schaden-stoss.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Joint de rail décalé avec écaillages sur la surface de roulement" loading="lazy" decoding="async"><figcaption>Joint de rail décalé<span class="cap-sub">Chocs et vibrations à chaque passage.</span></figcaption></figure>
+      <figure><img src="../img/schaden-lauffl.webp" srcset="../img/schaden-lauffl-s.webp 440w, ../img/schaden-lauffl.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Surface de roulement usée et écaillée d'un rail" loading="lazy" decoding="async"><figcaption>Surface de roulement usée<span class="cap-sub">La surface de contact perd sa forme et le roulement devient irrégulier.</span></figcaption></figure>
+      <figure><img src="../img/schaden-laufrad.webp" srcset="../img/schaden-laufrad-s.webp 440w, ../img/schaden-laufrad.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Galet de roulement usé d'un transstockeur avec méplats" loading="lazy" decoding="async"><figcaption>Galet de roulement usé<span class="cap-sub">Un rail en mauvais état détruit les galets du transstockeur.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="film-sec" aria-labelledby="film-h">
+  <div class="wrap">
+    <div class="vid-head reveal"><span class="eyebrow">Film</span><h2 id="film-h">Une intervention sur le rail de levage.</h2><p class="lead">Du rail usé à la surface de roulement finie, dans un magasin grande hauteur en exploitation.</p></div>
+    <figure class="film-stage reveal"><video controls muted playsinline loop preload="none" poster="../video/mark-einsatzfilm.webp" width="1280" height="720" aria-label="Film : intervention sur le rail de levage dans le magasin grande hauteur"><source src="../video/mark-einsatzfilm.mp4" type="video/mp4"></video></figure>
   </div>
 </section>
 

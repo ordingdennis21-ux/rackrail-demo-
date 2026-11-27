@@ -850,6 +850,18 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
 @media (max-width:900px){.holo{grid-template-columns:1fr}.holo-stage{aspect-ratio:4/3}.hs{width:40px;height:40px;margin:-20px 0 0 -20px}.hs .lbl{display:none}.hud .read{display:none}.holo-info p{min-height:0}.holo-info h3{min-height:0}}
 @media (prefers-reduced-motion:reduce){.hs .ring,.hud .scan,.holo-view.is-on,.holo.flash .holo-stage,.holo-info .hint::before{animation:none}}
 </style>
+<style>
+.schaden-sec{padding-block:clamp(40px,6vw,80px)}
+.schaden-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(24px,4vw,40px)}
+.schaden-grid figure{margin:0}
+.schaden-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block}
+.schaden-grid figcaption{margin-top:12px;font-weight:700}
+.schaden-grid .cap-sub{display:block;font-weight:400;color:var(--ink-2);margin-top:4px;font-size:.95rem;line-height:1.35}
+.film-sec{padding-block:clamp(40px,6vw,80px);background:var(--ground-2)}
+.film-stage{margin:clamp(24px,4vw,40px) 0 0;max-width:980px;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(8,18,32,.14)}
+.film-stage video{display:block;width:100%;height:auto;background:#0b1220}
+@media(max-width:760px){.schaden-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -893,7 +905,7 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
   </div>
   <div class="wrap">
     <div class="hero-copy">
-      <h1 id="hero-h">Rails that run true again.</h1>
+      <h1 id="hero-h">Rails back in full working order.</h1>
       <p class="lede">RackRail Solution grinds and surveys the running rails of stacker cranes in high-bay warehouses. Grinding means reconditioning: the running surface is reprofiled, during live operation, within the window your warehouse allows.</p>
       <div class="cta">
         <a class="btn acc mag" href="#kontakt">Make an enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -944,6 +956,24 @@ input[type="file"]:hover::file-selector-button{background:var(--accent)}
       <div class="hrl-points"><div class="p"><b>Stacker cranes</b><span>Running rails of stacker cranes, upper and lower rail.</span></div><div class="p"><b>All profiles</b><span>Rail profiles A65 to A150, regardless of manufacturer.</span></div></div>
     </div>
     <p class="hrl-more reveal">Beyond that, we also work on running rails in production, crane systems and plant engineering.</p>
+  </div>
+</section>
+
+<section class="schaden-sec" aria-labelledby="schaden-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Why grind</span><h2 id="schaden-h">What an uneven travel rail leads to.</h2><p class="lead" style="margin-top:18px">Corrugation, spalling and stepped joints cost smooth running, service life and ultimately availability. We bring the running surface back to profile before the damage turns into downtime.</p></div>
+    <div class="schaden-grid reveal">
+      <figure><img src="../img/schaden-stoss.webp" srcset="../img/schaden-stoss-s.webp 440w, ../img/schaden-stoss.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Stepped rail joint with spalling on the running surface" loading="lazy" decoding="async"><figcaption>Stepped rail joint<span class="cap-sub">Impacts and vibration on every pass.</span></figcaption></figure>
+      <figure><img src="../img/schaden-lauffl.webp" srcset="../img/schaden-lauffl-s.webp 440w, ../img/schaden-lauffl.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Worn and spalled running surface of a travel rail" loading="lazy" decoding="async"><figcaption>Worn running surface<span class="cap-sub">The contact surface loses its shape and the ride turns rough.</span></figcaption></figure>
+      <figure><img src="../img/schaden-laufrad.webp" srcset="../img/schaden-laufrad-s.webp 440w, ../img/schaden-laufrad.webp 800w" sizes="(max-width:760px) 92vw, 31vw" width="800" height="600" alt="Worn travel wheel of a stacker crane with flat spots" loading="lazy" decoding="async"><figcaption>Worn travel wheel<span class="cap-sub">A bad rail destroys the stacker crane's travel wheels.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="film-sec" aria-labelledby="film-h">
+  <div class="wrap">
+    <div class="vid-head reveal"><span class="eyebrow">Film</span><h2 id="film-h">A job on the lift rail.</h2><p class="lead">From the worn rail to the finished running surface, in a live high-bay warehouse.</p></div>
+    <figure class="film-stage reveal"><video controls muted playsinline loop preload="none" poster="../video/mark-einsatzfilm.webp" width="1280" height="720" aria-label="Film: job on the lift rail in the high-bay warehouse"><source src="../video/mark-einsatzfilm.mp4" type="video/mp4"></video></figure>
   </div>
 </section>
 
